@@ -1,0 +1,3928 @@
+fileFormatVersion: 2
+guid: c418eada9b2a8554fbd10eaad7111c9b
+timeCreated: 1474752184
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: zero-sprite_0
+    21300002: zero-sprite_1
+    21300004: zero-sprite_2
+    21300006: zero-sprite_3
+    21300008: zero-sprite_4
+    21300010: zero-sprite_5
+    21300012: zero-sprite_6
+    21300014: zero-sprite_7
+    21300016: zero-sprite_8
+    21300018: zero-sprite_9
+    21300020: zero-sprite_10
+    21300022: zero-sprite_11
+    21300024: zero-sprite_12
+    21300026: zero-sprite_13
+    21300028: zero-sprite_14
+    21300030: zero-sprite_15
+    21300032: zero-sprite_16
+    21300034: zero-sprite_17
+    21300036: zero-sprite_18
+    21300038: zero-sprite_19
+    21300040: zero-sprite_20
+    21300042: zero-sprite_21
+    21300044: zero-sprite_22
+    21300046: zero-sprite_23
+    21300048: zero-sprite_24
+    21300050: zero-sprite_25
+    21300052: zero-sprite_26
+    21300054: zero-sprite_27
+    21300056: zero-sprite_28
+    21300058: zero-sprite_29
+    21300060: zero-sprite_30
+    21300062: zero-sprite_31
+    21300064: zero-sprite_32
+    21300066: zero-sprite_33
+    21300068: zero-sprite_34
+    21300070: zero-sprite_35
+    21300072: zero-sprite_36
+    21300074: zero-sprite_37
+    21300076: zero-sprite_38
+    21300078: zero-sprite_39
+    21300080: zero-sprite_40
+    21300082: zero-sprite_41
+    21300084: zero-sprite_42
+    21300086: zero-sprite_43
+    21300088: zero-sprite_44
+    21300090: zero-sprite_45
+    21300092: zero-sprite_46
+    21300094: zero-sprite_47
+    21300096: zero-sprite_48
+    21300098: zero-sprite_49
+    21300100: zero-sprite_50
+    21300102: zero-sprite_51
+    21300104: zero-sprite_52
+    21300106: zero-sprite_53
+    21300108: zero-sprite_54
+    21300110: zero-sprite_55
+    21300112: zero-sprite_56
+    21300114: zero-sprite_57
+    21300116: zero-sprite_58
+    21300118: zero-sprite_59
+    21300120: zero-sprite_60
+    21300122: zero-sprite_61
+    21300124: zero-sprite_62
+    21300126: zero-sprite_63
+    21300128: zero-sprite_64
+    21300130: zero-sprite_65
+    21300132: zero-sprite_66
+    21300134: zero-sprite_67
+    21300136: zero-sprite_68
+    21300138: zero-sprite_69
+    21300140: zero-sprite_70
+    21300142: zero-sprite_71
+    21300144: zero-sprite_72
+    21300146: zero-sprite_73
+    21300148: zero-sprite_74
+    21300150: zero-sprite_75
+    21300152: zero-sprite_76
+    21300154: zero-sprite_77
+    21300156: zero-sprite_78
+    21300158: zero-sprite_79
+    21300160: zero-sprite_80
+    21300162: zero-sprite_81
+    21300164: zero-sprite_82
+    21300166: zero-sprite_83
+    21300168: zero-sprite_84
+    21300170: zero-sprite_85
+    21300172: zero-sprite_86
+    21300174: zero-sprite_87
+    21300176: zero-sprite_88
+    21300178: zero-sprite_89
+    21300180: zero-sprite_90
+    21300182: zero-sprite_91
+    21300184: zero-sprite_92
+    21300186: zero-sprite_93
+    21300188: zero-sprite_94
+    21300190: zero-sprite_95
+    21300192: zero-sprite_96
+    21300194: zero-sprite_97
+    21300196: zero-sprite_98
+    21300198: zero-sprite_99
+    21300200: zero-sprite_100
+    21300202: zero-sprite_101
+    21300204: zero-sprite_102
+    21300206: zero-sprite_103
+    21300208: zero-sprite_104
+    21300210: zero-sprite_105
+    21300212: zero-sprite_106
+    21300214: zero-sprite_107
+    21300216: zero-sprite_108
+    21300218: zero-sprite_109
+    21300220: zero-sprite_110
+    21300222: zero-sprite_111
+    21300224: zero-sprite_112
+    21300226: zero-sprite_113
+    21300228: zero-sprite_114
+    21300230: zero-sprite_115
+    21300232: zero-sprite_116
+    21300234: zero-sprite_117
+    21300236: zero-sprite_118
+    21300238: zero-sprite_119
+    21300240: zero-sprite_120
+    21300242: zero-sprite_121
+    21300244: zero-sprite_122
+    21300246: zero-sprite_123
+    21300248: zero-sprite_124
+    21300250: zero-sprite_125
+    21300252: zero-sprite_126
+    21300254: zero-sprite_127
+    21300256: zero-sprite_128
+    21300258: zero-sprite_129
+    21300260: zero-sprite_130
+    21300262: zero-sprite_131
+    21300264: zero-sprite_132
+    21300266: zero-sprite_133
+    21300268: zero-sprite_134
+    21300270: zero-sprite_135
+    21300272: zero-sprite_136
+    21300274: zero-sprite_137
+    21300276: zero-sprite_138
+    21300278: zero-sprite_139
+    21300280: zero-sprite_140
+    21300282: zero-sprite_141
+    21300284: zero-sprite_142
+    21300286: zero-sprite_143
+    21300288: zero-sprite_144
+    21300290: zero-sprite_145
+    21300292: zero-sprite_146
+    21300294: zero-sprite_147
+    21300296: zero-sprite_148
+    21300298: zero-sprite_149
+    21300300: zero-sprite_150
+    21300302: zero-sprite_151
+    21300304: zero-sprite_152
+    21300306: zero-sprite_153
+    21300308: zero-sprite_154
+    21300310: zero-sprite_155
+    21300312: zero-sprite_156
+    21300314: zero-sprite_157
+    21300316: zero-sprite_158
+    21300318: zero-sprite_159
+    21300320: zero-sprite_160
+    21300322: zero-sprite_161
+    21300324: zero-sprite_162
+    21300326: zero-sprite_163
+    21300328: zero-sprite_164
+    21300330: zero-sprite_165
+    21300332: zero-sprite_166
+    21300334: zero-sprite_167
+    21300336: zero-sprite_168
+    21300338: zero-sprite_169
+    21300340: zero-sprite_170
+    21300342: zero-sprite_171
+    21300344: zero-sprite_172
+    21300346: zero-sprite_173
+    21300348: zero-sprite_174
+    21300350: zero-sprite_175
+    21300352: zero-sprite_176
+    21300354: zero-sprite_177
+    21300356: zero-sprite_178
+    21300358: zero-sprite_179
+    21300360: zero-sprite_180
+    21300362: zero-sprite_181
+    21300364: zero-sprite_182
+    21300366: zero-sprite_183
+    21300368: zero-sprite_184
+    21300370: zero-sprite_185
+    21300372: zero-sprite_186
+    21300374: zero-sprite_187
+    21300376: zero-sprite_188
+    21300378: zero-sprite_189
+    21300380: zero-sprite_190
+    21300382: zero-sprite_191
+    21300384: zero-sprite_192
+    21300386: zero-sprite_193
+    21300388: zero-sprite_194
+    21300390: zero-sprite_195
+    21300392: zero-sprite_196
+    21300394: zero-sprite_197
+    21300396: zero-sprite_198
+    21300398: zero-sprite_199
+    21300400: zero-sprite_200
+    21300402: zero-sprite_201
+    21300404: zero-sprite_202
+    21300406: zero-sprite_203
+    21300408: zero-sprite_204
+    21300410: zero-sprite_205
+    21300412: zero-sprite_206
+    21300414: zero-sprite_207
+    21300416: zero-sprite_208
+    21300418: zero-sprite_209
+    21300420: zero-sprite_210
+    21300422: zero-sprite_211
+    21300424: zero-sprite_212
+    21300426: zero-sprite_213
+    21300428: zero-sprite_214
+    21300430: zero-sprite_215
+    21300432: zero-sprite_216
+    21300434: zero-sprite_217
+    21300436: zero-sprite_218
+    21300438: zero-sprite_219
+    21300440: zero-sprite_220
+    21300442: zero-sprite_221
+    21300444: zero-sprite_222
+    21300446: zero-sprite_223
+    21300448: zero-sprite_224
+    21300450: zero-sprite_225
+    21300452: zero-sprite_226
+    21300454: zero-sprite_227
+    21300456: zero-sprite_228
+    21300458: zero-sprite_229
+    21300460: zero-sprite_230
+    21300462: zero-sprite_231
+    21300464: zero-sprite_232
+    21300466: zero-sprite_233
+    21300468: zero-sprite_234
+    21300470: zero-sprite_235
+    21300472: zero-sprite_236
+    21300474: zero-sprite_237
+    21300476: zero-sprite_238
+    21300478: zero-sprite_239
+    21300480: zero-sprite_240
+    21300482: zero-sprite_241
+    21300484: zero-sprite_242
+    21300486: zero-sprite_243
+    21300488: zero-sprite_244
+    21300490: zero-sprite_245
+    21300492: zero-sprite_246
+    21300494: zero-sprite_247
+    21300496: zero-sprite_248
+    21300498: zero-sprite_249
+    21300500: zero-sprite_250
+    21300502: zero-sprite_251
+    21300504: zero-sprite_252
+    21300506: zero-sprite_253
+    21300508: zero-sprite_254
+    21300510: zero-sprite_255
+    21300512: zero-sprite_256
+    21300514: zero-sprite_257
+    21300516: zero-sprite_258
+    21300518: zero-sprite_259
+    21300520: zero-sprite_260
+    21300522: zero-sprite_261
+    21300524: zero-sprite_262
+    21300526: zero-sprite_263
+    21300528: zero-sprite_264
+    21300530: zero-sprite_265
+    21300532: zero-sprite_266
+    21300534: zero-sprite_267
+    21300536: zero-sprite_268
+    21300538: zero-sprite_269
+    21300540: zero-sprite_270
+    21300542: zero-sprite_271
+    21300544: zero-sprite_272
+    21300546: zero-sprite_273
+    21300548: zero-sprite_274
+    21300550: zero-sprite_275
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zero-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 2411
+        width: 8
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 2411
+        width: 10
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 2402
+        width: 20
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 2409
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 2406
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 2402
+        width: 131
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 2404
+        width: 54
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_7
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 2406
+        width: 46
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 2406
+        width: 39
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_9
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2336
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_10
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 2337
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_11
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 2337
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_12
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 2339
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2339
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 2339
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_15
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 2339
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_16
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 2339
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_17
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 2339
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_18
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 2275
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_19
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 2269
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_20
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 2268
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_21
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2268
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_22
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 2268
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_23
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 2264
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_24
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 2268
+        width: 42
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_25
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 2259
+        width: 43
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_26
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 2191
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_27
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 2181
+        width: 38
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_28
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2180
+        width: 37
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_29
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 2181
+        width: 41
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_30
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 2181
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_31
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 2182
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_32
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 2182
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_33
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 2181
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_34
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 2120
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_35
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 2120
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_36
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 2123
+        width: 54
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_37
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 2120
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_38
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 2120
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_39
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 2120
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_40
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 2121
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_41
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 2121
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_42
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 2058
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_43
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 2059
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_44
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 2057
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_45
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 2057
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_46
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 2057
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_47
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 2057
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_48
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 2057
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_49
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 2057
+        width: 47
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_50
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1987
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_51
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1987
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_52
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1987
+        width: 53
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_53
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1987
+        width: 81
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_54
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1987
+        width: 89
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_55
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 1987
+        width: 94
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_56
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1987
+        width: 87
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_57
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1931
+        width: 73
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_58
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1931
+        width: 70
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_59
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1931
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_60
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1931
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_61
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1931
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_62
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1931
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_63
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1930
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_64
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1930
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_65
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1930
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_66
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 1930
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_67
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1879
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_68
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1879
+        width: 70
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_69
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1879
+        width: 86
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_70
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1880
+        width: 107
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_71
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1824
+        width: 70
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_72
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1824
+        width: 71
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_73
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1824
+        width: 75
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_74
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1824
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_75
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1824
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_76
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1822
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_77
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1822
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_78
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1750
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_79
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1749
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_80
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1749
+        width: 56
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_81
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1749
+        width: 99
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_82
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1742
+        width: 106
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_83
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1741
+        width: 108
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_84
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1674
+        width: 106
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_85
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1674
+        width: 74
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_86
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1674
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_87
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1677
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_88
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 1681
+        width: 53
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_89
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1682
+        width: 54
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_90
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 1682
+        width: 53
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_91
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1682
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_92
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1593
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_93
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1591
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_94
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1592
+        width: 72
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_95
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1586
+        width: 91
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_96
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1584
+        width: 104
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_97
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1586
+        width: 58
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_98
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1584
+        width: 55
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_99
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1582
+        width: 44
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_100
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1582
+        width: 39
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_101
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1499
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_102
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1493
+        width: 85
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_103
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1471
+        width: 79
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_104
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1466
+        width: 58
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_105
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1469
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_106
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1477
+        width: 84
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_107
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1497
+        width: 81
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_108
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1494
+        width: 56
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_109
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1420
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_110
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1420
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_111
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1417
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_112
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1419
+        width: 60
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_113
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1417
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_114
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1419
+        width: 61
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_115
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1419
+        width: 60
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_116
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1419
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_117
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1420
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_118
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1417
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_119
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1417
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_120
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1367
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_121
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1367
+        width: 58
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_122
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1366
+        width: 98
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_123
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1366
+        width: 118
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_124
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1367
+        width: 106
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_125
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1309
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_126
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1309
+        width: 59
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_127
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1309
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_128
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1309
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_129
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1309
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_130
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1309
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_131
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1234
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_132
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1238
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_133
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1235
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_134
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1233
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_135
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1233
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_136
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1239
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_137
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 1245
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_138
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1245
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_139
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1160
+        width: 29
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_140
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1159
+        width: 40
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_141
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1160
+        width: 93
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_142
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1161
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_143
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1163
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_144
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1162
+        width: 73
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_145
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1165
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_146
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1162
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_147
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1159
+        width: 40
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_148
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1067
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_149
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1067
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_150
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1070
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_151
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1073
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_152
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1067
+        width: 32
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_153
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1067
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_154
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1066
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_155
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1068
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_156
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1073
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_157
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1068
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_158
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1072
+        width: 37
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_159
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1085
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_160
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1098
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_161
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1100
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_162
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 982
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_163
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 984
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_164
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 984
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_165
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 983
+        width: 90
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_166
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 985
+        width: 94
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_167
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 988
+        width: 96
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_168
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 984
+        width: 73
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_169
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 985
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_170
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 984
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_171
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 908
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_172
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 896
+        width: 65
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_173
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 876
+        width: 54
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_174
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 876
+        width: 57
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_175
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 888
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_176
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 884
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_177
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 886
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_178
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 886
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_179
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 885
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_180
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 810
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_181
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 811
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_182
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 810
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_183
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 811
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_184
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 813
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_185
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 812
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_186
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 811
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_187
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 811
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_188
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 812
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_189
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 812
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_190
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 812
+        width: 70
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_191
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 812
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_192
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 752
+        width: 105
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_193
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 751
+        width: 100
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_194
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 752
+        width: 118
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_195
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 752
+        width: 156
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_196
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 752
+        width: 151
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_197
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 696
+        width: 150
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_198
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 696
+        width: 148
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_199
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 699
+        width: 158
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_200
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 644
+        width: 132
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_201
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 644
+        width: 111
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_202
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 645
+        width: 67
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_203
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 645
+        width: 41
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_204
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 557
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_205
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 551
+        width: 83
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_206
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 544
+        width: 70
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_207
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 544
+        width: 71
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_208
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 544
+        width: 71
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_209
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 544
+        width: 71
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_210
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 544
+        width: 71
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_211
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 544
+        width: 71
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_212
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 539
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_213
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 439
+        width: 69
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_214
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 439
+        width: 71
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_215
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 435
+        width: 70
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_216
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 437
+        width: 68
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_217
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 437
+        width: 70
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_218
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 437
+        width: 69
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_219
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 437
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_220
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 518
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_221
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 458
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_222
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 445
+        width: 36
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_223
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 435
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_224
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 435
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_225
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 435
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_226
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 363
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_227
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 363
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_228
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 363
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_229
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 363
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_230
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 363
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_231
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 361
+        width: 51
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_232
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 357
+        width: 65
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_233
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 275
+        width: 82
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_234
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 275
+        width: 80
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_235
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 278
+        width: 66
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_236
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 280
+        width: 53
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_237
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 282
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_238
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 282
+        width: 52
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_239
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 282
+        width: 53
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_240
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 201
+        width: 51
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_241
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 201
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_242
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 201
+        width: 53
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_243
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 201
+        width: 52
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_244
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 201
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_245
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_246
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 202
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_247
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 202
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_248
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 142
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_249
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 142
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_250
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 142
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_251
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 139
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_252
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 143
+        width: 43
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_253
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 143
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_254
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 143
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_255
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 143
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_256
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 80
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_257
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 80
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_258
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 75
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_259
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 74
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_260
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 78
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_261
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 80
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_262
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 8
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_263
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 9
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_264
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 7
+        width: 44
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_265
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 7
+        width: 35
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_266
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 7
+        width: 38
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_267
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 7
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_268
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 7
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_269
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 7
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_270
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 7
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_271
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 7
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_272
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 4
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_273
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 3
+        width: 39
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_274
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 3
+        width: 49
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zero-sprite_275
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 3
+        width: 55
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
