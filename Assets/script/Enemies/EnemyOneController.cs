@@ -30,7 +30,7 @@ public class EnemyOneController : MonoBehaviour {
 		q = Quaternion.AngleAxis (angle, Vector3.forward);
 		selfTransform.rotation = Quaternion.Slerp (selfTransform.rotation,q,Time.deltaTime*maxSpeed);
 
-	
+		//test/
 	}
 
 
