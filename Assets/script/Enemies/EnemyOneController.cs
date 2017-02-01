@@ -23,6 +23,7 @@ public class EnemyOneController : MonoBehaviour {
 	
 	}
 	// Update is called once per frame
+
 	void Update () {
 
 		targetHeading = targetTransform.position - selfTransform.position;
