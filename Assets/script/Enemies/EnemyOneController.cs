@@ -25,12 +25,9 @@ public class EnemyOneController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		targetHeading = targetTransform.position - selfTransform.position;
-		angle = Mathf.Atan2 (targetHeading.y,targetHeading.x) * Mathf.Rad2Deg;
-		q = Quaternion.AngleAxis (angle, Vector3.forward);
-		selfTransform.rotation = Quaternion.Slerp (selfTransform.rotation,q,Time.deltaTime*maxSpeed);
 
-		//test/
+
+
 	}
 
 
