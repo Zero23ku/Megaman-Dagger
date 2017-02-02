@@ -7,7 +7,6 @@ TagManager:
   - Player
   - Enemy
   - Ground
-  - Wall
   layers:
   - Default
   - TransparentFX
@@ -18,9 +17,15 @@ TagManager:
   - 
   - 
   - Ground
+<<<<<<< HEAD
   - Wall
   - Character
   - Enemy
+=======
+  - 
+  - 
+  - 
+>>>>>>> refs/remotes/origin/sh1kenbranch
   - 
   - 
   - 
