@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Player
-  - Enemy
   - Ground
   layers:
   - Default
@@ -16,8 +14,8 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - 
+  - Enemy
+  - Character
   - 
   - 
   - 
@@ -43,16 +41,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 0. Background
-    uniqueID: 4246851921
-    locked: 0
-  - name: 1. Tiles
-    uniqueID: 3121427913
-    locked: 0
-  - name: 2. Characters
-    uniqueID: 179403705
-    locked: 0
-  - name: 3. Enemies
-    uniqueID: 2435342689
     locked: 0
