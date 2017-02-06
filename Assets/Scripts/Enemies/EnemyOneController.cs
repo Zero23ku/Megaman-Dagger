@@ -30,10 +30,6 @@ public class EnemyOneController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Movement();
-			
-	
-
-
 	}
 
 	//Movement of enemy
@@ -61,9 +57,6 @@ public class EnemyOneController : MonoBehaviour {
 
 		}
 
-
-
-		Debug.Log(selfTransform.position);
 	}
 
 }
