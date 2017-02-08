@@ -310,6 +310,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1337644675204186, guid: 2ec2fc43a06962c4683c584f999ddf1b, type: 2}
+      propertyPath: m_Name
+      value: enemyHelicopterBlue#1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec2fc43a06962c4683c584f999ddf1b, type: 2}
   m_IsPrefabParent: 0
@@ -354,7 +358,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1337644675204186, guid: 2ec2fc43a06962c4683c584f999ddf1b, type: 2}
       propertyPath: m_Name
-      value: enemyHelicopterBlue (1)
+      value: enemyHelicopterBlue#2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec2fc43a06962c4683c584f999ddf1b, type: 2}
@@ -845,7 +849,7 @@ GameObject:
   - component: {fileID: 1139751116}
   - component: {fileID: 1139751118}
   - component: {fileID: 1139751117}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: playerHitBox
   m_TagString: playerHitBox
   m_Icon: {fileID: 0}
