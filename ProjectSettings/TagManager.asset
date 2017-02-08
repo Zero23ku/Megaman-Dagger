@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - ScoreText
+  - MegamanBullet
+  - enemyHitBox
+  - Enemy
+  - playerHitBox
   layers:
   - Default
   - TransparentFX

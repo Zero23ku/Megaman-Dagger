@@ -1,42 +1,43 @@
-﻿	using System.Collections;
-	using System.Collections.Generic;
-	using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-	public class MegamanBullet : MonoBehaviour {
+public class MegamanBullet : MonoBehaviour {
+	public float damage;
 
-		public float damage;
+	private float bulletSpeed = 9.5f;
+	private float spriteWidthDelta;
+	private Rigidbody2D bulletBody;
 
-		private float bulletSpeed = 9.5f;
-		private float spriteWidthDelta;
-		private Rigidbody2D bulletBody;
-		private Transform playerTransform;
-		private Vector2 playerScale;
-		// Use this for initialization
-		void Start () {
-			spriteWidthDelta = GetComponent<SpriteRenderer>().bounds.size.x / 2;
-			bulletBody = GetComponent<Rigidbody2D>();
-			playerTransform = GameObject.FindWithTag("Player").transform;
-		}
-		
-		// Update is called once per frame
-		void Update () {
-			playerScale = playerTransform.localScale;
-			BulletMovement(playerScale.x);
-			//Destroy bullet if surpass right border.
+	// Use this for initialization
+	void Start () {
+		bulletBody = GetComponent<Rigidbody2D>();
+		spriteWidthDelta = GetComponent<SpriteRenderer>().bounds.size.x / 2;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		bulletBody.velocity = new Vector2(bulletSpeed, bulletBody.velocity.y);
+
+		//Destroy bullet if surpass right border.
+		if (bulletSpeed > 0f) {
 			if (transform.position.x + spriteWidthDelta > SpriteManager.maxPos.x) {
 				Destroy(gameObject);
 			}
-			
+		} else if (transform.position.x + spriteWidthDelta < SpriteManager.minPos.x) {
+			Destroy(gameObject);
 		}
 
-		void BulletMovement(float direction) {
-			if (direction > 0)
-			{
-				bulletBody.velocity = new Vector2(bulletSpeed, bulletBody.velocity.y);
-			}
-			else { 
-				bulletBody.velocity = new Vector2(bulletSpeed*-1, bulletBody.velocity.y);
-			}
-			
-		}
 	}
+
+	public void SetDirection(bool lookingRight) {
+		if (!lookingRight) {
+			bulletSpeed *= -1;
+		}		
+	}
+
+	void OnTriggerEnter2D(Collider2D otherCollider) {
+		if (otherCollider.tag == "enemyHitBox")
+			Destroy(gameObject);
+	}
+}

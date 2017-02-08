@@ -4,8 +4,10 @@ using System.Collections;
 
 public class EnemyOneController : MonoBehaviour {
 
-	public float enemySpeed =1.5f;
+	public float enemySpeed = 1.5f;
+	public int health;
 
+	private GameObject player;
 	private Transform playerTransform;
 	private Transform selfTransform;
 	private Rigidbody2D selfBody;
@@ -18,10 +20,10 @@ public class EnemyOneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindWithTag("Player");
 		playerTransform = GameObject.FindWithTag ("Player").transform;
 		selfTransform = GetComponent<Transform> ();
 		selfBody = GetComponent<Rigidbody2D>();
-
 	}
 
 	void FixedUpdate () {
@@ -34,8 +36,9 @@ public class EnemyOneController : MonoBehaviour {
 
 	//Movement of enemy
 	void Movement() {
-
-		playerPosition = playerTransform.position;
+		if (player)
+			playerPosition = playerTransform.position;
+		
 		selfPosition = selfTransform.position;
 		//Distance between player and enemy//
 		distance = playerPosition - selfPosition;
@@ -50,13 +53,22 @@ public class EnemyOneController : MonoBehaviour {
 
 		if (distance.y <= -0.5f) {	
 			selfBody.velocity = new Vector2(selfBody.velocity.x, -enemySpeed);
-
 		}
 		else { 			
 			selfBody.velocity = new Vector2(selfBody.velocity.x, enemySpeed);
 
 		}
+	}
 
+	public void receiveDamage() {
+		health--;
+		if (health <= 0) {
+			Die();
+		}
+	}
+
+	void Die() {
+		Destroy(gameObject);
 	}
 
 }
