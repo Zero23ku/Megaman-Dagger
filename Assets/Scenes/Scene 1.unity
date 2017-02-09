@@ -1445,6 +1445,7 @@ MonoBehaviour:
   timeToJumpApex: 0.32
   iFrames: 120
   blinkFrames: 120
+  bulletClip: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
 --- !u!4 &1725638166 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4502996200036022, guid: 2ec2fc43a06962c4683c584f999ddf1b,
@@ -1742,6 +1743,8 @@ MonoBehaviour:
   gameManager: {fileID: 1049527439331270, guid: d0800525ccff11742a2892849c98386a,
     type: 2}
   scoreManager: {fileID: 1776104902737068, guid: e45521fc34ec7644cb6cf1eaecab51c8,
+    type: 2}
+  soundManager: {fileID: 1663811871945306, guid: afab1af2bdbd848459b65e3efe69e050,
     type: 2}
 --- !u!114 &2044676154
 MonoBehaviour:
