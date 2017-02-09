@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTwoHitBoxScript : MonoBehaviour {
+public class EnemyTwoHitBoxScript : MonoBehaviour
+{
+	private EnemyTwoController enemyTwoController;
 
-	// Use this for initialization
-	void Start () {
-		
+	void Start()
+	{
+		enemyTwoController = GetComponentInParent<EnemyTwoController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void OnTriggerEnter2D(Collider2D otherCollider)
+	{
+		if (otherCollider.tag == "MegamanBullet")
+		{
+			enemyTwoController.receiveDamage();
+		}
 	}
 }
