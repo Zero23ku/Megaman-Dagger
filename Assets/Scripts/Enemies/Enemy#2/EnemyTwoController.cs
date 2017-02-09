@@ -39,7 +39,6 @@ public class EnemyTwoController : MonoBehaviour {
 	void Update () {
 		ChangeDirectionMovement();
 		Movement();
-		print(selfTransform.position.x);
 	}
 
 	void Movement() {
