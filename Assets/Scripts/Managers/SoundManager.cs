@@ -39,6 +39,7 @@ public class SoundManager : MonoBehaviour {
 		if (!soundPaused && GameManager.isPaused) {
 			soundPaused = true;
 			sfxSource.Pause();
+			musicSource.Pause();
 		}
 		else if (soundPaused && !GameManager.isPaused) {
 			soundPaused = false;
