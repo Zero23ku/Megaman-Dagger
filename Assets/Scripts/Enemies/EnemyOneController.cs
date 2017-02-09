@@ -16,6 +16,7 @@ public class EnemyOneController : MonoBehaviour {
 	private Vector3 selfPosition;
 	private Vector3 distance;
 	private float selfPositionY;
+	private bool isLookingLeft;
 
 
 	// Use this for initialization
@@ -24,6 +25,12 @@ public class EnemyOneController : MonoBehaviour {
 		playerTransform = GameObject.FindWithTag ("Player").transform;
 		selfTransform = GetComponent<Transform> ();
 		selfBody = GetComponent<Rigidbody2D>();
+		if (selfTransform.localScale.x > 0) {
+			isLookingLeft = true;
+		}
+		else {
+			isLookingLeft = false;
+		}
 	}
 
 	void FixedUpdate () {
@@ -44,11 +51,16 @@ public class EnemyOneController : MonoBehaviour {
 		distance = playerPosition - selfPosition;
 		if (distance.x <= 0.0f) {
 			selfBody.velocity = new Vector2(-enemySpeed,Mathf.Round(selfBody.velocity.y));
+			if (!isLookingLeft) {
+				Flip();
+			}
 
 		}
 		else { 
 			selfBody.velocity = new Vector2(enemySpeed, Mathf.Round(selfBody.velocity.y));
-
+			if (isLookingLeft) {
+				Flip();
+			}
 		}
 
 		if (distance.y <= -0.5f) {	
@@ -69,6 +81,14 @@ public class EnemyOneController : MonoBehaviour {
 
 	void Die() {
 		Destroy(gameObject);
+	}
+
+	void Flip()
+	{
+		isLookingLeft = !isLookingLeft;
+		Vector3 scale = selfTransform.localScale;
+		scale.x *= -1;
+		selfTransform.localScale = scale;
 	}
 
 }
