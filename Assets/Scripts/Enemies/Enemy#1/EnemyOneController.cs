@@ -38,7 +38,8 @@ public class EnemyOneController : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		Movement();
+		if(!GameManager.isPaused)
+			Movement();
 	}
 
 	//Movement of enemy

@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178903781532922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.46, y: -0.51, z: 0}
+  m_LocalPosition: {x: 5.22, y: 2.13, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 4211049202571150}
@@ -99,10 +99,10 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1675994775194800}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: -0.00006866455, y: 0.0005747795}
   serializedVersion: 2
@@ -120,6 +120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 2.5
   health: 3
+  waitFramesUntilAttack: 300
+  bulletSFX: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
+  bulletEnemyTwoPrefab: {fileID: 0}
 --- !u!114 &114156480181178366
 MonoBehaviour:
   m_ObjectHideFlags: 1
