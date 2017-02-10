@@ -30,8 +30,10 @@ public class EnemyTwoController : MonoBehaviour {
 		else {
 			goingRight = true;
 		}
-
-
+		/*
+		print(SpriteManager.minPos.x);
+		print(SpriteManager.maxPos.x);
+		*/
 		
 	}
 	
@@ -71,5 +73,10 @@ public class EnemyTwoController : MonoBehaviour {
 
 	void Die() {
 		Destroy(gameObject);
+	}
+
+
+	void Attack() { 
+		
 	}
 }
