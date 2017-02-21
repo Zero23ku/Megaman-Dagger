@@ -12,7 +12,7 @@ public class PlayerHitBoxScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
-		if (otherCollider.tag == "enemyHitBox")
+		if (otherCollider.tag == "enemyHitBox" || otherCollider.tag == "enemyBullet")
 			megamanController.receiveDamage();
 	}
 }
