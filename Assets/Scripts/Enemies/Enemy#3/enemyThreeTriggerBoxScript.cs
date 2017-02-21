@@ -15,19 +15,16 @@ public class enemyThreeTriggerBoxScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 
 		if (otherCollider.tag == "triggerBox"){
-			print("IZQUIERDA");
+			
 		}
-		else if (otherCollider.tag == "edgeBox")
-		{
+
+		if (otherCollider.tag == "edgeBox") {
+			print("CHOQUE");
 			enemyDiskFloorController.enemySpeed *= -1;
 
 
 		}
-		else if (otherCollider.tag == "edgeBox")
-		{
-			enemyDiskFloorController.enemySpeed *= -1;
-			print("DERECHA");
-		}
+
 	}
 
 }
