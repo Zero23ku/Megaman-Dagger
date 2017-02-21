@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4208746675127034}
   - component: {fileID: 61179931093554370}
+  - component: {fileID: 114712089898174032}
   m_Layer: 12
   m_Name: enemyThreeHitBox
   m_TagString: enemyHitBox
@@ -36,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4255633946783794}
   - component: {fileID: 61835937706228102}
+  - component: {fileID: 114574123780022396}
   m_Layer: 13
   m_Name: enemyTriggerBox
   m_TagString: triggerBox
@@ -133,9 +135,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0008485715, y: 0.001697143}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16803241, y: 0.08536037}
 --- !u!61 &61835937706228102
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -147,9 +149,31 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 2.1201544, y: 1.9143724}
+  m_Offset: {x: 2.1158085, y: 1.862212}
   serializedVersion: 2
-  m_Size: {x: 0.4542861, y: 0.19587183}
+  m_Size: {x: 0.37604523, y: 0.09155142}
+--- !u!114 &114574123780022396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235241373055808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce4144bc2c169047bebc184613490fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114712089898174032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033604162729130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8637ae0d12cb35943a5d100c3616c58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114960102577282110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,12 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20ee927cdd7cf346b97ba9e0da78460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healt: 0
+  health: 3
   enemySpeed: 3
-  leftLimit: {fileID: 0}
-  rightLimit: {fileID: 0}
   selfBody: {fileID: 0}
-  platform: {fileID: 0}
 --- !u!212 &212373352225648882
 SpriteRenderer:
   m_ObjectHideFlags: 1

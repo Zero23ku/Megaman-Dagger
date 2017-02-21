@@ -454,22 +454,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &592343654 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1235241373055808, guid: 2231a239e4420564486726382090b892,
-    type: 2}
-  m_PrefabInternal: {fileID: 798174573}
---- !u!114 &592343657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 592343654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce4144bc2c169047bebc184613490fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &599806630 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4502996200036022, guid: 2ec2fc43a06962c4683c584f999ddf1b,
@@ -513,31 +497,6 @@ Prefab:
     - target: {fileID: 4533119796246702, guid: 2231a239e4420564486726382090b892, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 61179931093554370, guid: 2231a239e4420564486726382090b892,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.0020492873
-      objectReference: {fileID: 0}
-    - target: {fileID: 61179931093554370, guid: 2231a239e4420564486726382090b892,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.16803233
-      objectReference: {fileID: 0}
-    - target: {fileID: 61179931093554370, guid: 2231a239e4420564486726382090b892,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.004098505
-      objectReference: {fileID: 0}
-    - target: {fileID: 61179931093554370, guid: 2231a239e4420564486726382090b892,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.07376909
-      objectReference: {fileID: 0}
-    - target: {fileID: 114960102577282110, guid: 2231a239e4420564486726382090b892,
-        type: 2}
-      propertyPath: healt
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2231a239e4420564486726382090b892, type: 2}
@@ -610,49 +569,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 840893033}
---- !u!1 &848273059
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 848273060}
-  - component: {fileID: 848273061}
-  m_Layer: 13
-  m_Name: triggerBox
-  m_TagString: triggerBox
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &848273060
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 848273059}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2020961497}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &848273061
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 848273059}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.5709441}
-  serializedVersion: 2
-  m_Size: {x: 0.99999875, y: 0.165174}
 --- !u!1 &890460135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,24 +1109,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396346148259116, guid: 16af709e4e14eaf4d8026533a0a550c7, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959719085269570, guid: 16af709e4e14eaf4d8026533a0a550c7, type: 2}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436259680476562, guid: 16af709e4e14eaf4d8026533a0a550c7, type: 2}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 61493719136223294, guid: 16af709e4e14eaf4d8026533a0a550c7,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61989654901528618, guid: 16af709e4e14eaf4d8026533a0a550c7,
-        type: 2}
-      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

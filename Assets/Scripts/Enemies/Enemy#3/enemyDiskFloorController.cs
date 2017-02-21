@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class enemyDiskFloorController : MonoBehaviour {
 
-	public int healt;
+	public int health = 3;
 	public float enemySpeed = 3.0f;
 
-	public Collider2D leftLimit;
-	public Collider2D rightLimit;
 	public Rigidbody2D selfBody;
-	public GameObject platform;
+	//public bool isPlayerThere = false;
+
 
 
 	// Use this for initialization
@@ -21,7 +20,8 @@ public class enemyDiskFloorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Movement();	
+
+		Movement();
 	}
 
 
@@ -29,5 +29,19 @@ public class enemyDiskFloorController : MonoBehaviour {
 
 		selfBody.velocity = new Vector2(enemySpeed,selfBody.velocity.y);
 	
+	}
+
+	public void receiveDamage()
+	{
+		health--;
+		if (health <= 0)
+		{
+			Die();
+		}
+	}
+
+	void Die() {
+
+		Destroy(gameObject);
 	}
 }
