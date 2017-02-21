@@ -12,6 +12,8 @@ TagManager:
   - playerHitBox
   - HealthBarFill
   - enemyBullet
+  - edgeBox
+  - triggerBox
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - Terrain
   - Bullet
   - Hitbox
-  - 
+  - Trigger
   - 
   - 
   - 
