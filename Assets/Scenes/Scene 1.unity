@@ -1633,15 +1633,10 @@ MonoBehaviour:
   minJumpH: 0.2
   maxJumpH: 2.2
   timeToJumpApex: 0.32
-<<<<<<< HEAD
   iFrames: 60
   blinkFrames: 60
   attackCooldown: 5
-=======
-  iFrames: 120
-  blinkFrames: 120
   bulletClip: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
->>>>>>> refs/remotes/origin/Zerobranch
 --- !u!4 &1725638166 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4502996200036022, guid: 2ec2fc43a06962c4683c584f999ddf1b,
