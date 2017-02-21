@@ -10,6 +10,7 @@ TagManager:
   - enemyHitBox
   - Enemy
   - playerHitBox
+  - HealthBarFill
   - enemyBullet
   layers:
   - Default
