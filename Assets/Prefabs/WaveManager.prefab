@@ -9,47 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1049527439331270}
+  m_RootGameObject: {fileID: 1143142884080866}
   m_IsPrefabParent: 1
---- !u!1 &1049527439331270
+--- !u!1 &1143142884080866
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4522963272688676}
-  - component: {fileID: 114321763337738144}
+  - component: {fileID: 4741255671369892}
+  - component: {fileID: 114420150128560516}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: WaveManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4522963272688676
+--- !u!4 &4741255671369892
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1049527439331270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34194863, y: -0.22180475, z: 10.011805}
+  m_GameObject: {fileID: 1143142884080866}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114321763337738144
+--- !u!114 &114420150128560516
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1049527439331270}
+  m_GameObject: {fileID: 1143142884080866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef013bdb454b334dbec5306c2172f73, type: 3}
+  m_Script: {fileID: 11500000, guid: 02023e36529f67749a3034063b756d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveManager: {fileID: 1143142884080866, guid: 17e28b67e3191314eaf3bfa33198af35,
-    type: 2}
+  AirEnemies:
+  - {fileID: 1178903781532922, guid: 2e58588195bd6244495d80076051841a, type: 2}
+  - {fileID: 1337644675204186, guid: 2ec2fc43a06962c4683c584f999ddf1b, type: 2}
+  LandEnemies:
+  - {fileID: 1311810077964932, guid: 2231a239e4420564486726382090b892, type: 2}

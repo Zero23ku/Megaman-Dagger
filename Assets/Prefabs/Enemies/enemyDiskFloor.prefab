@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 212373352225648882}
   - component: {fileID: 50451745580082134}
   - component: {fileID: 114960102577282110}
+  - component: {fileID: 114984441898760024}
   m_Layer: 14
   m_Name: enemyDiskFloor
   m_TagString: Enemy
@@ -185,9 +186,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20ee927cdd7cf346b97ba9e0da78460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
   enemySpeed: 3
-  selfBody: {fileID: 0}
+--- !u!114 &114984441898760024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311810077964932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbc2d8b4762c104a83ad7a2d6f22220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultLevel: 2
 --- !u!212 &212373352225648882
 SpriteRenderer:
   m_ObjectHideFlags: 1

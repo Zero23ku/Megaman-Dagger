@@ -16,6 +16,8 @@ TagManager:
   - triggerBox
   - groundEnemy
   - EnemyTrigger
+  - SpawnAir
+  - SpawnLand
   layers:
   - Default
   - TransparentFX
@@ -32,7 +34,7 @@ TagManager:
   - Hitbox
   - Trigger
   - GroundEnemy
-  - 
+  - Spawn Points
   - 
   - 
   - 
