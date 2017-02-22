@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class platformController : MonoBehaviour {
 
-	// Use this for initialization
-
-	void Start () {
-
-	}
+	private bool alreadyAssigned = false;
+	private enemyDiskFloorController enemyController;
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
-
-		//print(otherCollider.tag);		if (otherCollider.tag == "playerHitBox") {
-			GameObject.FindWithTag("Enemy").GetComponent<enemyDiskFloorController>().enemySpeed *= 2;
+		if (otherCollider.tag == "triggerBox" && !alreadyAssigned) {
+			alreadyAssigned = true;
+			enemyController = otherCollider.gameObject.GetComponentInParent<enemyDiskFloorController>();
+		}
+		if (otherCollider.tag == "playerHitBox") {
+			enemyController.enemySpeed *= 2;
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D otherCollider) {		
+	void OnTriggerExit2D(Collider2D otherCollider) {
 		if (otherCollider.tag == "playerHitBox") {
-			GameObject.FindWithTag("Enemy").GetComponent<enemyDiskFloorController>().enemySpeed /= 2;
+			enemyController.enemySpeed /= 2;
 		}
 	}
-	
-
 }
