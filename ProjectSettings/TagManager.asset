@@ -15,6 +15,7 @@ TagManager:
   - edgeBox
   - triggerBox
   - groundEnemy
+  - EnemyTrigger
   layers:
   - Default
   - TransparentFX
