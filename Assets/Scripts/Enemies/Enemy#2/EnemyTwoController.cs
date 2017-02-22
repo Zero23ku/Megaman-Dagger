@@ -78,12 +78,12 @@ public class EnemyTwoController : MonoBehaviour {
 
 	public void receiveDamage() {
 		health--;
+		print(health);
 		if (health <= 0)
 		{
 			Die();
 		}
 	}
-
 	void Die() {
 		Destroy(gameObject);
 	}
