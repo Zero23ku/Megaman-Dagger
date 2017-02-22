@@ -425,3 +425,5 @@ MonoBehaviour:
     type: 2}
   soundManager: {fileID: 1663811871945306, guid: afab1af2bdbd848459b65e3efe69e050,
     type: 2}
+  waveManager: {fileID: 1143142884080866, guid: 17e28b67e3191314eaf3bfa33198af35,
+    type: 2}

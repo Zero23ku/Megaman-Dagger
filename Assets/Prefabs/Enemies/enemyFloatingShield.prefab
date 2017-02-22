@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212413658676799212}
   - component: {fileID: 50814471146081572}
   - component: {fileID: 114019342358963636}
+  - component: {fileID: 114244671888685594}
   m_Layer: 8
   m_Name: enemyFloatingShield
   m_TagString: Enemy
@@ -119,10 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 2.5
-  health: 3
+  health: 1
   waitFramesUntilAttack: 300
   bulletSFX: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
-  bulletEnemyTwoPrefab: {fileID: 0}
+  bulletEnemyTwoPrefab: {fileID: 4564477716868756, guid: b028dc29dc394c34c83c1dbdf0daaadf,
+    type: 2}
 --- !u!114 &114156480181178366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +136,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6149dc77b4060514a92f6a1341a05368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114244671888685594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178903781532922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbc2d8b4762c104a83ad7a2d6f22220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultLevel: 1
 --- !u!212 &212413658676799212
 SpriteRenderer:
   m_ObjectHideFlags: 1

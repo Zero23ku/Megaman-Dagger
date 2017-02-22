@@ -6,6 +6,7 @@ public class LoaderScript : MonoBehaviour {
 	public GameObject gameManager;
 	public GameObject scoreManager;
 	public GameObject soundManager;
+	public GameObject waveManager;
 
 	// Use this for initialization
 	void Awake () {
@@ -13,6 +14,7 @@ public class LoaderScript : MonoBehaviour {
 			Instantiate(gameManager);
 			Instantiate(scoreManager);
 			Instantiate(soundManager);
+			Instantiate(waveManager);
 		}
 	}
 }

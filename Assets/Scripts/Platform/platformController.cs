@@ -13,13 +13,17 @@ public class platformController : MonoBehaviour {
 			enemyController = otherCollider.gameObject.GetComponentInParent<enemyDiskFloorController>();
 		}
 		if (otherCollider.tag == "playerHitBox") {
-			enemyController.enemySpeed *= 2;
+			if (enemyController) {
+				enemyController.enemySpeed *= 2;
+			}
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D otherCollider) {
 		if (otherCollider.tag == "playerHitBox") {
-			enemyController.enemySpeed /= 2;
+			if (enemyController) {
+				enemyController.enemySpeed /= 2;
+			}
 		}
 	}
 }
