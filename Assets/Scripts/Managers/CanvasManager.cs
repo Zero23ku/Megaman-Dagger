@@ -27,7 +27,6 @@ public class CanvasManager : MonoBehaviour {
 		// Shows score on HUD (ScoreText)
 		scoreText.text = ScoreManager.instance.Score.ToString("n0");
 		if (player) {
-			Debug.Log(megamanController.health / maxPlayerHealth);
 			healthBarFill.fillAmount = (float)megamanController.health / (float)maxPlayerHealth;
 		} else {
 			healthBarFill.fillAmount = 0f;
