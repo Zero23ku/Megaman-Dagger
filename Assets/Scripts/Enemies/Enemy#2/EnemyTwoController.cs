@@ -35,10 +35,6 @@ public class EnemyTwoController : MonoBehaviour {
 		else {
 			goingRight = true;
 		}
-		/*
-		print(SpriteManager.minPos.x);
-		print(SpriteManager.maxPos.x);
-		*/
 
 		framesCounter = waitFramesUntilAttack;
 	}
@@ -71,30 +67,23 @@ public class EnemyTwoController : MonoBehaviour {
 		}
 		else if (selfTransform.position.x > 6.24/*selfTransform.position.x + spriteWitdhDelta == SpriteManager.maxPos.x - 25 && goingRight*/) {
 			goingRight = false;
-
 		}
-	
 	}
 
 	public void receiveDamage() {
 		health--;
-		print(health);
-		if (health <= 0)
-		{
+		if (health <= 0) {
 			Die();
 		}
 	}
+
 	void Die() {
 		Destroy(gameObject);
 	}
-
 
 	void Attack() {
 		Transform bulletEnemyTwoTransform = Instantiate(bulletEnemyTwoPrefab) as Transform;
 		bulletEnemyTwoTransform.position = new Vector3(selfTransform.position.x, selfTransform.position.y, selfTransform.position.y);
 		SoundManager.instance.RandomizeSFX(bulletSFX);
 	}
-
-
-
 }
