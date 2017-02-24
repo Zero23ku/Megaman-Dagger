@@ -4,9 +4,7 @@ using System.Collections;
 
 public class EnemyOneController : MonoBehaviour {
 
-	public float enemySpeed = 1.5f;
-	public int health;
-
+	private enemyInformationScript enemyInformation;
 	private GameObject player;
 	private Transform playerTransform;
 	private Transform selfTransform;
@@ -21,6 +19,7 @@ public class EnemyOneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		enemyInformation = GetComponent<enemyInformationScript> ();
 		player = GameObject.FindWithTag("Player");
 		playerTransform = GameObject.FindWithTag ("Player").transform;
 		selfTransform = GetComponent<Transform> ();
@@ -51,31 +50,31 @@ public class EnemyOneController : MonoBehaviour {
 		//Distance between player and enemy//
 		distance = playerPosition - selfPosition;
 		if (distance.x <= 0.0f) {
-			selfBody.velocity = new Vector2(-enemySpeed,Mathf.Round(selfBody.velocity.y));
+			selfBody.velocity = new Vector2(-enemyInformation.speed,Mathf.Round(selfBody.velocity.y));
 			if (!isLookingLeft) {
 				Flip();
 			}
 
 		}
 		else { 
-			selfBody.velocity = new Vector2(enemySpeed, Mathf.Round(selfBody.velocity.y));
+			selfBody.velocity = new Vector2(enemyInformation.speed, Mathf.Round(selfBody.velocity.y));
 			if (isLookingLeft) {
 				Flip();
 			}
 		}
 
 		if (distance.y <= -0.5f) {	
-			selfBody.velocity = new Vector2(selfBody.velocity.x, -enemySpeed);
+			selfBody.velocity = new Vector2(selfBody.velocity.x, -enemyInformation.speed);
 		}
 		else { 			
-			selfBody.velocity = new Vector2(selfBody.velocity.x, enemySpeed);
+			selfBody.velocity = new Vector2(selfBody.velocity.x, enemyInformation.speed);
 
 		}
 	}
 
 	public void receiveDamage() {
-		health--;
-		if (health <= 0) {
+		enemyInformation.health--;
+		if (enemyInformation.health <= 0) {
 			Die();
 		}
 	}

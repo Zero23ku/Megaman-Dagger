@@ -186,8 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20ee927cdd7cf346b97ba9e0da78460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  enemySpeed: 3
 --- !u!114 &114984441898760024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbc2d8b4762c104a83ad7a2d6f22220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
+  speed: 3
   difficultLevel: 2
 --- !u!212 &212373352225648882
 SpriteRenderer:

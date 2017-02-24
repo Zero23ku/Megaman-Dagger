@@ -119,8 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d687933a70c5a574f8f76523389f4922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 2.5
-  health: 1
   waitFramesUntilAttack: 300
   bulletSFX: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
   bulletEnemyTwoPrefab: {fileID: 4564477716868756, guid: b028dc29dc394c34c83c1dbdf0daaadf,
@@ -147,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbc2d8b4762c104a83ad7a2d6f22220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
+  speed: 2.5
   difficultLevel: 1
 --- !u!212 &212413658676799212
 SpriteRenderer:
