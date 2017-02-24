@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyTwoController : MonoBehaviour {
 
-	public float enemySpeed = 2.5f;
-	public int health;
+	private enemyInformationScript enemyInformation;
 	public int waitFramesUntilAttack = 60;
 	public AudioClip bulletSFX;
 	public Transform bulletEnemyTwoPrefab;
@@ -23,6 +22,7 @@ public class EnemyTwoController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//playerTransform = GameObject.FindWithTag("Player").transform;
+		enemyInformation = GetComponent<enemyInformationScript> ();
 		selfTransform = GetComponent<Transform>();
 		selfBody = GetComponent<Rigidbody2D>();
 		//spriteWitdhDelta = GetComponent<SpriteRenderer>().bounds.size.x / 2;
@@ -30,9 +30,7 @@ public class EnemyTwoController : MonoBehaviour {
 		//Know where is going the enemy for the first time.
 		if (selfTransform.localScale.x > 0) {
 			goingRight = false;
-		}
-
-		else {
+		} else {
 			goingRight = true;
 		}
 
@@ -54,10 +52,10 @@ public class EnemyTwoController : MonoBehaviour {
 
 	void Movement() {
 		if(!goingRight) {
-			selfBody.velocity = new Vector2(-enemySpeed,selfBody.velocity.y);
+			selfBody.velocity = new Vector2(-enemyInformation.speed,selfBody.velocity.y);
 		}
 		else {
-			selfBody.velocity = new Vector2(enemySpeed,selfBody.velocity.y);
+			selfBody.velocity = new Vector2(enemyInformation.speed,selfBody.velocity.y);
 		}
 	}
 
@@ -71,8 +69,8 @@ public class EnemyTwoController : MonoBehaviour {
 	}
 
 	public void receiveDamage() {
-		health--;
-		if (health <= 0) {
+		enemyInformation.health--;
+		if (enemyInformation.health <= 0) {
 			Die();
 		}
 	}

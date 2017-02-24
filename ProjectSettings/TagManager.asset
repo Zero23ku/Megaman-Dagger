@@ -18,6 +18,7 @@ TagManager:
   - EnemyTrigger
   - SpawnAir
   - SpawnLand
+  - WaveManager
   layers:
   - Default
   - TransparentFX

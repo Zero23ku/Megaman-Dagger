@@ -11,7 +11,6 @@ public class CanvasManager : MonoBehaviour {
 	private Image healthBarFill;
 	private int maxPlayerHealth;
 
-
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -31,6 +30,7 @@ public class CanvasManager : MonoBehaviour {
 		} else {
 			healthBarFill.fillAmount = 0f;
 		}
+
 	}
 
 }
