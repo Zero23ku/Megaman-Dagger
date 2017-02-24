@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114420150128560516}
   m_Layer: 0
   m_Name: WaveManager
-  m_TagString: Untagged
+  m_TagString: WaveManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,8 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02023e36529f67749a3034063b756d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AirEnemies:
-  - {fileID: 1178903781532922, guid: 2e58588195bd6244495d80076051841a, type: 2}
-  - {fileID: 1337644675204186, guid: 2ec2fc43a06962c4683c584f999ddf1b, type: 2}
-  LandEnemies:
-  - {fileID: 1311810077964932, guid: 2231a239e4420564486726382090b892, type: 2}
+  totalDifficultLevel: 0

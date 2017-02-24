@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour {
 	public static WaveManager instance = null;
+	public static int enemyHealthMultiplier;
+	public static float enemySpeedMultiplier;
 
 	private List<GameObject> SpawnAirList;
 	private List<GameObject> SpawnLandList;
@@ -20,6 +22,11 @@ public class WaveManager : MonoBehaviour {
 	private SpawnScript currentSpawnScript;
 	private bool isOverallDifficultLevelCalculated;
 	private int overallDifficulty;
+	private bool isWaveSpawnable;
+	private int totalBuffedEnemiesCount;
+	private int currentBuffedEnemiesCount;
+	private bool isBuffed;
+	private int waveCount;
 
 	void Awake() {
 		if (!instance) {
@@ -37,9 +44,16 @@ public class WaveManager : MonoBehaviour {
 		currentSpawnIndex = 0;
 		currentSpawnCount = 0;
 		overallDifficulty = 0;
-
+		enemyHealthMultiplier = 2;
+		enemySpeedMultiplier = 1.5f;
+		waveCount = 1;
+		totalBuffedEnemiesCount = 1;
+		currentBuffedEnemiesCount = 0;
+	
+		isBuffed = false;
 		currentlyAssigning = false;
 		isOverallDifficultLevelCalculated = false;
+		isWaveSpawnable = true;
 	}
 	
 	// Update is called once per frame
@@ -48,14 +62,21 @@ public class WaveManager : MonoBehaviour {
 
 		if (currentSceneName == "Scene 1") {
 			// If there's no enemy on the screen
-			if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !currentlyAssigning) {
+			if (isWaveSpawnable && !currentlyAssigning) {
 				currentlyAssigning = true;
+				isWaveSpawnable = false;
+				if ((waveCount % 3) == 0) {
+					totalBuffedEnemiesCount += 2;
+					enemyHealthMultiplier += 1;
+					enemySpeedMultiplier += 0.8f;
+				}
+				currentBuffedEnemiesCount = 0;
 
 				//We get the current level spawn points
 				GetSpawnPoints();
 
 				// We restock every enemy in every spawn point
-				foreach(GameObject spawnPoint in SpawnAirList) {
+				foreach (GameObject spawnPoint in SpawnAirList) {
 					spawnPoint.GetComponent<SpawnScript>().restockEnemyList();
 				}
 
@@ -93,10 +114,19 @@ public class WaveManager : MonoBehaviour {
 						// We increase the current difficult level until we reach the total one
 						currentDifficultLevel += currentSpawnScript.getEnemyDifficultLevel(currentEnemyIndex);
 
+						print(currentBuffedEnemiesCount + " " + totalBuffedEnemiesCount);
+						if (currentBuffedEnemiesCount < totalBuffedEnemiesCount) {
+							isBuffed = true;
+							currentBuffedEnemiesCount++;
+						} else {
+							isBuffed = false;
+						}
+
 						// TODO: Add a little delay between spawns
 						// We spawn an enemy randomly from the pool of remaining enemies that the spawn point has
-						SpawnAirList[currentSpawnIndex].GetComponent<SpawnScript>().instantiateEnemy(currentEnemyIndex);
+						SpawnAirList[currentSpawnIndex].GetComponent<SpawnScript>().instantiateEnemy(currentEnemyIndex, isBuffed);
 					}
+
 				}
 
 				// We increase the difficult level for the next wave by, for example, '2'
@@ -107,6 +137,8 @@ public class WaveManager : MonoBehaviour {
 				// We reset the current difficult level to zero for the next iteration
 				currentDifficultLevel = 0;
 				currentlyAssigning = false;
+				waveCount++;
+				StartCoroutine(WaitForNextWave(300));
 			}
 		}
 	}
@@ -120,5 +152,25 @@ public class WaveManager : MonoBehaviour {
 		foreach(GameObject spawnPoint in SpawnAirList) {
 			overallDifficulty += spawnPoint.GetComponent<SpawnScript>().getTotalEnemyDifficultLevel();
 		}
+	}
+
+	private IEnumerator WaitForNextWave(int frames) {
+		isWaveSpawnable = false;
+		while (frames > 0) {
+			if (!GameManager.isPaused)
+				frames--;
+			if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+				break;
+			yield return null;
+		}
+		isWaveSpawnable = true;
+	}
+
+	public void ResetScene() {
+		enemyHealthMultiplier = 2;
+		enemySpeedMultiplier = 1.5f;
+		totalDifficultLevel = 4;
+		waveCount = 1;
+		totalBuffedEnemiesCount = 1;
 	}
 }

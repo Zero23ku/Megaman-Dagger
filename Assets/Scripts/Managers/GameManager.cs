@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 	public static bool isPaused;
 
+	private WaveManager waveManager;
+
 	void Awake() {
 		if (!instance) {
 			instance = this;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		waveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
 		isPaused = false;
 	}
 	
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour {
 		// Main Menu logic
 		if (currentSceneName == "Main Menu") {
 			if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Attack")) {
+				waveManager.ResetScene();
 				SceneManager.LoadScene("Scene 1");
 			}
 		} else if (currentSceneName == "Scene 1") {
