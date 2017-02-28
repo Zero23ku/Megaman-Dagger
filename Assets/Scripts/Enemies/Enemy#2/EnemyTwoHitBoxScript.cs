@@ -6,15 +6,12 @@ public class EnemyTwoHitBoxScript : MonoBehaviour
 {
 	private EnemyTwoController enemyTwoController;
 
-	void Start()
-	{
+	void Start() {
 		enemyTwoController = GetComponentInParent<EnemyTwoController>();
 	}
 
-	void OnTriggerEnter2D(Collider2D otherCollider)
-	{
-		if (otherCollider.tag == "MegamanBullet")
-		{
+	void OnTriggerEnter2D(Collider2D otherCollider) {
+		if (otherCollider.tag == "MegamanBullet") {
 			enemyTwoController.receiveDamage();
 		}
 	}

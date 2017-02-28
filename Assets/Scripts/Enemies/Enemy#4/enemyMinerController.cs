@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemyMinerController : MonoBehaviour {
 	public Transform pickaxeBulletPrefab;
 
+	private enemyInformationScript enemyInformation;
 	private int framesToAttack = 150;
 	private int frameCounter;
 	private Transform selfTransform;
@@ -14,6 +15,7 @@ public class enemyMinerController : MonoBehaviour {
 	void Start () {
 		frameCounter = 0;
 		selfTransform = GetComponent<Transform>();
+		enemyInformation = GetComponent<enemyInformationScript>();
 	}
 	
 	// Update is called once per frame
@@ -35,13 +37,13 @@ public class enemyMinerController : MonoBehaviour {
 		//SoundManager.instance.RandomizeSFX(bulletSFX);
 	}
 
-	/*
-	public void receiveDamage() -{
+
+	public void receiveDamage() {
 		enemyInformation.health--;
 		if (enemyInformation.health <= 0) {
 			Die();
 		}
-	}*/
+	}
 
 	void Die() {
 		Destroy(gameObject);
