@@ -114,7 +114,7 @@ public class WaveManager : MonoBehaviour {
 						// We increase the current difficult level until we reach the total one
 						currentDifficultLevel += currentSpawnScript.getEnemyDifficultLevel(currentEnemyIndex);
 
-						print(currentBuffedEnemiesCount + " " + totalBuffedEnemiesCount);
+						//print(currentBuffedEnemiesCount + " " + totalBuffedEnemiesCount);
 						if (currentBuffedEnemiesCount < totalBuffedEnemiesCount) {
 							isBuffed = true;
 							currentBuffedEnemiesCount++;
