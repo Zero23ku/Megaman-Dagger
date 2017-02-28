@@ -27,6 +27,9 @@ public class WaveManager : MonoBehaviour {
 	private int currentBuffedEnemiesCount;
 	private bool isBuffed;
 	private int waveCount;
+	private int originalSpawnRate;
+	private int spawnRate;
+	private bool isAssigning;
 
 	void Awake() {
 		if (!instance) {
@@ -49,11 +52,14 @@ public class WaveManager : MonoBehaviour {
 		waveCount = 1;
 		totalBuffedEnemiesCount = 1;
 		currentBuffedEnemiesCount = 0;
+		originalSpawnRate = 20;
+		spawnRate = originalSpawnRate;
 	
 		isBuffed = false;
 		currentlyAssigning = false;
 		isOverallDifficultLevelCalculated = false;
 		isWaveSpawnable = true;
+		isAssigning = false;
 	}
 	
 	// Update is called once per frame
@@ -65,81 +71,10 @@ public class WaveManager : MonoBehaviour {
 			if (isWaveSpawnable && !currentlyAssigning) {
 				currentlyAssigning = true;
 				isWaveSpawnable = false;
-				if ((waveCount % 3) == 0) {
-					totalBuffedEnemiesCount += 2;
-					enemyHealthMultiplier += 1;
-					enemySpeedMultiplier += 0.8f;
-				}
-				currentBuffedEnemiesCount = 0;
-
-				//We get the current level spawn points
-				GetSpawnPoints();
-
-				// We restock every enemy in every spawn point
-				foreach (GameObject spawnPoint in SpawnAirList) {
-					spawnPoint.GetComponent<SpawnScript>().restockEnemyList();
-				}
-
-				// We calculate the overall difficult level, which is the total sum of
-				// enemy's difficult attribute
-				if (!isOverallDifficultLevelCalculated) {
-					isOverallDifficultLevelCalculated = true;
-					calculateOverallDifficultLevel(SpawnAirList);
-				}
-
-				// TODO: Switch to decide between Air and Land randomly
-				// While the total difficult level quota isn't full and there's still enemies to assign
-				while (currentDifficultLevel <= totalDifficultLevel && SpawnAirList.Count != 0) {
-					currentSpawnCount = 0;
-
-					while (SpawnAirList.Count != 0 && currentSpawnCount == 0) {
-						// We choose a spawn point randomly
-						currentSpawnIndex = Random.Range(0, SpawnAirList.Count);
-
-						// We get the current size of the spawn point's enemy list
-						currentSpawnScript = SpawnAirList[currentSpawnIndex].GetComponent<SpawnScript>();
-						currentSpawnCount = currentSpawnScript.getEnemyListCount();
-
-						// If there's no enemy to spawn, the current spawn point is deleted from the eligible spawn list
-						if (currentSpawnCount == 0) {
-							SpawnAirList.RemoveAt(currentSpawnIndex);
-						}
-					}
-
-					// If there's any enemy still to be assign
-					if (SpawnAirList.Count > 0) {
-						// We choose a random enemy from the spawn point's poll
-						currentEnemyIndex = Random.Range(0, currentSpawnCount);
-
-						// We increase the current difficult level until we reach the total one
-						currentDifficultLevel += currentSpawnScript.getEnemyDifficultLevel(currentEnemyIndex);
-
-						if (currentBuffedEnemiesCount < totalBuffedEnemiesCount) {
-							isBuffed = true;
-							currentBuffedEnemiesCount++;
-						} else {
-							isBuffed = false;
-						}
-
-						// TODO: Add a little delay between spawns
-						// We spawn an enemy randomly from the pool of remaining enemies that the spawn point has
-						SpawnAirList[currentSpawnIndex].GetComponent<SpawnScript>().instantiateEnemy(currentEnemyIndex, isBuffed);
-					}
-
-				}
-
-				// We increase the difficult level for the next wave by, for example, '2'
-				if (totalDifficultLevel <= overallDifficulty - 2) {
-					totalDifficultLevel += 2;
-				}
-
-				// We reset the current difficult level to zero for the next iteration
-				currentDifficultLevel = 0;
-				currentlyAssigning = false;
-				waveCount++;
-				StartCoroutine(WaitForNextWave(300));
+				StartCoroutine(AssignNewWave());
 			}
 		}
+
 	}
 
 	void GetSpawnPoints() {
@@ -151,6 +86,90 @@ public class WaveManager : MonoBehaviour {
 		foreach(GameObject spawnPoint in SpawnAirList) {
 			overallDifficulty += spawnPoint.GetComponent<SpawnScript>().getTotalEnemyDifficultLevel();
 		}
+	}
+
+	private IEnumerator AssignNewWave() {
+		if ((waveCount % 3) == 0) {
+			totalBuffedEnemiesCount += 2;
+			enemyHealthMultiplier += 1;
+			enemySpeedMultiplier += 0.8f;
+		}
+
+		currentBuffedEnemiesCount = 0;
+		spawnRate = originalSpawnRate;
+
+		//We get the current level spawn points
+		GetSpawnPoints();
+
+		// We restock every enemy in every spawn point
+
+		foreach (GameObject spawnPoint in SpawnAirList) {
+			spawnPoint.GetComponent<SpawnScript>().restockEnemyList();
+		}
+
+		// We calculate the overall difficult level, which is the total sum of
+		// enemy's difficult attribute
+		if (!isOverallDifficultLevelCalculated) {
+			isOverallDifficultLevelCalculated = true;
+			calculateOverallDifficultLevel(SpawnAirList);
+		}
+
+		// TODO: Switch to decide between Air and Land randomly
+		// While the total difficult level quota isn't full and there's still enemies to assign
+		while (currentDifficultLevel <= totalDifficultLevel && SpawnAirList.Count != 0) {
+			currentSpawnCount = 0;
+
+			while (SpawnAirList.Count != 0 && currentSpawnCount == 0) {
+				// We choose a spawn point randomly
+				currentSpawnIndex = Random.Range(0, SpawnAirList.Count);
+
+				// We get the current size of the spawn point's enemy list
+				currentSpawnScript = SpawnAirList[currentSpawnIndex].GetComponent<SpawnScript>();
+				currentSpawnCount = currentSpawnScript.getEnemyListCount();
+
+				// If there's no enemy to spawn, the current spawn point is deleted from the eligible spawn list
+				if (currentSpawnCount == 0) {
+					SpawnAirList.RemoveAt(currentSpawnIndex);
+				}
+			}
+
+			// If there's any enemy still to be assign
+			if (SpawnAirList.Count > 0) {
+				// We choose a random enemy from the spawn point's poll
+				currentEnemyIndex = Random.Range(0, currentSpawnCount);
+
+				// We increase the current difficult level until we reach the total one
+				currentDifficultLevel += currentSpawnScript.getEnemyDifficultLevel(currentEnemyIndex);
+
+				if (currentBuffedEnemiesCount < totalBuffedEnemiesCount) {
+					isBuffed = true;
+					currentBuffedEnemiesCount++;
+				} else {
+					isBuffed = false;
+				}
+
+				// We spawn an enemy randomly from the pool of remaining enemies that the spawn point has
+				yield return new WaitForSeconds(0.3f);
+
+				if (!(SpawnAirList[currentSpawnIndex] == null))
+					SpawnAirList[currentSpawnIndex].GetComponent<SpawnScript>().instantiateEnemy(currentEnemyIndex, isBuffed);
+				else
+					break;
+				
+				spawnRate += spawnRate;
+			}
+		}
+
+		// We increase the difficult level for the next wave by, for example, '2'
+		if (totalDifficultLevel <= overallDifficulty - 2) {
+			totalDifficultLevel += 2;
+		}
+
+		// We reset the current difficult level to zero for the next iteration
+		currentDifficultLevel = 0;
+		currentlyAssigning = false;
+		waveCount++;
+		StartCoroutine(WaitForNextWave(300));
 	}
 
 	private IEnumerator WaitForNextWave(int frames) {
