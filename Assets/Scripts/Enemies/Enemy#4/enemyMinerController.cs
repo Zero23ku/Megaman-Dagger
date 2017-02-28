@@ -9,6 +9,7 @@ public class enemyMinerController : MonoBehaviour {
 	private int framesToAttack = 150;
 	private int frameCounter;
 	private Transform selfTransform;
+	private Animator selfAnimator;
 
 
 	// Use this for initialization
@@ -16,6 +17,7 @@ public class enemyMinerController : MonoBehaviour {
 		frameCounter = 0;
 		selfTransform = GetComponent<Transform>();
 		enemyInformation = GetComponent<enemyInformationScript>();
+		selfAnimator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +26,7 @@ public class enemyMinerController : MonoBehaviour {
 		if(!GameManager.isPaused) {
 			frameCounter++;
 			if (frameCounter == framesToAttack) {
+				selfAnimator.SetBool("isTimeToAttack",true);
 				Attack();
 				frameCounter = 0;
 			}
@@ -39,9 +42,11 @@ public class enemyMinerController : MonoBehaviour {
 
 
 	public void receiveDamage() {
-		enemyInformation.health--;
-		if (enemyInformation.health <= 0) {
-			Die();
+		if (selfAnimator.GetBool("isVulnerable") == true) {
+			enemyInformation.health--;
+			if (enemyInformation.health <= 0) {
+				Die();
+			}
 		}
 	}
 
