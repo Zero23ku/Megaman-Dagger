@@ -43,12 +43,12 @@ public class SpawnScript : MonoBehaviour {
 				enemyInformation.health = enemyInformation.health + WaveManager.enemyHealthMultiplier;
 				spriteRenderer.color = new Color(0f, 255f, 0f);
 			} else {
-
 				enemyInformation.speed = enemyInformation.speed * WaveManager.enemySpeedMultiplier;
-
 				//print(WaveManager.enemySpeedMultiplier);
 				enemyInformation.speed = enemyInformation.speed * WaveManager.enemySpeedMultiplier;
 				//print(WaveManager.enemySpeedMultiplier);
+				enemyInformation.speed = enemyInformation.speed * WaveManager.enemySpeedMultiplier;
+				enemyInformation.speed = enemyInformation.speed * WaveManager.enemySpeedMultiplier;
 				spriteRenderer.color = new Color(255f, 0f, 0f);
 			}
 		}
