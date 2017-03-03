@@ -8,6 +8,7 @@ public class enemyMinerController : MonoBehaviour {
 	private enemyInformationScript enemyInformation;
 	private int framesToAttack = 150;
 	private int frameCounter;
+	private GameObject player;
 	private Transform selfTransform;
 	private Animator selfAnimator;
 	private Transform playerTransform;
@@ -16,22 +17,23 @@ public class enemyMinerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
 		frameCounter = 0;
+		player = GameObject.FindGameObjectWithTag("Player");
 		selfTransform = GetComponent<Transform>();
 		enemyInformation = GetComponent<enemyInformationScript>();
 		selfAnimator = GetComponent<Animator>();
-		playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 		if(!GameManager.isPaused) {
-			if (playerTransform.position.x < selfTransform.position.x && selfTransform.localScale.x < 0 && selfAnimator.GetBool("isVulnerable") == false) {
-				turnDirection();
-			}
-			else if (playerTransform.position.x > selfTransform.position.x && selfTransform.localScale.x > 0 && selfAnimator.GetBool("isVulnerable") == false) {
-				turnDirection();
+			if (player) {
+				if (playerTransform.position.x < selfTransform.position.x && selfTransform.localScale.x < 0 && selfAnimator.GetBool("isVulnerable") == false) {
+					turnDirection();
+				} else if (playerTransform.position.x > selfTransform.position.x && selfTransform.localScale.x > 0 && selfAnimator.GetBool("isVulnerable") == false) {
+					turnDirection();
+				}
 			}
 
 			frameCounter++;
@@ -45,8 +47,9 @@ public class enemyMinerController : MonoBehaviour {
 	}
 
 	void Attack() {
-		Transform bulletEnemyTwoTransform = Instantiate(pickaxeBulletPrefab) as Transform;
-		bulletEnemyTwoTransform.position = new Vector3(selfTransform.position.x, selfTransform.position.y, selfTransform.position.y);
+		GameObject pickaxe = Instantiate(pickaxeBulletPrefab).gameObject;
+		pickaxe.GetComponent<pickaxeController>().bulletSpeed += enemyInformation.buffAttack;
+		pickaxe.transform.position = new Vector3(selfTransform.position.x, selfTransform.position.y, selfTransform.position.z);
 		//SoundManager.instance.RandomizeSFX(bulletSFX);
 	}
 
@@ -61,6 +64,7 @@ public class enemyMinerController : MonoBehaviour {
 	}
 
 	void Die() {
+		WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
 		Destroy(gameObject);
 	}
 

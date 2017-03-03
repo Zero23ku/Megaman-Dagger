@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 114592008277225150}
   - component: {fileID: 50567426529700180}
   - component: {fileID: 114703805800276356}
+  - component: {fileID: 95884987261658384}
   m_Layer: 14
   m_Name: enemyMiner
-  m_TagString: groundEnemy
+  m_TagString: enemyMiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +42,7 @@ GameObject:
   - component: {fileID: 4583864301680074}
   - component: {fileID: 61631542355796074}
   - component: {fileID: 114099181397364870}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: enemyHitBox
   m_TagString: enemyHitBox
   m_Icon: {fileID: 0}
@@ -123,6 +124,23 @@ BoxCollider2D:
   m_Offset: {x: -0.029223442, y: -0.0053130626}
   serializedVersion: 2
   m_Size: {x: 0.22955875, y: 0.22424546}
+--- !u!95 &95884987261658384
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382203080013842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90d1257347c9fa34c82178f6e699f7bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114099181397364870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +178,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   speed: 0
-  difficultLevel: 2
+  difficultLevel: 4
+  bonusTimeInFrames: 300
+  respawnPoint: {fileID: 0}
+  isShottingEnemy: 1
 --- !u!212 &212408616434221576
 SpriteRenderer:
   m_ObjectHideFlags: 1

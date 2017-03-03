@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class pickaxeController : MonoBehaviour {
 	public int bulletDamage;
-	private float bulletSpeed = 10.5f;
+	public float bulletSpeed = 10.5f;
 
 	private float spriteWithDelta;
 	private float spriteHeightDelta;
-	private Transform playerTransform;
+	private GameObject player;
 	private Transform selfTransform;
 	private Vector3 playerPosition;
 	private Vector3 direction;
@@ -17,10 +17,12 @@ public class pickaxeController : MonoBehaviour {
 	void Start () {
 		spriteWithDelta = GetComponent<SpriteRenderer>().bounds.size.x / 2;
 		spriteHeightDelta = GetComponent<SpriteRenderer>().bounds.size.y / 2;
-		playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-		playerPosition = playerTransform.position;
 		selfTransform = GetComponent<Transform>();
-		direction = (playerPosition - selfTransform.position).normalized;
+		player = GameObject.FindWithTag("Player");
+		if (player) {
+			playerPosition = player.GetComponent<Transform>().position;
+			direction = (playerPosition - selfTransform.position).normalized;
+		}
 	}
 	
 	// Update is called once per frame
@@ -28,11 +30,12 @@ public class pickaxeController : MonoBehaviour {
 		selfTransform.position += direction * bulletSpeed * Time.deltaTime;
 
 		DestroyBulletOutsideCamera();
-
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 		if (otherCollider.tag == "playerHitBox")
+			Destroy(gameObject);
+		if (otherCollider.tag == "MegamanBullet")
 			Destroy(gameObject);
 	}
 
@@ -50,6 +53,5 @@ public class pickaxeController : MonoBehaviour {
 		else if (selfTransform.position.y + spriteHeightDelta < SpriteManager.minPos.y) {
 			Destroy(gameObject);
 		}
-
 	}
 }
