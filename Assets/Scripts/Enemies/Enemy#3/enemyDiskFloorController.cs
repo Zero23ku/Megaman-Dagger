@@ -30,6 +30,7 @@ public class enemyDiskFloorController : MonoBehaviour {
 	}
 
 	void Die() {
+		WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
 		Destroy(gameObject);
 	}
 }

@@ -76,12 +76,15 @@ public class EnemyTwoController : MonoBehaviour {
 	}
 
 	void Die() {
+		WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
 		Destroy(gameObject);
 	}
 
 	void Attack() {
-		Transform bulletEnemyTwoTransform = Instantiate(bulletEnemyTwoPrefab) as Transform;
-		bulletEnemyTwoTransform.position = new Vector3(selfTransform.position.x, selfTransform.position.y, selfTransform.position.y);
+		GameObject enemyTwoBullet = Instantiate(bulletEnemyTwoPrefab).gameObject;
+		enemyTwoBullet.GetComponent<EnemyTwoBulletScript>().bulletSpeed += enemyInformation.buffAttack;
+		enemyTwoBullet.transform.position = new Vector3(selfTransform.position.x, selfTransform.position.y, selfTransform.position.z);
+
 		SoundManager.instance.RandomizeSFX(bulletSFX);
 	}
 }

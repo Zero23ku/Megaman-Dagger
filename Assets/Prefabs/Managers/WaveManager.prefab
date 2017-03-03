@@ -51,4 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02023e36529f67749a3034063b756d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalDifficultLevel: 0
+  timeBetweenWaves: 300

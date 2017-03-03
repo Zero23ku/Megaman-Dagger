@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour {
 
-	public int Score { get; set; }
+	public static int score;
+	public static int bonusWave;
+	public static int highScore;
 
 	public static ScoreManager instance = null;
+
+	private WaveManager waveManager;
 
 	void Awake() {
 		if (!instance) {
@@ -14,17 +18,25 @@ public class ScoreManager : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy(gameObject);
 		}
-
 		DontDestroyOnLoad(gameObject);
 	}
 
-	// Use this for initialization
 	void Start () {
-		Score = 0;
+		score = 0;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-		// Score += 1;		
+		bonusWave = WaveManager.timeBetweenWaves;
+		if (score > highScore)
+			highScore = score;
+	}
+
+	public static void AssignBonus() {
+		score += WaveManager.timeBetweenWaves;
+	}
+
+	public static void ResetScene() {
+		score = 0;
+		bonusWave = 0;
 	}
 }

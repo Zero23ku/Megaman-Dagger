@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4211049202571150}
   - component: {fileID: 61327790108141640}
   - component: {fileID: 114156480181178366}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: enemyTwoHitBox
   m_TagString: enemyHitBox
   m_Icon: {fileID: 0}
@@ -148,6 +148,9 @@ MonoBehaviour:
   health: 1
   speed: 2.5
   difficultLevel: 1
+  bonusTimeInFrames: 120
+  respawnPoint: {fileID: 0}
+  isShottingEnemy: 1
 --- !u!212 &212413658676799212
 SpriteRenderer:
   m_ObjectHideFlags: 1

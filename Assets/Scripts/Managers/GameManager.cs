@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
 		if (currentSceneName == "Main Menu") {
 			if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Attack")) {
 				waveManager.ResetScene();
+				ScoreManager.ResetScene();
 				SceneManager.LoadScene("Scene 1");
 			}
 		} else if (currentSceneName == "Scene 1") {

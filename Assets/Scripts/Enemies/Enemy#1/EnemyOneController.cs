@@ -80,6 +80,7 @@ public class EnemyOneController : MonoBehaviour {
 	}
 
 	void Die() {
+		WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
 		Destroy(gameObject);
 	}
 
