@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61384750821222288}
   - component: {fileID: 251470971895131226}
   m_Layer: 10
-  m_Name: Middle Platform
+  m_Name: Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyTwoBulletScript : MonoBehaviour {
 
 	public float bulletDamage;
+	public float bulletSpeed = 9.5f;
 
-	private float bulletSpeed = 9.5f;
 	private float spriteWithDelta;
 	private float spriteHeightDelta;
 	//private Rigidbody2D bulletBody;
@@ -33,7 +33,6 @@ public class EnemyTwoBulletScript : MonoBehaviour {
 		selfTransform.position += direction * bulletSpeed * Time.deltaTime;
 
 		DestroyBulletOutsideCamera();
-
 	}
 
 

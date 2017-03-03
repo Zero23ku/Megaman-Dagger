@@ -19,6 +19,10 @@ TagManager:
   - SpawnAir
   - SpawnLand
   - WaveManager
+  - enemyMiner
+  - BonusWave
+  - HighScore
+  - WaveCount
   layers:
   - Default
   - TransparentFX
@@ -36,8 +40,8 @@ TagManager:
   - Trigger
   - GroundEnemy
   - Spawn Points
-  - 
-  - 
+  - EnemyBullet
+  - GroundCheck
   - 
   - 
   - 
