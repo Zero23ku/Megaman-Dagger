@@ -201,6 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20ee927cdd7cf346b97ba9e0da78460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthItemPrefab: {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07,
+    type: 2}
+  invulnerabilityItemPrefab: {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07,
+    type: 2}
 --- !u!114 &114984441898760024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,6 +221,8 @@ MonoBehaviour:
   difficultLevel: 2
   bonusTimeInFrames: 60
   respawnPoint: {fileID: 0}
+  isShottingEnemy: 0
+  buffAttack: 0
 --- !u!212 &212373352225648882
 SpriteRenderer:
   m_ObjectHideFlags: 1

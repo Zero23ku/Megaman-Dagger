@@ -7,6 +7,8 @@ public class EnemyOneController : MonoBehaviour {
 
 	public Transform healthItemPrefab;
 	public Transform invulnerabilityItemPrefab;
+	public bool getAway;
+	public bool alreadyEntered;
 
 	private enemyInformationScript enemyInformation;
 	private GameObject player;
@@ -19,6 +21,8 @@ public class EnemyOneController : MonoBehaviour {
 	private Vector3 distance;
 	private float selfPositionY;
 	private bool isLookingLeft;
+	private int getAwayDirection;
+
 
 
 	// Use this for initialization
@@ -28,6 +32,8 @@ public class EnemyOneController : MonoBehaviour {
 		playerTransform = GameObject.FindWithTag ("Player").transform;
 		selfTransform = GetComponent<Transform> ();
 		selfBody = GetComponent<Rigidbody2D>();
+		getAway = false;
+		alreadyEntered = false;
 		if (selfTransform.localScale.x > 0) {
 			isLookingLeft = true;
 		}
@@ -53,26 +59,42 @@ public class EnemyOneController : MonoBehaviour {
 		selfPosition = selfTransform.position;
 		//Distance between player and enemy//
 		distance = playerPosition - selfPosition;
-		if (distance.x <= 0.0f) {
-			selfBody.velocity = new Vector2(-enemyInformation.speed,Mathf.Round(selfBody.velocity.y));
-			if (!isLookingLeft) {
-				Flip();
+		if (Mathf.Abs(distance.x) > 2.5f && getAway) {
+			getAway = false;
+		}
+
+		if (!getAway){
+			if (distance.x <= 0.0f){
+				selfBody.velocity = new Vector2(-enemyInformation.speed, Mathf.Round(selfBody.velocity.y));
+				if (!isLookingLeft){
+					Flip();
+				}
+
+			}
+			else{
+				selfBody.velocity = new Vector2(enemyInformation.speed, Mathf.Round(selfBody.velocity.y));
+				if (isLookingLeft){
+					Flip();
+				}
 			}
 
-		}
-		else { 
-			selfBody.velocity = new Vector2(enemyInformation.speed, Mathf.Round(selfBody.velocity.y));
-			if (isLookingLeft) {
-				Flip();
+			if (distance.y <= -0.5f){
+				selfBody.velocity = new Vector2(selfBody.velocity.x, -enemyInformation.speed);
+			}
+			else{
+				selfBody.velocity = new Vector2(selfBody.velocity.x, enemyInformation.speed);
+
 			}
 		}
 
-		if (distance.y <= -0.5f) {	
-			selfBody.velocity = new Vector2(selfBody.velocity.x, -enemyInformation.speed);
-		}
-		else { 			
-			selfBody.velocity = new Vector2(selfBody.velocity.x, enemyInformation.speed);
-
+		if (getAway) {
+			if (Random.Range(0.0f, 1.0f) > 0.5f && !alreadyEntered) {
+				getAwayDirection = -1;
+			}
+			else
+				getAwayDirection = 1;
+			alreadyEntered = true;
+			selfBody.velocity = new Vector2(enemyInformation.speed * 1.7f * getAwayDirection,enemyInformation.speed * 1.3f * getAwayDirection);
 		}
 	}
 
@@ -114,5 +136,7 @@ public class EnemyOneController : MonoBehaviour {
 		}
 	
 	}
+
+
 
 }

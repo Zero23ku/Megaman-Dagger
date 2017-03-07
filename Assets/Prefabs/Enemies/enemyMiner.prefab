@@ -165,6 +165,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickaxeBulletPrefab: {fileID: 4560556565167304, guid: 4422ad004aa58194db4e810b53e5a413,
     type: 2}
+  healthItemPrefab: {fileID: 4029930431969174, guid: e196400224ec7d2469117912b8418561,
+    type: 2}
+  invulnerabilityItemPrefab: {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07,
+    type: 2}
 --- !u!114 &114703805800276356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,6 +186,7 @@ MonoBehaviour:
   bonusTimeInFrames: 300
   respawnPoint: {fileID: 0}
   isShottingEnemy: 1
+  buffAttack: 0
 --- !u!212 &212408616434221576
 SpriteRenderer:
   m_ObjectHideFlags: 1
