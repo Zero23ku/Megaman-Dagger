@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class enemyMinerController : MonoBehaviour {
 	public Transform pickaxeBulletPrefab;
+	public Transform healthItemPrefab;
+	public Transform invulnerabilityItemPrefab;
 
 	private enemyInformationScript enemyInformation;
 	private int framesToAttack = 150;
@@ -58,6 +60,7 @@ public class enemyMinerController : MonoBehaviour {
 		if (selfAnimator.GetBool("isVulnerable") == true) {
 			enemyInformation.health--;
 			if (enemyInformation.health <= 0) {
+				dropItem();
 				Die();
 			}
 		}
@@ -72,6 +75,27 @@ public class enemyMinerController : MonoBehaviour {
 		selfScale = selfTransform.localScale;
 		selfScale.x *= -1;
 		selfTransform.localScale = selfScale;
+	}
+	void dropItem()
+	{
+		Transform itemTransform;
+		//if you get anything higher than 0.6 then enemy will drop something
+		if (Random.Range(0.0f, 1.0f) > 0.6f)
+		{
+			//if you get anything higher than 0.85 then enemy will drop invulnerability item
+			//otherwise it will drop health item
+			if (Random.Range(0.0f, 1.0f) > 0.85f)
+			{
+				itemTransform = Instantiate(invulnerabilityItemPrefab) as Transform;
+			}
+			else
+			{
+				itemTransform = Instantiate(healthItemPrefab) as Transform;
+			}
+
+			itemTransform.position = transform.position;
+		}
+
 	}
 		
 }
