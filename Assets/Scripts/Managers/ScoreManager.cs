@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class ScoreManager : MonoBehaviour {
 	public static ScoreManager instance = null;
 
 	private WaveManager waveManager;
+	private List<ScoreEntry> playerScores;
 
 	void Awake() {
 		if (!instance) {
@@ -22,6 +24,8 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	void Start () {
+		playerScores = new List<ScoreEntry> ();
+
 		score = 0;
 	}
 
@@ -38,5 +42,14 @@ public class ScoreManager : MonoBehaviour {
 	public static void ResetScene() {
 		score = 0;
 		bonusWave = 0;
+	}
+		
+	public void SetScore(string playerName) {
+		ScoreEntry newEntry = ScoreEntry.CreateInstance(playerName, score);
+		playerScores.Add(newEntry);
+	}
+
+	public List<ScoreEntry> GetPlayerNames() {
+		return playerScores;
 	}
 }
