@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class SoundManager : MonoBehaviour {
 	private AudioSource musicSource;
 	private float musicVolume;
 	private bool soundPaused = false;
+	private Slider volumeControl;
 
 
 	void Awake() {
@@ -32,6 +34,7 @@ public class SoundManager : MonoBehaviour {
 		musicSource = GetComponents<AudioSource>()[0];
 		sfxSource = GetComponents<AudioSource>()[1];
 		musicVolume = musicSource.volume;
+		volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
@@ -46,6 +49,7 @@ public class SoundManager : MonoBehaviour {
 			sfxSource.UnPause();
 			musicSource.UnPause();
 		}
+		musicSource.volume = volumeControl.value;
 	}
 
 	public void PlaySingle(AudioClip clip) {

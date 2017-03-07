@@ -24,6 +24,7 @@ TagManager:
   - HighScore
   - WaveCount
   - Item
+  - sliderVolume
   layers:
   - Default
   - TransparentFX
