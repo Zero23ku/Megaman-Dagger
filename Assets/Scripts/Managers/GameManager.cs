@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void gameOver() {
+		ScoreManager.instance.SetScore("Sh1ken");
 		SceneManager.LoadScene("Game Over");
 	}
 }
