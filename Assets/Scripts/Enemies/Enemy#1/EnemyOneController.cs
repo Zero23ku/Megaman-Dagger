@@ -59,7 +59,7 @@ public class EnemyOneController : MonoBehaviour {
 		selfPosition = selfTransform.position;
 		//Distance between player and enemy//
 		distance = playerPosition - selfPosition;
-		if (Mathf.Abs(distance.x) > 2.5f && getAway) {
+		if (Mathf.Abs(distance.x) > 2.75f && getAway) {
 			getAway = false;
 		}
 
