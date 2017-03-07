@@ -13,5 +13,9 @@ public class EnemyHitBoxScript : MonoBehaviour {
 		if (otherCollider.tag == "MegamanBullet") {
 			enemyOneController.receiveDamage();
 		}
+		if (otherCollider.tag == "playerHitBox") {
+			enemyOneController.getAway = true;
+			enemyOneController.alreadyEntered = false;
+		}
 	}
 }

@@ -23,6 +23,8 @@ TagManager:
   - BonusWave
   - HighScore
   - WaveCount
+  - Item
+  - sliderVolume
   layers:
   - Default
   - TransparentFX
@@ -42,8 +44,8 @@ TagManager:
   - Spawn Points
   - EnemyBullet
   - GroundCheck
-  - 
-  - 
+  - Item
+  - ItemTrigger
   - 
   - 
   - 

@@ -152,6 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43111d688830fc64d8d09d1ce90a6486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthItemPrefab: {fileID: 4029930431969174, guid: e196400224ec7d2469117912b8418561,
+    type: 2}
+  invulnerabilityItemPrefab: {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07,
+    type: 2}
+  getAway: 0
+  alreadyEntered: 0
 --- !u!114 &114939741397573746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +185,8 @@ MonoBehaviour:
   difficultLevel: 3
   bonusTimeInFrames: 120
   respawnPoint: {fileID: 0}
+  isShottingEnemy: 0
+  buffAttack: 0
 --- !u!212 &212921498525118276
 SpriteRenderer:
   m_ObjectHideFlags: 1
