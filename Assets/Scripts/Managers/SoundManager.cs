@@ -14,7 +14,9 @@ public class SoundManager : MonoBehaviour {
 	private float musicVolume;
 	private bool soundPaused = false;
 	private Slider volumeControl;
-
+	private GameObject volumeObject;
+	private Slider SFXControl;
+	private GameObject SFXObject;
 
 	void Awake() {
 		if (!instance) {
@@ -34,7 +36,11 @@ public class SoundManager : MonoBehaviour {
 		musicSource = GetComponents<AudioSource>()[0];
 		sfxSource = GetComponents<AudioSource>()[1];
 		musicVolume = musicSource.volume;
-		volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
+		//volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
+		volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
+		SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
+		SFXControl = SFXObject.GetComponent<Slider>();
+		volumeControl = volumeObject.GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
@@ -50,6 +56,7 @@ public class SoundManager : MonoBehaviour {
 			musicSource.UnPause();
 		}
 		musicSource.volume = volumeControl.value;
+		sfxSource.volume = SFXControl.value;
 	}
 
 	public void PlaySingle(AudioClip clip) {
