@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour {
 
@@ -17,8 +18,10 @@ public class SoundManager : MonoBehaviour {
 	private GameObject volumeObject;
 	private Slider SFXControl;
 	private GameObject SFXObject;
+    private string currentSceneName;
 
-	void Awake() {
+
+    void Awake() {
 		if (!instance) {
 			instance = this;
 		}
@@ -36,15 +39,20 @@ public class SoundManager : MonoBehaviour {
 		musicSource = GetComponents<AudioSource>()[0];
 		sfxSource = GetComponents<AudioSource>()[1];
 		musicVolume = musicSource.volume;
-		//volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
-		volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
-		SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
-		SFXControl = SFXObject.GetComponent<Slider>();
-		volumeControl = volumeObject.GetComponent<Slider>();
+        //volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
+        currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "Main Menu") {
+            volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
+            SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
+            SFXControl = SFXObject.GetComponent<Slider>();
+            volumeControl = volumeObject.GetComponent<Slider>();
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        currentSceneName = SceneManager.GetActiveScene().name;
 		if (!soundPaused && GameManager.isPaused) {
 			soundPaused = true;
 			sfxSource.Pause();
@@ -55,8 +63,11 @@ public class SoundManager : MonoBehaviour {
 			sfxSource.UnPause();
 			musicSource.UnPause();
 		}
-		musicSource.volume = volumeControl.value;
-		sfxSource.volume = SFXControl.value;
+
+        if (currentSceneName == "Main Menu") {
+            musicSource.volume = volumeControl.value;
+            sfxSource.volume = SFXControl.value;
+        }
 	}
 
 	public void PlaySingle(AudioClip clip) {
