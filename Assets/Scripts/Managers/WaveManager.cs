@@ -45,7 +45,6 @@ public class WaveManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindWithTag("Player");
 		currentDifficultLevel = 0;
 		totalDifficultLevel = 4;
 		currentSpawnIndex = 0;
@@ -72,8 +71,8 @@ public class WaveManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		string currentSceneName = SceneManager.GetActiveScene().name;
-
-		if (currentSceneName == "Scene 1" && player) {
+        player = GameObject.FindWithTag("Player");
+        if (currentSceneName == "Scene 1" && player) {
 			// If there's no enemy on the screen
 			if (isWaveSpawnable && !currentlyAssigning) {
 				currentlyAssigning = true;
