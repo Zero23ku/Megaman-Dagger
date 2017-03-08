@@ -20,10 +20,12 @@ public class EnemyTwoController : MonoBehaviour {
 	//private float spriteWitdhDelta;
 	private bool goingRight;
 	private int framesCounter;
+    private GameObject player;
 
 
 	// Use this for initialization
 	void Start () {
+        player = GameObject.FindWithTag("Player");
 		//playerTransform = GameObject.FindWithTag("Player").transform;
 		enemyInformation = GetComponent<enemyInformationScript> ();
 		selfTransform = GetComponent<Transform>();
@@ -42,7 +44,7 @@ public class EnemyTwoController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!GameManager.isPaused) {
+		if (!GameManager.isPaused && player) {
 			ChangeDirectionMovement();
 			Movement();
 			framesCounter--;

@@ -80,6 +80,18 @@ public class GameManager : MonoBehaviour {
         if (playerName == "")
             playerName = "Player";
         ScoreManager.instance.SetScore(playerName);
-		SceneManager.LoadScene("Game Over");
+        StartCoroutine(waitForFrames(100));
+		
 	}
+
+    private IEnumerator waitForFrames(int frames) {
+
+        while (frames > 0) {
+            if (!GameManager.isPaused)
+                frames--;
+            yield return null;
+        }
+        SceneManager.LoadScene("Game Over");
+
+    }
 }

@@ -32,6 +32,7 @@ public class WaveManager : MonoBehaviour {
 	private bool isBuffed;
 	private int originalSpawnRate;
 	private int spawnRate;
+    private GameObject player;
 
 	void Awake() {
 		if (!instance) {
@@ -70,8 +71,8 @@ public class WaveManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		string currentSceneName = SceneManager.GetActiveScene().name;
-
-		if (currentSceneName == "Scene 1") {
+        player = GameObject.FindWithTag("Player");
+        if (currentSceneName == "Scene 1" && player) {
 			// If there's no enemy on the screen
 			if (isWaveSpawnable && !currentlyAssigning) {
 				currentlyAssigning = true;
