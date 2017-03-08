@@ -22,7 +22,7 @@ public class MegamanDeathController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(direction);
+        //print(direction);
         string sceneName = SceneManager.GetActiveScene().name;
         if (sceneName == "Main Menu" || sceneName == "Game Over")
             Destroy(gameObject);

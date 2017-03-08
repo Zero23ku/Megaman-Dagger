@@ -15,6 +15,7 @@ public class enemyMinerController : MonoBehaviour {
 	private Animator selfAnimator;
 	private Transform playerTransform;
 	private Vector3 selfScale;
+    
 
 
 	// Use this for initialization
@@ -29,7 +30,7 @@ public class enemyMinerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!GameManager.isPaused) {
+		if(!GameManager.isPaused && player) {
 			if (player) {
 				if (playerTransform.position.x < selfTransform.position.x && selfTransform.localScale.x < 0 && selfAnimator.GetBool("isVulnerable") == false) {
 					turnDirection();

@@ -72,7 +72,7 @@ Animator:
   m_GameObject: {fileID: 1324602114214496}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: faec2d09fb0921e4e89d5bc83ea3fda4, type: 2}
+  m_Controller: {fileID: 9100000, guid: fdb9ddeb957f47d4b8e84e3fcb6a6e32, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfSpeed: 1.7
-  direction: left
+  direction: 
 --- !u!212 &212761266450887670
 SpriteRenderer:
   m_ObjectHideFlags: 1

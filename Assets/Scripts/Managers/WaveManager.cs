@@ -32,6 +32,7 @@ public class WaveManager : MonoBehaviour {
 	private bool isBuffed;
 	private int originalSpawnRate;
 	private int spawnRate;
+    private GameObject player;
 
 	void Awake() {
 		if (!instance) {
@@ -44,6 +45,7 @@ public class WaveManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        player = GameObject.FindWithTag("Player");
 		currentDifficultLevel = 0;
 		totalDifficultLevel = 4;
 		currentSpawnIndex = 0;
@@ -71,7 +73,7 @@ public class WaveManager : MonoBehaviour {
 	void Update () {
 		string currentSceneName = SceneManager.GetActiveScene().name;
 
-		if (currentSceneName == "Scene 1") {
+		if (currentSceneName == "Scene 1" && player) {
 			// If there's no enemy on the screen
 			if (isWaveSpawnable && !currentlyAssigning) {
 				currentlyAssigning = true;
