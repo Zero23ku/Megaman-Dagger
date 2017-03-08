@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -8,8 +10,11 @@ public class GameManager : MonoBehaviour {
 	public static bool isPaused;
 
 	private WaveManager waveManager;
+    private InputField playerNameInput;
+    private string playerName = "";
+    private bool isInputReferenced = false;
 
-	void Awake() {
+    void Awake() {
 		if (!instance) {
 			instance = this;
 		} else if (instance != this) {
@@ -23,6 +28,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		waveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
 		isPaused = false;
+        
 	}
 	
 	// Update is called once per frame
@@ -31,11 +37,20 @@ public class GameManager : MonoBehaviour {
 
 		// Main Menu logic
 		if (currentSceneName == "Main Menu") {
-			if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Attack")) {
-				waveManager.ResetScene();
-				ScoreManager.ResetScene();
-				SceneManager.LoadScene("Scene 1");
-			}
+            if (!isInputReferenced) {
+                isInputReferenced = true;
+                playerNameInput = GameObject.Find("PlayerNameInput").GetComponent<InputField>();
+                playerNameInput.text = playerName;
+            }
+
+            if (Input.GetButtonDown("Jump")) {
+                waveManager.ResetScene();
+                ScoreManager.ResetScene();
+                playerName = playerNameInput.gameObject.GetComponentsInChildren<Text>()[1].text;
+                isInputReferenced = false;
+                SceneManager.LoadScene("Scene 1");
+            }
+            playerNameInput.ActivateInputField();            
 		} else if (currentSceneName == "Scene 1") {
 			if (Input.GetButtonDown("Pause")) {
 				if (isPaused) {
@@ -44,9 +59,9 @@ public class GameManager : MonoBehaviour {
 					Pause();
 				}
 			}
-		} else {
+		} else { // Game Over
 			if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Attack")) {
-				SceneManager.LoadScene("Main Menu");
+                SceneManager.LoadScene("Main Menu");
 			}			
 		}
 	}
@@ -62,7 +77,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void gameOver() {
-		ScoreManager.instance.SetScore("Sh1ken");
+        if (playerName == "")
+            playerName = "Player";
+        ScoreManager.instance.SetScore(playerName);
 		SceneManager.LoadScene("Game Over");
 	}
 }

@@ -37,7 +37,8 @@ public class ItemScript : MonoBehaviour {
 			yield return null;
 
 			if (frames < 120 && !GameManager.isPaused) {
-				if (frames % 10 == 0) {					selfRenderer.enabled = false;
+				if (frames % 10 == 0) {
+					selfRenderer.enabled = false;
 				}
 				else if (frames % 5 == 0) {
 					selfRenderer.enabled = true;

@@ -15,7 +15,8 @@ public class ItemColliderController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 
-		if (otherCollider.tag == "playerHitBox") {			//print("DICKS");
+		if (otherCollider.tag == "playerHitBox") {
+			//print("DICKS");
 			if (itemScript.giveInvulnerability) {
 				
 				StartCoroutine(megamanController.getInvulnerability());
