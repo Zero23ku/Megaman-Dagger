@@ -37,8 +37,8 @@ public class SoundManager : MonoBehaviour {
 		sfxSource = GetComponents<AudioSource>()[1];
 		musicVolume = musicSource.volume;
 		//volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
-		volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
-		SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
+		volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
+		SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
 		SFXControl = SFXObject.GetComponent<Slider>();
 		volumeControl = volumeObject.GetComponent<Slider>();
 	}
