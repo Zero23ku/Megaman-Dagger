@@ -282,6 +282,8 @@ MonoBehaviour:
   blinkFrames: 60
   attackCooldown: 5
   bulletClip: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
+  deathParticlePrefab: {fileID: 4408051694744514, guid: e3dcda9a16300f640b9d7d8e60342d5c,
+    type: 2}
 --- !u!212 &212040893618031026
 SpriteRenderer:
   m_ObjectHideFlags: 1
