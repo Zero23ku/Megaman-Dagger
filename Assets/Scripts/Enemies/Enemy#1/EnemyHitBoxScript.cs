@@ -6,16 +6,17 @@ public class EnemyHitBoxScript : MonoBehaviour {
 	private EnemyOneController enemyOneController;
 
 	void Start () {
-		enemyOneController = GetComponentInParent<EnemyOneController>();		
+		enemyOneController = GetComponentInParent<EnemyOneController> ();		
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 		if (otherCollider.tag == "MegamanBullet") {
 			enemyOneController.receiveDamage();
 		}
-		if (otherCollider.tag == "playerHitBox") {
-			enemyOneController.getAway = true;
-			enemyOneController.alreadyEntered = false;
-		}
+		if (otherCollider.tag == "playerHitBox" && !enemyOneController.alreadyEntered) {
+            enemyOneController.alreadyEntered = true;
+            enemyOneController.getAway = true;
+            StartCoroutine(enemyOneController.moveAway());
+        }
 	}
 }

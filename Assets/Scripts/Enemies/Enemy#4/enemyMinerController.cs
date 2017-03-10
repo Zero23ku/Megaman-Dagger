@@ -20,9 +20,10 @@ public class enemyMinerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player)
+            playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
 		frameCounter = 0;
-		player = GameObject.FindGameObjectWithTag("Player");
 		selfTransform = GetComponent<Transform>();
 		enemyInformation = GetComponent<enemyInformationScript>();
 		selfAnimator = GetComponent<Animator>();
