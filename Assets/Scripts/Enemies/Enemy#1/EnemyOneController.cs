@@ -1,10 +1,8 @@
-﻿using UnityEngine;
+﻿using UnityEngine;  
 using System.Collections;
 
 
 public class EnemyOneController : MonoBehaviour {
-
-
 	public Transform healthItemPrefab;
 	public Transform invulnerabilityItemPrefab;
 	public bool getAway;
@@ -22,14 +20,15 @@ public class EnemyOneController : MonoBehaviour {
 	private float selfPositionY;
 	private bool isLookingLeft;
 	private int getAwayDirection;
-
-
-
+    private int framesBetweenMovement;
+    
 	// Use this for initialization
 	void Start () {
 		enemyInformation = GetComponent<enemyInformationScript> ();
 		player = GameObject.FindWithTag("Player");
-		playerTransform = GameObject.FindWithTag ("Player").transform;
+        if (player) {
+            playerTransform = GameObject.FindWithTag("Player").transform;
+        }
 		selfTransform = GetComponent<Transform> ();
 		selfBody = GetComponent<Rigidbody2D>();
 		getAway = false;
@@ -40,63 +39,54 @@ public class EnemyOneController : MonoBehaviour {
 		else {
 			isLookingLeft = false;
 		}
+        framesBetweenMovement = 20;
+        StartCoroutine(Movement());
 	}
 
-	void FixedUpdate () {
-	
-	}
-	// Update is called once per frame
-	void Update () {
-		if(!GameManager.isPaused)
-			Movement();
-	}
+	// Enemy Movement
+	IEnumerator Movement() {
+        while (true) {
+            if (!GameManager.isPaused) {
+		        if (player) {
+                    if (framesBetweenMovement == 0) {
+                        framesBetweenMovement = 20;
+                        playerPosition = playerTransform.position;
+                        playerPosition.y += 0.4f;
+                    } else {
+                        framesBetweenMovement--;
+                    }
+                }
 
-	//Movement of enemy
-	void Movement() {
-		if (player)
-			playerPosition = playerTransform.position;
+                selfPosition = selfTransform.position;
 		
-		selfPosition = selfTransform.position;
-		//Distance between player and enemy//
-		distance = playerPosition - selfPosition;
-		if (Mathf.Abs(distance.x) > 2.75f && getAway) {
-			getAway = false;
-		}
+                // Distance between player and enemy
+		        distance = playerPosition - selfPosition;
+		        if (Mathf.Abs(distance.x) > 2.75f && getAway) {
+			        getAway = false;
+		        }
 
-		if (!getAway){
-			if (distance.x <= 0.0f){
-				selfBody.velocity = new Vector2(-enemyInformation.speed, Mathf.Round(selfBody.velocity.y));
-				if (!isLookingLeft){
-					Flip();
-				}
+                if(!getAway) {
+                    selfBody.MovePosition(Vector2.MoveTowards(selfPosition, playerPosition, enemyInformation.speed * Time.deltaTime));
+                }
+            }
+            yield return null;
+        }
+    }
 
-			}
-			else{
-				selfBody.velocity = new Vector2(enemyInformation.speed, Mathf.Round(selfBody.velocity.y));
-				if (isLookingLeft){
-					Flip();
-				}
-			}
-
-			if (distance.y <= -0.5f){
-				selfBody.velocity = new Vector2(selfBody.velocity.x, -enemyInformation.speed);
-			}
-			else{
-				selfBody.velocity = new Vector2(selfBody.velocity.x, enemyInformation.speed);
-
-			}
-		}
-
-		if (getAway) {
-			if (Random.Range(0.0f, 1.0f) > 0.5f && !alreadyEntered) {
-				getAwayDirection = -1;
-			}
-			else
-				getAwayDirection = 1;
-			alreadyEntered = true;
-			selfBody.velocity = new Vector2(enemyInformation.speed * 1.7f * getAwayDirection,enemyInformation.speed * 1.3f * getAwayDirection);
-		}
-	}
+    public IEnumerator moveAway() {
+        while (getAway) {
+            if (!GameManager.isPaused) { 
+                if(Random.Range(0.0f, 1.0f) > 0.5f && !alreadyEntered) {
+                    getAwayDirection = -1;
+                } else {
+                    getAwayDirection = 1;
+                }
+                selfBody.velocity = new Vector2(enemyInformation.speed * 1.7f * getAwayDirection, enemyInformation.speed * 1.7f);
+                yield return null;
+            }
+        }
+        alreadyEntered = false;
+    }
 
 	public void receiveDamage() {
 		enemyInformation.health--;
@@ -121,22 +111,18 @@ public class EnemyOneController : MonoBehaviour {
 
 	void dropItem() {
 		Transform itemTransform;
-		//if you get anything higher than 0.6 then enemy will drop something
+		// If you get anything higher than 0.6 then enemy will drop something
 		if (Random.Range(0.0f, 1.0f) > 0.6f ) {
-			//if you get anything higher than 0.85 then enemy will drop invulnerability item
-			//otherwise it will drop health item
-			if (Random.Range(0.0f, 1.0f) > 0.85f){
+			// If you get anything higher than 0.85 then enemy will drop invulnerability item
+			// Otherwise it will drop health item
+			if (Random.Range(0.0f, 1.0f) > 0.85f) {
 				itemTransform = Instantiate(invulnerabilityItemPrefab) as Transform;
 			}
 			else {
 				itemTransform = Instantiate(healthItemPrefab) as Transform;
 			}
-
 			itemTransform.position = selfPosition;
 		}
 	
 	}
-
-
-
 }

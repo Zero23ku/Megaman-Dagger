@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4564477716868756}
   - component: {fileID: 212529131433070070}
-  - component: {fileID: 114842177506765714}
   - component: {fileID: 61812098450095846}
+  - component: {fileID: 114977891736934282}
   m_Layer: 16
   m_Name: EnemyTwoBullet
   m_TagString: enemyBullet
@@ -51,12 +51,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.06}
---- !u!114 &114842177506765714
+--- !u!114 &114977891736934282
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 1
-  bulletSpeed: 4.5
+  bulletSpeed: 9.5
 --- !u!212 &212529131433070070
 SpriteRenderer:
   m_ObjectHideFlags: 1
