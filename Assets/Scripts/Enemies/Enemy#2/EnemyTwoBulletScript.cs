@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyTwoBulletScript : MonoBehaviour {
 
 	public float bulletDamage;
-	public float bulletSpeed = 9.5f;
+	public float bulletSpeed = 10f;
 
 	private float spriteWithDelta;
 	private float spriteHeightDelta;

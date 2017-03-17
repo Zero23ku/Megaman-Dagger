@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pickaxeController : MonoBehaviour {
 	public int bulletDamage;
-	public float bulletSpeed = 10.5f;
+	public float bulletSpeed = 10f;
 
 	private float spriteWithDelta;
 	private float spriteHeightDelta;
