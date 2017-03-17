@@ -17,20 +17,16 @@ public class ItemScript : MonoBehaviour {
 		isUsed = false;
 		StartCoroutine(waitForFrames(300));
 		selfRenderer= GetComponent<SpriteRenderer>();
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 		if (isUsed || timePassed) {
 			Destroy(gameObject);
 		}
-
 	}
 
 	private IEnumerator waitForFrames(int frames) {
-
 		while (frames > 0) {
 			if (!GameManager.isPaused)
 				frames--;
@@ -46,6 +42,5 @@ public class ItemScript : MonoBehaviour {
 			}
 		}
 		timePassed = true;
-	
 	}
 }

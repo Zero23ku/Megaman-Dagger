@@ -12,22 +12,16 @@ public class ItemColliderController : MonoBehaviour {
 		megamanController = GameObject.FindWithTag("Player").GetComponent<MegamanController>();
 	}
 
-
 	void OnTriggerEnter2D(Collider2D otherCollider) {
-
 		if (otherCollider.tag == "playerHitBox") {
-			//print("DICKS");
 			if (itemScript.giveInvulnerability) {
-				
-				StartCoroutine(megamanController.getInvulnerability());
+                megamanController.becomeInvulnerable();
 
-			}
+            }
 			else { 
 				megamanController.getHealth(itemScript.giveHealth);
 			}
 			itemScript.isUsed = true;
 		}
-
 	}
-
 }
