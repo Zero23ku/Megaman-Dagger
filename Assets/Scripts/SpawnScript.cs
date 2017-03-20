@@ -46,6 +46,7 @@ public class SpawnScript : MonoBehaviour {
 		GameObject currentEnemy = Instantiate(currentEnemyList[index]);
 		enemyInformationScript enemyInformation = currentEnemy.GetComponent<enemyInformationScript>();
 		currentEnemy.transform.position = GetComponent<Transform>().position;
+        currentEnemy.transform.localPosition = new Vector3(currentEnemy.transform.position.x, currentEnemy.transform.position.y, 0);
 		enemyInformation.respawnPoint = this.transform;
 
 		if (isBuffed) {

@@ -27,7 +27,7 @@ public class enemyMinerController : MonoBehaviour {
 		selfTransform = GetComponent<Transform>();
 		enemyInformation = GetComponent<enemyInformationScript>();
 		selfAnimator = GetComponent<Animator>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
