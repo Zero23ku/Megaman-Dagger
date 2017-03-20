@@ -25,6 +25,8 @@ TagManager:
   - WaveCount
   - Item
   - sliderVolume
+  - BGFO
+  - Set
   layers:
   - Default
   - TransparentFX

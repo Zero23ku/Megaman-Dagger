@@ -14,7 +14,7 @@ public class enemyDiskFloorController : MonoBehaviour {
 	void Start () {
 		selfBody = GetComponent<Rigidbody2D>();
 		enemyInformation = GetComponent<enemyInformationScript>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

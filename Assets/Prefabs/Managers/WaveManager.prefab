@@ -51,4 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02023e36529f67749a3034063b756d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenWaves: 300
+  SpawnPoints:
+  - {fileID: 1711412945900308, guid: b52b1981eb9f4c44d8d2ba4cb169741c, type: 2}
+  - {fileID: 1727242556078980, guid: 805f94f59c6b8a84c93e3a00d9130a68, type: 2}
+  - {fileID: 1668345109694134, guid: e9136167a0e119c40a3b0c82d27404ba, type: 2}
+  Platforms:
+  - {fileID: 1065209681943994, guid: 69fcd1fafc27b434dacf0ad71099bd00, type: 2}
+  - {fileID: 1126418224598176, guid: df120cd532ba24949ad1773a1a9f2b8b, type: 2}
+  - {fileID: 1272299622895160, guid: ffb195b6ff901944f8c603d705b9ebc7, type: 2}
