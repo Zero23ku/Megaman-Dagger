@@ -40,7 +40,7 @@ public class EnemyTwoController : MonoBehaviour {
 		}
 
 		framesCounter = waitFramesUntilAttack;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

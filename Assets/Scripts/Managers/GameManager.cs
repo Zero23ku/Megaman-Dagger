@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour {
                 ScoreManager.ResetScene();
                 playerName = playerNameInput.gameObject.GetComponentsInChildren<Text>()[1].text;
                 isInputReferenced = false;
+                WaveManager.currentSet = 0;
+                WaveManager.setCount = 0;
+                WaveManager.firstWaveSpawned = false;
                 SceneManager.LoadScene("Scene 1");
             }
             playerNameInput.ActivateInputField();            

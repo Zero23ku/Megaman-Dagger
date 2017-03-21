@@ -4,223 +4,321 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour {
-	public static WaveManager instance = null;
-	public static int enemyHealthMultiplier;
-	public static float enemySpeedMultiplier;
-	public static int waveCount;
-	public static int timeBetweenWaves;
+    public static WaveManager instance = null;
+    public static int enemyHealthMultiplier;
+    public static float enemySpeedMultiplier;
+    public static int waveCount;
+    public static int setCount;
+    public static int timeBetweenWaves;
+    public static int currentSet;
+    public static bool firstWaveSpawned;
 
-	private List<GameObject> SpawnAirList;
-	private List<GameObject> SpawnLandList;
-	private List<GameObject> currentSpawnLandList;
+    public GameObject[] SpawnPoints;
+    public GameObject[] Platforms;
 
-	// To refactor to DifficultManager
-	private int originalTimeBetweenWaves;
-	private int totalDifficultLevel;
-	private int currentDifficultLevel;
-	private int currentRandomSpawnPoint;
-	private bool currentlyAssigning;
-	private int currentSpawnIndex;
-	private int currentSpawnCount;
-	private int currentEnemyIndex;
-	private SpawnScript currentSpawnScript;
-	private bool isOverallDifficultLevelCalculated;
-	private int overallDifficulty;
-	private bool isWaveSpawnable;
-	private int totalBuffedEnemiesCount;
-	private int currentBuffedEnemiesCount;
-	private bool isBuffed;
-	private int originalSpawnRate;
-	private int spawnRate;
+    private List<GameObject> SpawnAirList;
+    private List<GameObject> SpawnLandList;
+    private List<GameObject> currentSpawnLandList;
+
     private GameObject player;
+    private SpawnScript currentSpawnScript;
+    private int originalTimeBetweenWaves;
+    private int totalDifficultLevel;
+    private int currentDifficultLevel;
+    private int currentRandomSpawnPoint;
+    private bool currentlyAssigning;
+    private int currentSpawnIndex;
+    private int currentSpawnCount;
+    private int currentEnemyIndex;
+    private bool isOverallDifficultLevelCalculated;
+    private int overallDifficulty;
+    private bool isWaveSpawnable;
+    private int totalBuffedEnemiesCount;
+    private int currentBuffedEnemiesCount;
+    private bool isBuffed;
+    private int originalSpawnRate;
+    private int spawnRate;
+    private bool setChanged;
+    private List<int> sets;
 
-	void Awake() {
-		if (!instance) {
-			instance = this;
-		} else if (instance != this) {
-			Destroy(gameObject);
-		}
-		DontDestroyOnLoad(gameObject);
-	}
+    void Awake() {
+        if(!instance) {
+            instance = this;
+        } else if(instance != this) {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
-	// Use this for initialization
-	void Start () {
-		currentDifficultLevel = 0;
-		totalDifficultLevel = 4;
-		currentSpawnIndex = 0;
-		currentSpawnCount = 0;
-		overallDifficulty = 0;
-		enemyHealthMultiplier = 2;
-		enemySpeedMultiplier = 1.2f;
-		waveCount = 0;
-		totalBuffedEnemiesCount = 1;
-		currentBuffedEnemiesCount = 0;
+    // Use this for initialization
+    void Start() {
+        currentSet = 0;
+        sets = new List<int>(new int[] {0, 1, 2});
+        currentDifficultLevel = 0;
+        totalDifficultLevel = 4;
+        currentSpawnIndex = 0;
+        currentSpawnCount = 0;
+        overallDifficulty = 0;
+        enemyHealthMultiplier = 2;
+        enemySpeedMultiplier = 1.2f;
+        waveCount = 0;
+        totalBuffedEnemiesCount = 1;
+        currentBuffedEnemiesCount = 0;
 
-		originalSpawnRate = 20;
-		spawnRate = originalSpawnRate;
+        originalSpawnRate = 20;
+        spawnRate = originalSpawnRate;
 
-		timeBetweenWaves = 300;
-		originalTimeBetweenWaves = timeBetweenWaves;
-	
-		isBuffed = false;
-		currentlyAssigning = false;
-		isOverallDifficultLevelCalculated = false;
-		isWaveSpawnable = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		string currentSceneName = SceneManager.GetActiveScene().name;
+        timeBetweenWaves = 300;
+        originalTimeBetweenWaves = timeBetweenWaves;
+
+        isBuffed = false;
+        currentlyAssigning = false;
+        isOverallDifficultLevelCalculated = false;
+        isWaveSpawnable = true;
+
+        setChanged = false;
+
+        setCount = 0;
+        spawnNewSet(0);
+        firstWaveSpawned = true;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        string currentSceneName = SceneManager.GetActiveScene().name;
         player = GameObject.FindWithTag("Player");
-        if (currentSceneName == "Scene 1" && player) {
-			// If there's no enemy on the screen
-			if (isWaveSpawnable && !currentlyAssigning) {
-				currentlyAssigning = true;
-				isWaveSpawnable = false;
-				StartCoroutine(AssignNewWave());
-			}
-		}
-	}
+        if(currentSceneName == "Scene 1" && player) {
+            if(!firstWaveSpawned) {
+                spawnNewSet(0);
+                firstWaveSpawned = true;
+            }
+            // If there's no enemy on the screen
+            if(isWaveSpawnable && !currentlyAssigning) {
+                currentlyAssigning = true;
+                isWaveSpawnable = false;
+                StartCoroutine(AssignNewWave());
+            }
+        }
+    }
 
-	void GetSpawnPoints() {
-		SpawnAirList = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnAir"));
-		SpawnLandList = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnLand"));
-	}
+    void GetSpawnPoints() {
+        SpawnAirList = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnAir"));
+        SpawnLandList = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnLand"));
+    }
 
-	void calculateOverallDifficultLevel(List<GameObject> SpawnAirList) {
-		foreach(GameObject spawnPoint in SpawnAirList) {
-			overallDifficulty += spawnPoint.GetComponent<SpawnScript>().getTotalEnemyDifficultLevel();
-		}
-	}
+    void calculateOverallDifficultLevel(List<GameObject> SpawnAirList) {
+        foreach(GameObject spawnPoint in SpawnAirList) {
+            overallDifficulty += spawnPoint.GetComponent<SpawnScript>().getTotalEnemyDifficultLevel();
+        }
+    }
 
-	private IEnumerator AssignNewWave() {
-		waveCount++;
-		timeBetweenWaves = originalTimeBetweenWaves;
+    private IEnumerator AssignNewWave() {
+        waveCount++;
+        setCount++;
 
-		currentBuffedEnemiesCount = 0;
-		spawnRate = originalSpawnRate;
+        if(setCount > 2 && (GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("enemyMiner").Length == 0)) {
+            setCount = 0;
+            StartCoroutine(ChangeSet());
+            yield return new WaitUntil(() => setChanged);
+            setChanged = false;
+        }
+        timeBetweenWaves = originalTimeBetweenWaves;
 
-		if ((waveCount % 3) == 0) {
-			totalBuffedEnemiesCount += 2;
-			enemyHealthMultiplier += 1;
-			enemySpeedMultiplier += 0.4f;
-		}
-			
-		//We get the current level spawn points
-		GetSpawnPoints();
+        currentBuffedEnemiesCount = 0;
+        spawnRate = originalSpawnRate;
 
-		// We restock every enemy in every spawn point
-		foreach (GameObject spawnPoint in SpawnAirList) {
-			spawnPoint.GetComponent<SpawnScript>().restockEnemyList();
-		}
+        if((waveCount % 3) == 0) {
+            totalBuffedEnemiesCount += 2;
+            enemyHealthMultiplier += 1;
+            enemySpeedMultiplier += 0.4f;
+        }
 
-		foreach (GameObject spawnPoint in SpawnLandList) {
-			spawnPoint.GetComponent<SpawnScript>().restockEnemyList();
-		}
+        //We get the current level spawn points
+        GetSpawnPoints();
 
-		// We calculate the overall difficult level, which is the total sum of
-		// enemy's difficult attribute
-		if (!isOverallDifficultLevelCalculated) {
-			isOverallDifficultLevelCalculated = true;
-			calculateOverallDifficultLevel(SpawnAirList);
-		}
+        // We restock every enemy in every spawn point
+        foreach(GameObject spawnPoint in SpawnAirList) {
+            spawnPoint.GetComponent<SpawnScript>().restockEnemyList();
+        }
 
-		// While the total difficult level quota isn't full and there's still enemies to assign
-		while (currentDifficultLevel <= totalDifficultLevel && SpawnAirList.Count != 0) {
-			currentSpawnCount = 0;
+        foreach(GameObject spawnPoint in SpawnLandList) {
+            spawnPoint.GetComponent<SpawnScript>().restockEnemyList();
+        }
 
-			// We choose randomly between air and land
-			if (Random.Range(0, 2) == 0) {
-				currentSpawnLandList = SpawnAirList;
-			} else {
-				currentSpawnLandList = SpawnLandList;
-			}
+        // We calculate the overall difficult level, which is the total sum of
+        // enemy's difficult attribute
+        if(!isOverallDifficultLevelCalculated) {
+            isOverallDifficultLevelCalculated = true;
+            calculateOverallDifficultLevel(SpawnAirList);
+        }
 
-			while (currentSpawnLandList.Count != 0 && currentSpawnCount == 0) {
-				// We choose a spawn point randomly
-				currentSpawnIndex = Random.Range(0, currentSpawnLandList.Count);
+        // While the total difficult level quota isn't full and there's still enemies to assign
+        while(currentDifficultLevel <= totalDifficultLevel && SpawnAirList.Count != 0) {
+            currentSpawnCount = 0;
 
-				// We get the current size of the spawn point's enemy list
-				currentSpawnScript = currentSpawnLandList[currentSpawnIndex].GetComponent<SpawnScript>();
-				currentSpawnCount = currentSpawnScript.getEnemyListCount();
+            // We choose randomly between air and land
+            if(Random.Range(0, 2) == 0) {
+                currentSpawnLandList = SpawnAirList;
+            } else {
+                currentSpawnLandList = SpawnLandList;
+            }
 
-				// If there's no enemy to spawn, the current spawn point is deleted from the eligible spawn list
-				if (currentSpawnCount == 0) {
-					currentSpawnLandList.RemoveAt(currentSpawnIndex);
-				}
-			}
+            while(currentSpawnLandList.Count != 0 && currentSpawnCount == 0) {
+                // We choose a spawn point randomly
+                currentSpawnIndex = Random.Range(0, currentSpawnLandList.Count);
 
-			// If there's any enemy still to be assign
-			if (currentSpawnLandList.Count > 0) {
-				// We choose a random enemy from the spawn point's poll
-				currentEnemyIndex = Random.Range(0, currentSpawnCount);
+                // We get the current size of the spawn point's enemy list
+                currentSpawnScript = currentSpawnLandList[currentSpawnIndex].GetComponent<SpawnScript>();
+                currentSpawnCount = currentSpawnScript.getEnemyListCount();
 
-				// We increase the current difficult level until we reach the total one
-				currentDifficultLevel += currentSpawnScript.getEnemyDifficultLevel(currentEnemyIndex);
+                // If there's no enemy to spawn, the current spawn point is deleted from the eligible spawn list
+                if(currentSpawnCount == 0) {
+                    currentSpawnLandList.RemoveAt(currentSpawnIndex);
+                }
+            }
 
-				if (currentBuffedEnemiesCount < totalBuffedEnemiesCount) {
-					isBuffed = true;
-					currentBuffedEnemiesCount++;
-				} else {
-					isBuffed = false;
-				}
+            // If there's any enemy still to be assign
+            if(currentSpawnLandList.Count > 0) {
+                // We choose a random enemy from the spawn point's poll
+                currentEnemyIndex = Random.Range(0, currentSpawnCount);
 
-				// We spawn an enemy randomly from the pool of remaining enemies that the spawn point has
-				yield return StartCoroutine(WaitForNextEnemy(20));
+                // We increase the current difficult level until we reach the total one
+                currentDifficultLevel += currentSpawnScript.getEnemyDifficultLevel(currentEnemyIndex);
 
-				if (!(currentSpawnLandList[currentSpawnIndex] == null))
-					currentSpawnLandList[currentSpawnIndex].GetComponent<SpawnScript>().instantiateEnemy(currentEnemyIndex, isBuffed);
-				else
-					break;
-				
-				spawnRate += spawnRate;
-			}
-		}
+                if(currentBuffedEnemiesCount < totalBuffedEnemiesCount) {
+                    isBuffed = true;
+                    currentBuffedEnemiesCount++;
+                } else {
+                    isBuffed = false;
+                }
 
-		// We increase the difficult level for the next wave by, for example, '2'
-		if (totalDifficultLevel <= overallDifficulty - 2) {
-			totalDifficultLevel += 2;
-		}
+                // We spawn an enemy randomly from the pool of remaining enemies that the spawn point has
+                yield return StartCoroutine(WaitForNextEnemy(20));
 
-		// We reset the current difficult level to zero for the next iteration
-		currentDifficultLevel = 0;
-		currentlyAssigning = false;
-		StartCoroutine(WaitForNextWave());
-	}
-		
-	private IEnumerator WaitForNextEnemy(int frames) {
-		while (frames > 0) {
-			frames--;
-			yield return null;
-		}
-	}
+                if(!(currentSpawnLandList[currentSpawnIndex] == null))
+                    currentSpawnLandList[currentSpawnIndex].GetComponent<SpawnScript>().instantiateEnemy(currentEnemyIndex, isBuffed);
+                else
+                    break;
 
-	private IEnumerator WaitForNextWave() {
-		isWaveSpawnable = false;
-		while (timeBetweenWaves > 0) {
-			if (!GameManager.isPaused)
-				timeBetweenWaves--;
-			if (GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("enemyMiner").Length == 0) {
-				if (GameObject.FindWithTag("Player")) {
-					ScoreManager.AssignBonus();
-				}
-				break;
-			}
-			yield return null;
-		}
-		isWaveSpawnable = true;
-	}
+                spawnRate += spawnRate;
+            }
+        }
 
-	public void ResetScene() {
-		enemyHealthMultiplier = 2;
-		enemySpeedMultiplier = 1.2f;
-		totalDifficultLevel = 4;
-		waveCount = 0;
-		totalBuffedEnemiesCount = 1;
-		timeBetweenWaves = originalTimeBetweenWaves;
-	}
+        // We increase the difficult level for the next wave by, for example, '2'
+        if(totalDifficultLevel <= overallDifficulty - 2) {
+            totalDifficultLevel += 2;
+        }
 
-	public void MinusDifficultLevel(int minusDifficult) {
-		currentDifficultLevel -= minusDifficult;
-	}
+        // We reset the current difficult level to zero for the next iteration
+        currentDifficultLevel = 0;
+        currentlyAssigning = false;
+        StartCoroutine(WaitForNextWave());
+    }
+
+    private IEnumerator WaitForNextEnemy(int frames) {
+        while(frames > 0) {
+            frames--;
+            yield return null;
+        }
+    }
+
+    private IEnumerator WaitForNextWave() {
+        isWaveSpawnable = false;
+        while(timeBetweenWaves > 0) {
+            if(!GameManager.isPaused)
+                timeBetweenWaves--;
+            if(GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("enemyMiner").Length == 0) {
+                if(GameObject.FindWithTag("Player")) {
+                    ScoreManager.AssignBonus();
+                }
+                break;
+            }
+            yield return null;
+        }
+        isWaveSpawnable = true;
+    }
+
+    private void spawnNewSet(int index) {
+        GameObject spawnPoint = Instantiate(SpawnPoints[index]);
+        spawnPoint.transform.parent = GameObject.Find("Spawn points").transform;
+        spawnPoint.transform.localPosition = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0f);
+
+        GameObject platforms = Instantiate(Platforms[index]);
+        platforms.transform.parent = GameObject.Find("Platforms").transform;
+        platforms.transform.localPosition = new Vector3(platforms.transform.position.x, platforms.transform.position.y, 0f);
+    }
+
+    private IEnumerator ChangeSet() {
+        int previousSet;
+        int newCurrentSet;
+        float transitionFrames = 70f;
+        float framesToTransition = 0f;
+        float tAlpha = 0f;
+        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
+        Color BGFOColor = BGFO.color;
+
+        // Fade Out
+        while(framesToTransition < transitionFrames) {
+            if(!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(0.0f, 1.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
+
+        // We remove the current set from the poll
+        // and choose a new one randomly
+        previousSet = currentSet;
+        sets.Remove(currentSet);
+        newCurrentSet = sets[Random.Range(0, sets.Count)];
+        Debug.Log("new set: " + newCurrentSet);
+
+        // We destroy the current set from the scene
+        if (player) {
+            foreach(GameObject set in GameObject.FindGameObjectsWithTag("Set")) {
+                Destroy(set);
+            }
+        }
+
+        // We instantiate the new set
+        currentSet = newCurrentSet;
+        spawnNewSet(newCurrentSet);
+
+        // We add the previous set to the poll
+        sets.Add(previousSet);
+
+        // Fade In
+        framesToTransition = 0f;
+        tAlpha = 1f;
+        while(framesToTransition < transitionFrames) {
+            if(!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(1.0f, 0.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
+        
+        setChanged = true;
+    }
+
+    public void ResetScene() {
+        enemyHealthMultiplier = 2;
+        enemySpeedMultiplier = 1.2f;
+        totalDifficultLevel = 4;
+        waveCount = 0;
+        totalBuffedEnemiesCount = 1;
+        timeBetweenWaves = originalTimeBetweenWaves;
+    }
+
+    public void MinusDifficultLevel(int minusDifficult) {
+        currentDifficultLevel -= minusDifficult;
+    }
 }

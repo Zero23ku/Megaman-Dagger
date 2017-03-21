@@ -14,7 +14,8 @@ public class enemyInformationScript : MonoBehaviour {
 	private SpriteRenderer spriteRenderer;
 
 	void Start() {
-		buffAttack = 0;
+        transform.parent = GameObject.Find("Enemies").transform;
+        buffAttack = 0;
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		StartCoroutine(WaitForSpawn(60));
 		StartCoroutine(WaitFramesHighlight(60));

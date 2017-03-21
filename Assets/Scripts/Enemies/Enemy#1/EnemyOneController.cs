@@ -39,6 +39,7 @@ public class EnemyOneController : MonoBehaviour {
 		else {
 			isLookingLeft = false;
 		}
+        
         framesBetweenMovement = 20;
         StartCoroutine(Movement());
 	}
