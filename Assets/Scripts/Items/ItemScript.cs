@@ -8,6 +8,7 @@ public class ItemScript : MonoBehaviour {
     public bool isHealthItem;
     public bool isThreeBulletsItem;
     public bool isMoreBulletsItem;
+    public bool isMoreBulletSpeedItem;
 
 
     public int giveHealth;

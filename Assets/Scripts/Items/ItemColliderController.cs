@@ -27,6 +27,9 @@ public class ItemColliderController : MonoBehaviour {
             else if (itemScript.isMoreBulletsItem) {
                 megamanController.moreBullets();
             }
+            else if (itemScript.isMoreBulletSpeedItem) {
+                megamanController.moreBulletSpeed();
+            }
 			itemScript.isUsed = true;
 		}
 	}
