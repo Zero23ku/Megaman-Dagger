@@ -3,11 +3,14 @@ using System.Collections;
 
 
 public class EnemyOneController : MonoBehaviour {
-	public Transform healthItemPrefab;
+    /*public Transform healthItemPrefab;
 	public Transform invulnerabilityItemPrefab;
     public Transform threeBulletsItemPrefab;
     public Transform moreBulletsItemPrefab;
     public Transform moreBulletSpeedPrefab;
+    */
+
+    public Transform[] items;
 
     public bool getAway;
 	public bool alreadyEntered;
@@ -118,26 +121,29 @@ public class EnemyOneController : MonoBehaviour {
         Transform itemTransform;
         //if you get anything higher than 0.6 then enemy will drop something
         if (Random.Range(0.0f, 1.0f) > 0.6f) {
-            int item = Random.Range(0, 5);
+            int item = Random.Range(0, 6);
             //Health item
             if (item == 0) {
-                itemTransform = Instantiate(healthItemPrefab) as Transform;
+                itemTransform = Instantiate(items[item]) as Transform;
             }
             //Invulnerability item
             else if (item == 1) {
-                itemTransform = Instantiate(invulnerabilityItemPrefab) as Transform;
+                itemTransform = Instantiate(items[item]) as Transform;
             }
             //Three Bullets item
             else if (item == 2) {
-                itemTransform = Instantiate(threeBulletsItemPrefab) as Transform;
+                itemTransform = Instantiate(items[item]) as Transform;
             }
             //More bullet Speed
             else if (item == 3) {
-                itemTransform = Instantiate(moreBulletSpeedPrefab) as Transform;
+                itemTransform = Instantiate(items[item]) as Transform;
             }
             //More Bullets item
-            else {
-                itemTransform = Instantiate(moreBulletsItemPrefab) as Transform;
+            else if (item == 4) {
+                itemTransform = Instantiate(items[item]) as Transform;
+                //More Speed Item
+            } else {
+                itemTransform = Instantiate(items[item]) as Transform;
             }
             itemTransform.position = transform.position;
         }

@@ -22,7 +22,6 @@ public class ItemColliderController : MonoBehaviour {
 		if (otherCollider.tag == "playerHitBox") {
             if (itemScript.isInvulnerabilityItem) {
                 megamanController.becomeInvulnerable();
-
             }
             else if (itemScript.isHealthItem) {
                 megamanController.getHealth(itemScript.giveHealth);
