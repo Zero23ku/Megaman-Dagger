@@ -7,6 +7,7 @@ public class EnemyOneController : MonoBehaviour {
 	public bool alreadyEntered;
 
 	private enemyInformationScript enemyInformation;
+    private SpriteRenderer spriteRenderer;
 	private GameObject player;
 	private Transform playerTransform;
 	private Transform selfTransform;
@@ -19,10 +20,12 @@ public class EnemyOneController : MonoBehaviour {
 	private bool isLookingLeft;
 	private int getAwayDirection;
     private int framesBetweenMovement;
-    
-	// Use this for initialization
-	void Start () {
+    private bool alreadyLockedDown;
+
+    // Use this for initialization
+    void Start () {
 		enemyInformation = GetComponent<enemyInformationScript> ();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 		player = GameObject.FindWithTag("Player");
         if (player) {
             playerTransform = GameObject.FindWithTag("Player").transform;
@@ -41,6 +44,7 @@ public class EnemyOneController : MonoBehaviour {
 		}
         
         framesBetweenMovement = 20;
+        alreadyLockedDown = false;
         StartCoroutine(Movement());
 	}
 
@@ -48,42 +52,74 @@ public class EnemyOneController : MonoBehaviour {
 	IEnumerator Movement() {
         while (!enemyInformation.isDead) {
             if (!GameManager.isPaused) {
-		        if (player) {
-                    if (framesBetweenMovement == 0) {
-                        framesBetweenMovement = 20;
-                        playerPosition = playerTransform.position;
-                        playerPosition.y += 0.4f;
-                    } else {
-                        framesBetweenMovement--;
+                if(!enemyInformation.isLockdown) {
+                    if(player) {
+                        if(framesBetweenMovement == 0) {
+                            framesBetweenMovement = 20;
+                            playerPosition = playerTransform.position;
+                            playerPosition.y += 0.4f;
+                        } else {
+                            framesBetweenMovement--;
+                        }
                     }
-                }
 
-                selfPosition = selfTransform.position;
-		
-                // Distance between player and enemy
-		        distance = playerPosition - selfPosition;
-		        if (Mathf.Abs(distance.x) > 2.75f && getAway) {
-			        getAway = false;
-		        }
+                    selfPosition = selfTransform.position;
 
-                if(!getAway) {
-                    selfBody.MovePosition(Vector2.MoveTowards(selfPosition, playerPosition, enemyInformation.speed * Time.deltaTime));
+                    // Distance between player and enemy
+                    distance = playerPosition - selfPosition;
+                    if(Mathf.Abs(distance.x) > 2.75f && getAway) {
+                        getAway = false;
+                    }
+
+                    if(!getAway) {
+                        selfBody.MovePosition(Vector2.MoveTowards(selfPosition, playerPosition, enemyInformation.speed * Time.deltaTime));
+                    }
+                } else {
+                    if(!alreadyLockedDown) {
+                        alreadyLockedDown = true;
+                        StartCoroutine(Lockdown(enemyInformation.lockdownFrames));
+                    }
+
                 }
             }
             yield return null;
         }
     }
 
+    private IEnumerator Lockdown(int frames) {
+        gameObject.tag = "Default";
+        spriteRenderer.color = new Color(0, 0, 255);
+
+        while(frames > 0) {
+            if(!GameManager.isPaused) {
+                frames--;
+                yield return null;
+            }
+        }
+
+        gameObject.tag = "Enemy";
+        spriteRenderer.color = new Color(255, 255, 255);
+        alreadyLockedDown = false;
+        enemyInformation.isLockdown = false;
+    }
+
     public IEnumerator moveAway() {
         while (getAway) {
-            if (!GameManager.isPaused) { 
-                if(Random.Range(0.0f, 1.0f) > 0.5f && !alreadyEntered) {
-                    getAwayDirection = -1;
+            if(!GameManager.isPaused) {
+                if(!enemyInformation.isLockdown) {
+                    if(Random.Range(0.0f, 1.0f) > 0.5f && !alreadyEntered) {
+                        getAwayDirection = -1;
+                    } else {
+                        getAwayDirection = 1;
+                    }
+                    selfBody.velocity = new Vector2(enemyInformation.speed * 1.7f * getAwayDirection, enemyInformation.speed * 1.7f);
+                    yield return null;
                 } else {
-                    getAwayDirection = 1;
+                    if(!alreadyLockedDown) {
+                        alreadyLockedDown = true;
+                        StartCoroutine(Lockdown(enemyInformation.lockdownFrames));
+                    }
                 }
-                selfBody.velocity = new Vector2(enemyInformation.speed * 1.7f * getAwayDirection, enemyInformation.speed * 1.7f);
-                yield return null;
             }
         }
         alreadyEntered = false;

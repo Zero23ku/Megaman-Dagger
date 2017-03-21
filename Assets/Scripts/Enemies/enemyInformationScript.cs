@@ -12,14 +12,16 @@ public class enemyInformationScript : MonoBehaviour {
 	public bool isShottingEnemy;
 	public float buffAttack;
     public bool isDead;
+    public bool isLockdown;
     public int boxColliderPosition;
+    public int lockdownFrames;
 
     private SpriteRenderer spriteRenderer;
     private Animator enemyAnimator;
-    
-    
 
 	void Start() {
+        isDead = false;
+        isLockdown = false;
         transform.parent = GameObject.Find("Enemies").transform;
         enemyAnimator = GetComponent<Animator>();
         buffAttack = 0;
@@ -27,6 +29,10 @@ public class enemyInformationScript : MonoBehaviour {
 		StartCoroutine(WaitForSpawn(60));
 		StartCoroutine(WaitFramesHighlight(60));
 	}
+
+    private void Update() {
+        Debug.Log(isLockdown);
+    }
 
     public void Die() {
         isDead = true;
@@ -42,7 +48,7 @@ public class enemyInformationScript : MonoBehaviour {
         Transform itemTransform;
         //if you get anything higher than 0.6 then enemy will drop something
         if(Random.Range(0.0f, 1.0f) > 0.6f) {
-            int item = Random.Range(0, 7);
+            int item = Random.Range(0, 8);
             itemTransform = Instantiate(items[item]) as Transform;
             itemTransform.position = transform.position;
         }

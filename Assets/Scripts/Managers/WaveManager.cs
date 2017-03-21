@@ -15,6 +15,7 @@ public class WaveManager : MonoBehaviour {
 
     public GameObject[] SpawnPoints;
     public GameObject[] Platforms;
+    public bool DEBUGMODE;
 
     private List<GameObject> SpawnAirList;
     private List<GameObject> SpawnLandList;
@@ -78,8 +79,10 @@ public class WaveManager : MonoBehaviour {
 
         setChanged = false;
 
+        if(DEBUGMODE) {
+            spawnNewSet(0);
+        }
         setCount = 0;
-        //-spawnNewSet(0);
         firstWaveSpawned = true;
     }
 
