@@ -8,17 +8,20 @@ public class EnemyTwoController : MonoBehaviour {
     public Transform bulletEnemyTwoPrefab;
 
     private enemyInformationScript enemyInformation;
+    private SpriteRenderer spriteRenderer;
 	private GameObject player;
     private Transform selfTransform;
 	private Rigidbody2D selfBody;
         
     private bool goingRight;
 	private int framesCounter;
+    private bool alreadyLockedDown;
 
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindWithTag("Player");
-		enemyInformation = GetComponent<enemyInformationScript> ();
+		enemyInformation = GetComponent<enemyInformationScript>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 		selfTransform = GetComponent<Transform>();
 		selfBody = GetComponent<Rigidbody2D>();
 
@@ -30,22 +33,45 @@ public class EnemyTwoController : MonoBehaviour {
 		}
 
 		framesCounter = waitFramesUntilAttack;
+        alreadyLockedDown = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if (!GameManager.isPaused && player && !enemyInformation.isDead) {
-			ChangeDirectionMovement();
-			Movement();
-			framesCounter--;
-			if (framesCounter < 0) {
-				Attack();
-				framesCounter = waitFramesUntilAttack;
-			}
-		}
+            if (!enemyInformation.isLockdown) { 
+			    ChangeDirectionMovement(); 
+			    Movement();
+			    framesCounter--;
+			    if (framesCounter < 0) {
+				    Attack();
+				    framesCounter = waitFramesUntilAttack;
+			    }
+            } else {
+                if (!alreadyLockedDown) {
+                    alreadyLockedDown = true;
+                    StartCoroutine(Lockdown(enemyInformation.lockdownFrames));
+                }
+            }
+        }
 	}
 
-	void Movement() {
+    private IEnumerator Lockdown(int frames) {
+        spriteRenderer.color = new Color(0, 0, 255);
+        selfBody.velocity = new Vector2(0f, 0f);
+        Debug.Log("!");
+        while(frames > 0) {
+            if(!GameManager.isPaused) {
+                frames--;
+                yield return null;
+            }
+        }
+        spriteRenderer.color = new Color(255, 255, 255);
+        alreadyLockedDown = false;
+        enemyInformation.isLockdown = false;
+    }
+
+    void Movement() {
 		if(!goingRight) {
 			selfBody.velocity = new Vector2(-enemyInformation.speed,selfBody.velocity.y);
 		}

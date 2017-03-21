@@ -59,3 +59,4 @@ MonoBehaviour:
   - {fileID: 1065209681943994, guid: 69fcd1fafc27b434dacf0ad71099bd00, type: 2}
   - {fileID: 1126418224598176, guid: df120cd532ba24949ad1773a1a9f2b8b, type: 2}
   - {fileID: 1272299622895160, guid: ffb195b6ff901944f8c603d705b9ebc7, type: 2}
+  DEBUGMODE: 1

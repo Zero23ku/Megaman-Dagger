@@ -11,6 +11,7 @@ public class ItemScript : MonoBehaviour {
     public bool isMoreBulletSpeedItem;
     public bool isMoreSpeedItem;
     public bool isClearAll;
+    public bool isLockdown;
 
     public int giveHealth;
     public bool isUsed;
