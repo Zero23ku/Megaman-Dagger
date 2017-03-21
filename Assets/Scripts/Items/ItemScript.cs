@@ -10,7 +10,7 @@ public class ItemScript : MonoBehaviour {
     public bool isMoreBulletsItem;
     public bool isMoreBulletSpeedItem;
     public bool isMoreSpeedItem;
-
+    public bool isClearAll;
 
     public int giveHealth;
     public bool isUsed;

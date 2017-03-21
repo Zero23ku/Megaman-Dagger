@@ -3,7 +3,6 @@ using System.Collections;
 
 
 public class EnemyOneController : MonoBehaviour {
-    public Transform[] items;
     public bool getAway;
 	public bool alreadyEntered;
 
@@ -12,7 +11,6 @@ public class EnemyOneController : MonoBehaviour {
 	private Transform playerTransform;
 	private Transform selfTransform;
 	private Rigidbody2D selfBody;
-    private Animator enemyAnimator;
 
 	private Vector3 playerPosition;
 	private Vector3 selfPosition;
@@ -21,12 +19,10 @@ public class EnemyOneController : MonoBehaviour {
 	private bool isLookingLeft;
 	private int getAwayDirection;
     private int framesBetweenMovement;
-    private bool isDead;
     
 	// Use this for initialization
 	void Start () {
 		enemyInformation = GetComponent<enemyInformationScript> ();
-        enemyAnimator = GetComponent<Animator>();
 		player = GameObject.FindWithTag("Player");
         if (player) {
             playerTransform = GameObject.FindWithTag("Player").transform;
@@ -43,15 +39,14 @@ public class EnemyOneController : MonoBehaviour {
 		else {
 			isLookingLeft = false;
 		}
-
-        isDead = false;
+        
         framesBetweenMovement = 20;
         StartCoroutine(Movement());
 	}
 
 	// Enemy Movement
 	IEnumerator Movement() {
-        while (!isDead) {
+        while (!enemyInformation.isDead) {
             if (!GameManager.isPaused) {
 		        if (player) {
                     if (framesBetweenMovement == 0) {
@@ -97,17 +92,8 @@ public class EnemyOneController : MonoBehaviour {
 	public void receiveDamage() {
 		enemyInformation.health--;
 		if (enemyInformation.health <= 0) {
-			dropItem();
-			Die();
+			enemyInformation.Die();
 		}
-	}
-
-	void Die() {
-        isDead = true;
-        GetComponentsInChildren<BoxCollider2D>()[1].enabled = false;
-        enemyAnimator.SetTrigger("tDead");
-        WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
-		Destroy(gameObject, 0.3f);
 	}
 
 	void Flip() {
@@ -116,15 +102,4 @@ public class EnemyOneController : MonoBehaviour {
 		scale.x *= -1;
 		selfTransform.localScale = scale;
 	}
-
-    void dropItem() {
-        Transform itemTransform;
-        //if you get anything higher than 0.6 then enemy will drop something
-        if (Random.Range(0.0f, 1.0f) > 0.6f) {
-            int item = Random.Range(0, 6);
-            itemTransform = Instantiate(items[item]) as Transform;
-            itemTransform.position = transform.position;
-        }
-
-    }
 }

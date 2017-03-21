@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class enemyMinerController : MonoBehaviour {
     public Transform pickaxeBulletPrefab;
-    public Transform[] items;
-
     private enemyInformationScript enemyInformation;
 	private int framesToAttack = 150;
 	private int frameCounter;
@@ -14,7 +12,6 @@ public class enemyMinerController : MonoBehaviour {
 	private Animator selfAnimator;
 	private Transform playerTransform;
 	private Vector3 selfScale;
-    private bool isDead;
 
 	// Use this for initialization
 	void Start () {
@@ -25,13 +22,11 @@ public class enemyMinerController : MonoBehaviour {
 		selfTransform = GetComponent<Transform>();
 		enemyInformation = GetComponent<enemyInformationScript>();
 		selfAnimator = GetComponent<Animator>();
-
-        isDead = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(!GameManager.isPaused && player && !isDead) {
+		if(!GameManager.isPaused && player && !enemyInformation.isDead) {
 			if (player) {
 				if (playerTransform.position.x < selfTransform.position.x && selfTransform.localScale.x < 0 && selfAnimator.GetBool("isVulnerable") == false) {
 					turnDirection();
@@ -61,18 +56,10 @@ public class enemyMinerController : MonoBehaviour {
 		if (selfAnimator.GetBool("isVulnerable") == true) {
 			enemyInformation.health--;
 			if (enemyInformation.health <= 0) {
-				dropItem();
-				Die();
+				
+				enemyInformation.Die();
 			}
 		}
-	}
-
-	void Die() {
-        isDead = true;
-        GetComponentsInChildren<BoxCollider2D>()[1].enabled = false;
-        selfAnimator.SetTrigger("tDead");
-        WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
-		Destroy(gameObject, 0.3f);
 	}
 
 	void turnDirection() { 
@@ -80,15 +67,4 @@ public class enemyMinerController : MonoBehaviour {
 		selfScale.x *= -1;
 		selfTransform.localScale = selfScale;
 	}
-    void dropItem() {
-        Transform itemTransform;
-        //if you get anything higher than 0.6 then enemy will drop something
-        if (Random.Range(0.0f, 1.0f) > 0.6f) {
-            int item = Random.Range(0, 6);
-            itemTransform = Instantiate(items[item]) as Transform;
-            itemTransform.position = transform.position;
-        }
-
-    }
-
 }
