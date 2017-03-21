@@ -53,7 +53,7 @@ public class WaveManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         currentSet = 0;
-        sets = new List<int>(new int[] {0, 1, 2});
+        sets = new List<int>(new int[] {0, 1, 2, 3, 4});
         currentDifficultLevel = 0;
         totalDifficultLevel = 4;
         currentSpawnIndex = 0;
@@ -79,7 +79,7 @@ public class WaveManager : MonoBehaviour {
         setChanged = false;
 
         setCount = 0;
-        spawnNewSet(0);
+        //-spawnNewSet(0);
         firstWaveSpawned = true;
     }
 
