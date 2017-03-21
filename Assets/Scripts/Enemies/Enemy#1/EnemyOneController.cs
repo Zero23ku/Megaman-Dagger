@@ -5,7 +5,10 @@ using System.Collections;
 public class EnemyOneController : MonoBehaviour {
 	public Transform healthItemPrefab;
 	public Transform invulnerabilityItemPrefab;
-	public bool getAway;
+    public Transform threeBulletsItemPrefab;
+    public Transform moreBulletsItemPrefab;
+
+    public bool getAway;
 	public bool alreadyEntered;
 
 	private enemyInformationScript enemyInformation;
@@ -110,20 +113,29 @@ public class EnemyOneController : MonoBehaviour {
 		selfTransform.localScale = scale;
 	}
 
-	void dropItem() {
-		Transform itemTransform;
-		// If you get anything higher than 0.6 then enemy will drop something
-		if (Random.Range(0.0f, 1.0f) > 0.6f ) {
-			// If you get anything higher than 0.85 then enemy will drop invulnerability item
-			// Otherwise it will drop health item
-			if (Random.Range(0.0f, 1.0f) > 0.85f) {
-				itemTransform = Instantiate(invulnerabilityItemPrefab) as Transform;
-			}
-			else {
-				itemTransform = Instantiate(healthItemPrefab) as Transform;
-			}
-			itemTransform.position = selfPosition;
-		}
-	
-	}
+    void dropItem() {
+        Transform itemTransform;
+        //if you get anything higher than 0.6 then enemy will drop something
+        if (Random.Range(0.0f, 1.0f) > 0.6f) {
+            int item = Random.Range(0, 4);
+            //Health item
+            if (item == 0){
+                itemTransform = Instantiate(healthItemPrefab) as Transform;
+            }
+            //Invulnerability item
+            else if (item == 1) {
+                itemTransform = Instantiate(invulnerabilityItemPrefab) as Transform;
+            }
+            //Three Bullets item
+            else if (item == 2) {
+                itemTransform = Instantiate(threeBulletsItemPrefab) as Transform;
+            }
+            //More Bullets item
+            else {
+                itemTransform = Instantiate(moreBulletsItemPrefab) as Transform;
+            }
+            itemTransform.position = transform.position;
+        }
+
+    }
 }

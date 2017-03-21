@@ -6,8 +6,10 @@ public class EnemyTwoController : MonoBehaviour {
 
 	public Transform healthItemPrefab;
 	public Transform invulnerabilityItemPrefab;
+    public Transform threeBulletsItemPrefab;
+    public Transform moreBulletsItemPrefab;
 
-	private enemyInformationScript enemyInformation;
+    private enemyInformationScript enemyInformation;
 	public int waitFramesUntilAttack = 60;
 	public AudioClip bulletSFX;
 	public Transform bulletEnemyTwoPrefab;
@@ -93,25 +95,29 @@ public class EnemyTwoController : MonoBehaviour {
 
 		SoundManager.instance.RandomizeSFX(bulletSFX);
 	}
-	void dropItem()
-	{
-		Transform itemTransform;
-		//if you get anything higher than 0.6 then enemy will drop something
-		if (Random.Range(0.0f, 1.0f) > 0.6f)
-		{
-			//if you get anything higher than 0.85 then enemy will drop invulnerability item
-			//otherwise it will drop health item
-			if (Random.Range(0.0f, 1.0f) > 0.85f)
-			{
-				itemTransform = Instantiate(invulnerabilityItemPrefab) as Transform;
-			}
-			else
-			{
-				itemTransform = Instantiate(healthItemPrefab) as Transform;
-			}
+    void dropItem() {
+        Transform itemTransform;
+        //if you get anything higher than 0.6 then enemy will drop something
+        if (Random.Range(0.0f, 1.0f) > 0.6f) {
+            int item = Random.Range(0, 4);
+            //Health item
+            if (item == 0){
+                itemTransform = Instantiate(healthItemPrefab) as Transform;
+            }
+            //Invulnerability item
+            else if (item == 1) {
+                itemTransform = Instantiate(invulnerabilityItemPrefab) as Transform;
+            }
+            //Three Bullets item
+            else if (item == 2) {
+                itemTransform = Instantiate(threeBulletsItemPrefab) as Transform;
+            }
+            //More Bullets item
+            else {
+                itemTransform = Instantiate(moreBulletsItemPrefab) as Transform;
+            }
+            itemTransform.position = transform.position;
+        }
 
-			itemTransform.position = transform.position;
-		}
-
-	}
+    }
 }
