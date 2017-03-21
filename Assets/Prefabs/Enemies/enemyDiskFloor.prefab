@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4208746675127034}
   - component: {fileID: 61179931093554370}
-  - component: {fileID: 114712089898174032}
   m_Layer: 14
   m_Name: enemyThreeHitBox
   m_TagString: enemyHitBox
@@ -58,6 +57,7 @@ GameObject:
   - component: {fileID: 114960102577282110}
   - component: {fileID: 114984441898760024}
   - component: {fileID: 61540271182340742}
+  - component: {fileID: 95057859409906276}
   m_Layer: 14
   m_Name: enemyDiskFloor
   m_TagString: Enemy
@@ -168,6 +168,23 @@ BoxCollider2D:
   m_Offset: {x: 2.1158085, y: 1.862212}
   serializedVersion: 2
   m_Size: {x: 0.37604523, y: 0.09155142}
+--- !u!95 &95057859409906276
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311810077964932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61fd13b1a68facf4f84a60409e453589, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114574123780022396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,17 +194,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cce4144bc2c169047bebc184613490fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114712089898174032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1033604162729130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8637ae0d12cb35943a5d100c3616c58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114960102577282110

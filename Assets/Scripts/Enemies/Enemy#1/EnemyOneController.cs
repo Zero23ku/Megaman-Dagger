@@ -20,6 +20,7 @@ public class EnemyOneController : MonoBehaviour {
 	private Transform playerTransform;
 	private Transform selfTransform;
 	private Rigidbody2D selfBody;
+    private Animator enemyAnimator;
 
 	private Vector3 playerPosition;
 	private Vector3 selfPosition;
@@ -28,10 +29,12 @@ public class EnemyOneController : MonoBehaviour {
 	private bool isLookingLeft;
 	private int getAwayDirection;
     private int framesBetweenMovement;
+    private bool isDead;
     
 	// Use this for initialization
 	void Start () {
 		enemyInformation = GetComponent<enemyInformationScript> ();
+        enemyAnimator = GetComponent<Animator>();
 		player = GameObject.FindWithTag("Player");
         if (player) {
             playerTransform = GameObject.FindWithTag("Player").transform;
@@ -46,14 +49,15 @@ public class EnemyOneController : MonoBehaviour {
 		else {
 			isLookingLeft = false;
 		}
-        
+
+        isDead = false;
         framesBetweenMovement = 20;
         StartCoroutine(Movement());
 	}
 
 	// Enemy Movement
 	IEnumerator Movement() {
-        while (true) {
+        while (!isDead) {
             if (!GameManager.isPaused) {
 		        if (player) {
                     if (framesBetweenMovement == 0) {
@@ -105,12 +109,14 @@ public class EnemyOneController : MonoBehaviour {
 	}
 
 	void Die() {
-		WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
-		Destroy(gameObject);
+        isDead = true;
+        GetComponentsInChildren<BoxCollider2D>()[1].enabled = false;
+        enemyAnimator.SetTrigger("tDead");
+        WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
+		Destroy(gameObject, 0.3f);
 	}
 
-	void Flip()
-	{
+	void Flip() {
 		isLookingLeft = !isLookingLeft;
 		Vector3 scale = selfTransform.localScale;
 		scale.x *= -1;
