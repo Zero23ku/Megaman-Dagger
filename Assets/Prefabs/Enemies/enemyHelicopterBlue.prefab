@@ -160,6 +160,8 @@ MonoBehaviour:
     type: 2}
   moreBulletsItemPrefab: {fileID: 4801381489246322, guid: 4683b5d2812af204da3f601a1cd2a2b5,
     type: 2}
+  moreBulletSpeedPrefab: {fileID: 4153875232278996, guid: da95524cbd87b3d47aec2c3fb6e5f2e0,
+    type: 2}
   getAway: 0
   alreadyEntered: 0
 --- !u!114 &114939741397573746
