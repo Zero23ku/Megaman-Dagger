@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50814471146081572}
   - component: {fileID: 114019342358963636}
   - component: {fileID: 114244671888685594}
+  - component: {fileID: 95904943953735986}
   m_Layer: 8
   m_Name: enemyFloatingShield
   m_TagString: Enemy
@@ -108,6 +109,23 @@ BoxCollider2D:
   m_Offset: {x: -0.00006866455, y: 0.0005747795}
   serializedVersion: 2
   m_Size: {x: 0.15305173, y: 0.15406291}
+--- !u!95 &95904943953735986
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178903781532922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 963ca85d5280fac419258b6bb3b6672b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114019342358963636
 MonoBehaviour:
   m_ObjectHideFlags: 1

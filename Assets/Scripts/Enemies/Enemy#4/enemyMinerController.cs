@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class enemyMinerController : MonoBehaviour {
-    /*public Transform healthItemPrefab;
-	public Transform invulnerabilityItemPrefab;
-    public Transform threeBulletsItemPrefab;
-    public Transform moreBulletsItemPrefab;
-    public Transform moreBulletSpeedPrefab;
-    */
     public Transform pickaxeBulletPrefab;
     public Transform[] items;
-
 
     private enemyInformationScript enemyInformation;
 	private int framesToAttack = 150;
@@ -21,8 +14,7 @@ public class enemyMinerController : MonoBehaviour {
 	private Animator selfAnimator;
 	private Transform playerTransform;
 	private Vector3 selfScale;
-    
-
+    private bool isDead;
 
 	// Use this for initialization
 	void Start () {
@@ -33,11 +25,13 @@ public class enemyMinerController : MonoBehaviour {
 		selfTransform = GetComponent<Transform>();
 		enemyInformation = GetComponent<enemyInformationScript>();
 		selfAnimator = GetComponent<Animator>();
+
+        isDead = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(!GameManager.isPaused && player) {
+		if(!GameManager.isPaused && player && !isDead) {
 			if (player) {
 				if (playerTransform.position.x < selfTransform.position.x && selfTransform.localScale.x < 0 && selfAnimator.GetBool("isVulnerable") == false) {
 					turnDirection();
@@ -60,7 +54,6 @@ public class enemyMinerController : MonoBehaviour {
 		GameObject pickaxe = Instantiate(pickaxeBulletPrefab).gameObject;
 		pickaxe.GetComponent<pickaxeController>().bulletSpeed += enemyInformation.buffAttack;
 		pickaxe.transform.position = new Vector3(selfTransform.position.x, selfTransform.position.y, selfTransform.position.z);
-		//SoundManager.instance.RandomizeSFX(bulletSFX);
 	}
 
 
@@ -75,8 +68,11 @@ public class enemyMinerController : MonoBehaviour {
 	}
 
 	void Die() {
-		WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
-		Destroy(gameObject);
+        isDead = true;
+        GetComponentsInChildren<BoxCollider2D>()[1].enabled = false;
+        selfAnimator.SetTrigger("tDead");
+        WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
+		Destroy(gameObject, 0.3f);
 	}
 
 	void turnDirection() { 
@@ -89,29 +85,7 @@ public class enemyMinerController : MonoBehaviour {
         //if you get anything higher than 0.6 then enemy will drop something
         if (Random.Range(0.0f, 1.0f) > 0.6f) {
             int item = Random.Range(0, 6);
-            //Health item
-            if (item == 0) {
-                itemTransform = Instantiate(items[item]) as Transform;
-            }
-            //Invulnerability item
-            else if (item == 1) {
-                itemTransform = Instantiate(items[item]) as Transform;
-            }
-            //Three Bullets item
-            else if (item == 2) {
-                itemTransform = Instantiate(items[item]) as Transform;
-            }
-            //More bullet Speed
-            else if (item == 3) {
-                itemTransform = Instantiate(items[item]) as Transform;
-            }
-            //More Bullets item
-            else if (item == 4) {
-                itemTransform = Instantiate(items[item]) as Transform;
-            //More Speed Item
-            } else {
-                itemTransform = Instantiate(items[item]) as Transform;
-            }
+            itemTransform = Instantiate(items[item]) as Transform;
             itemTransform.position = transform.position;
         }
 
