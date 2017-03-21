@@ -241,7 +241,7 @@ public class WaveManager : MonoBehaviour {
     private void spawnNewSet(int index) {
         GameObject spawnPoint = Instantiate(SpawnPoints[index]);
         spawnPoint.transform.parent = GameObject.Find("Spawn points").transform;
-        spawnPoint.transform.localPosition = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0f);
+        spawnPoint.transform.localPosition = new Vector3(spawnPoint.transform.localPosition.x, spawnPoint.transform.localPosition.y, 0f);
 
         GameObject platforms = Instantiate(Platforms[index]);
         platforms.transform.parent = GameObject.Find("Platforms").transform;
