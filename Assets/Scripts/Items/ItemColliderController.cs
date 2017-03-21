@@ -6,10 +6,16 @@ public class ItemColliderController : MonoBehaviour {
 
 	private ItemScript itemScript;
 	private MegamanController megamanController;
+    private GameObject megamanObject;
 
 	void Start() {
 		itemScript = GetComponentInParent<ItemScript>();
-		megamanController = GameObject.FindWithTag("Player").GetComponent<MegamanController>();
+        megamanObject = GameObject.FindWithTag("Player");
+
+        if (megamanObject) {
+            megamanController = megamanObject.GetComponent<MegamanController>();
+        }
+        //megamanController = GameObject.FindWithTag("Player").GetComponent<MegamanController>();
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
