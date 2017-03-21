@@ -22,7 +22,7 @@ public class MegamanBullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print("X: " + bulletSpeed + " Y:" + bulletSpeedY);
+        //print("X: " + bulletSpeed + " Y:" + bulletSpeedY);
         //bulletBody.velocity = new Vector2(bulletSpeed, bulletBody.velocity.y);
         //print(bulletBody.velocity);
         if (direction == 's') {
@@ -68,7 +68,7 @@ public class MegamanBullet : MonoBehaviour {
 	}
 
     public void fasterBullets(float adSpeed) {
-        print("pase");
+        //print("pase");
         if(bulletSpeed > 0)
             bulletSpeed += adSpeed;
         else
