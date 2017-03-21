@@ -169,6 +169,10 @@ MonoBehaviour:
     type: 2}
   invulnerabilityItemPrefab: {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07,
     type: 2}
+  threeBulletsItemPrefab: {fileID: 4801381489246322, guid: 4683b5d2812af204da3f601a1cd2a2b5,
+    type: 2}
+  moreBulletsItemPrefab: {fileID: 4952525733359592, guid: 520da7f89d501c742b6377114dbb6ad9,
+    type: 2}
 --- !u!114 &114703805800276356
 MonoBehaviour:
   m_ObjectHideFlags: 1

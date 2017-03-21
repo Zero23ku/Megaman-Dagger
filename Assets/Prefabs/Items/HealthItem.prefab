@@ -133,7 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952142cbd2cf4234ea1d77b2712ab6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  giveInvulnerability: 0
+  isInvulnerabilityItem: 0
+  isHealthItem: 1
+  isThreeBulletsItem: 0
+  isMoreBulletsItem: 0
   giveHealth: 2
   isUsed: 0
 --- !u!114 &114864736039944026
