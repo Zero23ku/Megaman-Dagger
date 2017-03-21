@@ -12,20 +12,27 @@ public class enemyDiskFloorController : MonoBehaviour {
 
     private enemyInformationScript enemyInformation;
 	private Rigidbody2D selfBody;
+    private Animator enemyAnimator;
+    private bool isDead;
 
 	// Use this for initialization
 	void Start () {
 		selfBody = GetComponent<Rigidbody2D>();
 		enemyInformation = GetComponent<enemyInformationScript>();
+        enemyAnimator = GetComponent<Animator>();
+
+        isDead = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		Movement();
 	}
-		
-	void Movement() {
-		selfBody.velocity = new Vector2(enemyInformation.speed, selfBody.velocity.y);
+
+    void Movement() {
+        if(!isDead) {
+            selfBody.velocity = new Vector2(enemyInformation.speed, selfBody.velocity.y);
+        }
 	}
 
 	public void receiveDamage() {
@@ -37,8 +44,11 @@ public class enemyDiskFloorController : MonoBehaviour {
 	}
 
 	void Die() {
-		WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
-		Destroy(gameObject);
+        isDead = true;
+        GetComponentsInChildren<BoxCollider2D>()[2].enabled = false;
+        enemyAnimator.SetTrigger("tDead");
+        WaveManager.timeBetweenWaves += enemyInformation.bonusTimeInFrames;
+		Destroy(gameObject, 0.3f);
 	}
     void dropItem() {
         Transform itemTransform;

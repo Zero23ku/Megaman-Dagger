@@ -16,7 +16,6 @@ public class enemyThreeTriggerBoxScript : MonoBehaviour {
 	
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
-
 		if (otherCollider.tag == "edgeBox") {
 			enemyInformation.speed *= -1;
 		}
@@ -24,7 +23,6 @@ public class enemyThreeTriggerBoxScript : MonoBehaviour {
 		if (otherCollider.tag == "MegamanBullet") {
 			enemyDiskFloorController.receiveDamage();
 		}
-
 	}
 
 }
