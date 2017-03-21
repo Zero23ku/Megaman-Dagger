@@ -123,6 +123,12 @@ MonoBehaviour:
     type: 2}
   invulnerabilityItemPrefab: {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07,
     type: 2}
+  threeBulletsItemPrefab: {fileID: 4801381489246322, guid: 4683b5d2812af204da3f601a1cd2a2b5,
+    type: 2}
+  moreBulletsItemPrefab: {fileID: 4952525733359592, guid: 520da7f89d501c742b6377114dbb6ad9,
+    type: 2}
+  moreBulletSpeedPrefab: {fileID: 4153875232278996, guid: da95524cbd87b3d47aec2c3fb6e5f2e0,
+    type: 2}
   waitFramesUntilAttack: 300
   bulletSFX: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
   bulletEnemyTwoPrefab: {fileID: 4564477716868756, guid: b028dc29dc394c34c83c1dbdf0daaadf,

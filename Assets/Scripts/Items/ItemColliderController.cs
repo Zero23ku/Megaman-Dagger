@@ -14,13 +14,22 @@ public class ItemColliderController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 		if (otherCollider.tag == "playerHitBox") {
-			if (itemScript.giveInvulnerability) {
+            if (itemScript.isInvulnerabilityItem) {
                 megamanController.becomeInvulnerable();
 
             }
-			else { 
-				megamanController.getHealth(itemScript.giveHealth);
-			}
+            else if (itemScript.isHealthItem) {
+                megamanController.getHealth(itemScript.giveHealth);
+            }
+            else if (itemScript.isThreeBulletsItem) {
+                megamanController.threeBullets();
+            }
+            else if (itemScript.isMoreBulletsItem) {
+                megamanController.moreBullets();
+            }
+            else if (itemScript.isMoreBulletSpeedItem) {
+                megamanController.moreBulletSpeed();
+            }
 			itemScript.isUsed = true;
 		}
 	}

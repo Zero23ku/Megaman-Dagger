@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour {
 
-	public bool giveInvulnerability;
-	public int giveHealth;
+	public bool isInvulnerabilityItem;
+    public bool isHealthItem;
+    public bool isThreeBulletsItem;
+    public bool isMoreBulletsItem;
+    public bool isMoreBulletSpeedItem;
 
-	public bool isUsed;
+
+    public int giveHealth;
+    public bool isUsed;
 	private bool timePassed;
 	private SpriteRenderer selfRenderer;
 
