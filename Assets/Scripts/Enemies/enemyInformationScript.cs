@@ -3,25 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class enemyInformationScript : MonoBehaviour {
-	public int health;
+    public Transform[] items;
+    public int health;
 	public float speed;
 	public int difficultLevel;
 	public int bonusTimeInFrames;
 	public Transform respawnPoint;
 	public bool isShottingEnemy;
 	public float buffAttack;
+    public bool isDead;
+    public int boxColliderPosition;
 
-	private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
+    private Animator enemyAnimator;
+    
+    
 
 	void Start() {
         transform.parent = GameObject.Find("Enemies").transform;
+        enemyAnimator = GetComponent<Animator>();
         buffAttack = 0;
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		StartCoroutine(WaitForSpawn(60));
 		StartCoroutine(WaitFramesHighlight(60));
 	}
 
-	private IEnumerator WaitForSpawn(int frames) {
+    public void Die() {
+        isDead = true;
+        dropItem();
+
+        GetComponentsInChildren<BoxCollider2D>() [boxColliderPosition].enabled = false;
+        enemyAnimator.SetTrigger("tDead");
+        WaveManager.timeBetweenWaves += bonusTimeInFrames;
+        Destroy(gameObject, 0.3f);
+    }
+    
+    private void dropItem() {
+        Transform itemTransform;
+        //if you get anything higher than 0.6 then enemy will drop something
+        if(Random.Range(0.0f, 1.0f) > 0.6f) {
+            int item = Random.Range(0, 7);
+            itemTransform = Instantiate(items[item]) as Transform;
+            itemTransform.position = transform.position;
+        }
+
+    }
+    private IEnumerator WaitForSpawn(int frames) {
 		List<BoxCollider2D> boxColliders = new List<BoxCollider2D>(GetComponentsInChildren<BoxCollider2D>());
 		foreach (BoxCollider2D boxCollider in boxColliders) {
 			if (boxCollider.tag == "enemyHitBox")

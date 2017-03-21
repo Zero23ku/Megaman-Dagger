@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4208746675127034}
   - component: {fileID: 61179931093554370}
-  - component: {fileID: 114712089898174032}
   m_Layer: 14
   m_Name: enemyThreeHitBox
   m_TagString: enemyHitBox
@@ -58,6 +57,7 @@ GameObject:
   - component: {fileID: 114960102577282110}
   - component: {fileID: 114984441898760024}
   - component: {fileID: 61540271182340742}
+  - component: {fileID: 95057859409906276}
   m_Layer: 14
   m_Name: enemyDiskFloor
   m_TagString: Enemy
@@ -168,6 +168,23 @@ BoxCollider2D:
   m_Offset: {x: 2.1158085, y: 1.862212}
   serializedVersion: 2
   m_Size: {x: 0.37604523, y: 0.09155142}
+--- !u!95 &95057859409906276
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311810077964932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61fd13b1a68facf4f84a60409e453589, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114574123780022396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,17 +194,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cce4144bc2c169047bebc184613490fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114712089898174032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1033604162729130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8637ae0d12cb35943a5d100c3616c58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114960102577282110
@@ -201,13 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20ee927cdd7cf346b97ba9e0da78460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 4029930431969174, guid: e196400224ec7d2469117912b8418561, type: 2}
-  - {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07, type: 2}
-  - {fileID: 4801381489246322, guid: 4683b5d2812af204da3f601a1cd2a2b5, type: 2}
-  - {fileID: 4952525733359592, guid: 520da7f89d501c742b6377114dbb6ad9, type: 2}
-  - {fileID: 4292943875156610, guid: b2d47283c11c9fb478ba33052fa27424, type: 2}
-  - {fileID: 4846426601437796, guid: e5f772b5f676ff84aad66e88a1e482b9, type: 2}
 --- !u!114 &114984441898760024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,6 +218,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbc2d8b4762c104a83ad7a2d6f22220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items:
+  - {fileID: 4292943875156610, guid: b2d47283c11c9fb478ba33052fa27424, type: 2}
+  - {fileID: 4009273305703722, guid: caeaae73a7cfbd34791130d2ddeb5640, type: 2}
+  - {fileID: 4029930431969174, guid: e196400224ec7d2469117912b8418561, type: 2}
+  - {fileID: 4157719675538574, guid: bca3ee7cd6d3a6f4988cf59ab7840a07, type: 2}
+  - {fileID: 4952525733359592, guid: 520da7f89d501c742b6377114dbb6ad9, type: 2}
+  - {fileID: 4846426601437796, guid: e5f772b5f676ff84aad66e88a1e482b9, type: 2}
+  - {fileID: 4801381489246322, guid: 4683b5d2812af204da3f601a1cd2a2b5, type: 2}
   health: 1
   speed: 3
   difficultLevel: 2
@@ -226,6 +233,8 @@ MonoBehaviour:
   respawnPoint: {fileID: 0}
   isShottingEnemy: 0
   buffAttack: 0
+  isDead: 0
+  boxColliderPosition: 2
 --- !u!212 &212373352225648882
 SpriteRenderer:
   m_ObjectHideFlags: 1

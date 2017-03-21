@@ -20,23 +20,25 @@ public class ItemColliderController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 		if (otherCollider.tag == "playerHitBox") {
-            if (itemScript.isInvulnerabilityItem) {
+            if(itemScript.isInvulnerabilityItem) {
                 megamanController.becomeInvulnerable();
-            }
-            else if (itemScript.isHealthItem) {
+            } else if(itemScript.isHealthItem) {
                 megamanController.getHealth(itemScript.giveHealth);
-            }
-            else if (itemScript.isThreeBulletsItem) {
+            } else if(itemScript.isThreeBulletsItem) {
                 megamanController.threeBullets();
-            }
-            else if (itemScript.isMoreBulletsItem) {
+            } else if(itemScript.isMoreBulletsItem) {
                 megamanController.moreBullets();
-            }
-            else if (itemScript.isMoreBulletSpeedItem) {
+            } else if(itemScript.isMoreBulletSpeedItem) {
                 megamanController.moreBulletSpeed();
-            }
-            else if (itemScript.isMoreSpeedItem) {
+            } else if(itemScript.isMoreSpeedItem) {
                 megamanController.moreSpeed();
+            } else if(itemScript.isClearAll) {
+                foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
+                    enemy.GetComponent<enemyInformationScript>().Die();
+                }
+                foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("enemyMiner")) {
+                    enemy.GetComponent<enemyInformationScript>().Die();
+                }
             }
 			itemScript.isUsed = true;
 		}
