@@ -6,18 +6,23 @@ public class MegamanBullet : MonoBehaviour {
 	public float damage;
     public char direction;
 
-	private float bulletSpeed = 9.5f;
-	private float spriteWidthDelta;
+    private float bulletSpeed = 9.5f;
+    private float bulletSpeedY = 9.5f;
+
+    private float spriteWidthDelta;
 	private Rigidbody2D bulletBody;
+    
 
 	// Use this for initialization
 	void Start () {
 		bulletBody = GetComponent<Rigidbody2D>();
 		spriteWidthDelta = GetComponent<SpriteRenderer>().bounds.size.x / 2;
-	}
+
+}
 	
 	// Update is called once per frame
 	void Update () {
+        print("X: " + bulletSpeed + " Y:" + bulletSpeedY);
         //bulletBody.velocity = new Vector2(bulletSpeed, bulletBody.velocity.y);
         //print(bulletBody.velocity);
         if (direction == 's') {
@@ -25,10 +30,10 @@ public class MegamanBullet : MonoBehaviour {
             bulletBody.constraints = RigidbodyConstraints2D.FreezePositionY;
         }
         else if (direction == 'u') {
-            bulletBody.velocity = new Vector2(bulletSpeed, 9.5f);
+            bulletBody.velocity = new Vector2(bulletSpeed, bulletSpeedY);
         }
         else if (direction == 'd') {
-            bulletBody.velocity = new Vector2(bulletSpeed, -9.5f);
+            bulletBody.velocity = new Vector2(bulletSpeed, -bulletSpeedY);
         }
 
 
@@ -61,4 +66,17 @@ public class MegamanBullet : MonoBehaviour {
 		if (otherCollider.tag == "enemyHitBox")
 			Destroy(gameObject);
 	}
+
+    public void fasterBullets(float adSpeed) {
+        print("pase");
+        if(bulletSpeed > 0)
+            bulletSpeed += adSpeed;
+        else
+            bulletSpeed -= adSpeed;
+
+        if(bulletSpeedY > 0)
+            bulletSpeedY += adSpeed;
+        else
+            bulletSpeedY -= adSpeed;
+    }
 }
