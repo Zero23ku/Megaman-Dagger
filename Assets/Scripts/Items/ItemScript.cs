@@ -23,6 +23,9 @@ public class ItemScript : MonoBehaviour {
 		isUsed = false;
 		StartCoroutine(waitForFrames(300));
 		selfRenderer= GetComponent<SpriteRenderer>();
+        /*print(gameObject.tag);
+        gameObject.tag = "SpawnAir";
+        print(gameObject.tag);*/
 	}
 	
 	// Update is called once per frame
