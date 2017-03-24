@@ -9,6 +9,8 @@ public class EnemyTwoBulletScript : MonoBehaviour {
 
 	private float spriteWithDelta;
 	private float spriteHeightDelta;
+    private Rigidbody2D selfBody2D;
+    private GameObject player;
 	private Transform playerTransform;
 	private Vector3 playerPosition;
 	private Vector3 direction;
@@ -17,15 +19,19 @@ public class EnemyTwoBulletScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+        selfBody2D = GetComponent<Rigidbody2D>();
         spriteWithDelta = GetComponentInParent<SpriteRenderer>().bounds.size.x / 2;
 		spriteHeightDelta = GetComponentInParent<SpriteRenderer>().bounds.size.y / 2;
-		playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        playerPosition = playerTransform.position;
-        direction = (playerPosition - transform.position).normalized;
-	}
+        player = GameObject.FindWithTag("Player");
+        if(player) {
+            playerPosition = player.GetComponent<Transform>().position;
+            direction = (playerPosition - transform.position);
+        }
+        selfBody2D.velocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;
+    }
 	// Update is called once per frame
 	void Update () {
-        transform.position += direction * bulletSpeed * Time.deltaTime;
+        //transform.position += direction * bulletSpeed * Time.deltaTime;
 		DestroyBulletOutsideCamera();
 	}
 
