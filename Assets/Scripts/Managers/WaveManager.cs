@@ -54,7 +54,7 @@ public class WaveManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         currentSet = 0;
-        sets = new List<int>(new int[] {0, 1, 2});
+        sets = new List<int>(new int[] {0, 1, 2, 3, 4});
         currentDifficultLevel = 0;
         totalDifficultLevel = 4;
         currentSpawnIndex = 0;
@@ -244,7 +244,7 @@ public class WaveManager : MonoBehaviour {
     private void spawnNewSet(int index) {
         GameObject spawnPoint = Instantiate(SpawnPoints[index]);
         spawnPoint.transform.parent = GameObject.Find("Spawn points").transform;
-        spawnPoint.transform.localPosition = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0f);
+        spawnPoint.transform.localPosition = new Vector3(spawnPoint.transform.localPosition.x, spawnPoint.transform.localPosition.y, 0f);
 
         GameObject platforms = Instantiate(Platforms[index]);
         platforms.transform.parent = GameObject.Find("Platforms").transform;
