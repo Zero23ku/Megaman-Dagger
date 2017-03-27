@@ -13,6 +13,8 @@ public class WaveManager : MonoBehaviour {
     public static int currentSet;
     public static bool firstWaveSpawned;
     public static bool isTutorialActivated;
+    public static bool firstTutorial;
+    public static bool secondTutorial;
 
     public GameObject[] SpawnPoints;
     public GameObject[] Platforms;
@@ -41,8 +43,7 @@ public class WaveManager : MonoBehaviour {
     private int originalSpawnRate;
     private int spawnRate;
     private bool setChanged;
-    private bool firstTutorial;
-    private bool secondTutorial;
+
     private List<int> sets;
 
     void Awake() {
