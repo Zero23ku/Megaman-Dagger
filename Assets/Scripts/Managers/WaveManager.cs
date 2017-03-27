@@ -278,7 +278,7 @@ public class WaveManager : MonoBehaviour {
         previousSet = currentSet;
         sets.Remove(currentSet);
         newCurrentSet = sets[Random.Range(0, sets.Count)];
-        Debug.Log("new set: " + newCurrentSet);
+        //Debug.Log("new set: " + newCurrentSet);
 
         // We destroy the current set from the scene
         if (player) {

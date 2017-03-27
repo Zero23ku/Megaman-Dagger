@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class pickaxeController : MonoBehaviour {
 	public int bulletDamage;
-	public float bulletSpeed = 10f;
+	public float bulletSpeed;
 
+    private Rigidbody2D selfbody2D;
 	private float spriteWithDelta;
 	private float spriteHeightDelta;
 	private GameObject player;
@@ -15,20 +16,20 @@ public class pickaxeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        selfbody2D = GetComponent<Rigidbody2D>();
 		spriteWithDelta = GetComponent<SpriteRenderer>().bounds.size.x / 2;
 		spriteHeightDelta = GetComponent<SpriteRenderer>().bounds.size.y / 2;
 		selfTransform = GetComponent<Transform>();
 		player = GameObject.FindWithTag("Player");
 		if (player) {
 			playerPosition = player.GetComponent<Transform>().position;
-			direction = (playerPosition - selfTransform.position).normalized;
-		}
-	}
+			direction = (playerPosition - selfTransform.position);
+        }
+        selfbody2D.velocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		selfTransform.position += direction * bulletSpeed * Time.deltaTime;
-
 		DestroyBulletOutsideCamera();
 	}
 

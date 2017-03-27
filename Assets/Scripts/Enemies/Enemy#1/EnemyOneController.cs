@@ -87,7 +87,7 @@ public class EnemyOneController : MonoBehaviour {
     }
 
     private IEnumerator Lockdown(int frames) {
-        gameObject.tag = "Default";
+        gameObject.layer = 0;
         spriteRenderer.color = new Color(0, 0, 255);
 
         while(frames > 0) {
@@ -97,7 +97,7 @@ public class EnemyOneController : MonoBehaviour {
             }
         }
 
-        gameObject.tag = "Enemy";
+        gameObject.layer = 8;
         spriteRenderer.color = new Color(255, 255, 255);
         alreadyLockedDown = false;
         enemyInformation.isLockdown = false;
