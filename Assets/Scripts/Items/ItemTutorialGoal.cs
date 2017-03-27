@@ -12,8 +12,9 @@ public class ItemTutorialGoal : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D otherCollider) {
         if(otherCollider.tag == "playerHitBox") {
+            //print("pase");
             WaveManager.firstTutorial = false;
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

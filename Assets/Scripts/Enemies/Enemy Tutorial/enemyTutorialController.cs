@@ -26,7 +26,7 @@ public class enemyTutorialController : MonoBehaviour {
             selfSpriteRenderer.color = new Color(255f, 0f, 0f);
             enemyInformation.speed += 3.0f;
         }
-        waitUntilMove = 120;
+        waitUntilMove = 60;
 	}
 	
 	// Update is called once per frame
@@ -50,6 +50,7 @@ public class enemyTutorialController : MonoBehaviour {
     public void receiveDamage() {
         enemyInformation.health--;
         if (enemyInformation.health <= 0) {
+            WaveManager.enemiesCount--;
             enemyInformation.Die();
         }
     }

@@ -137,8 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbc2d8b4762c104a83ad7a2d6f22220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 4029930431969174, guid: e196400224ec7d2469117912b8418561, type: 2}
+  items: []
   health: 0
   speed: 2
   difficultLevel: 0
@@ -148,6 +147,7 @@ MonoBehaviour:
   buffAttack: 0
   isDead: 0
   boxColliderPosition: 0
+  enemyTutorial: 1
 --- !u!114 &114546564518882386
 MonoBehaviour:
   m_ObjectHideFlags: 1
