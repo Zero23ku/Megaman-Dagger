@@ -20,7 +20,11 @@ public class WaveManager : MonoBehaviour {
 
     public GameObject[] SpawnPoints;
     public GameObject[] Platforms;
+<<<<<<< HEAD
     public GameObject[] TutorialLevels;
+=======
+    public bool DEBUGMODE;
+>>>>>>> refs/remotes/origin/master
 
     private List<GameObject> SpawnAirList;
     private List<GameObject> SpawnLandList;
@@ -90,8 +94,14 @@ public class WaveManager : MonoBehaviour {
 
         setChanged = false;
 
+        if(DEBUGMODE) {
+            spawnNewSet(0);
+        }
         setCount = 0;
+<<<<<<< HEAD
         
+=======
+>>>>>>> refs/remotes/origin/master
         firstWaveSpawned = true;
         if (isTutorialActivated) {
             firstTutorial = true;

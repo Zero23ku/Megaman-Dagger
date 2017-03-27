@@ -39,6 +39,13 @@ public class ItemColliderController : MonoBehaviour {
                 foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("enemyMiner")) {
                     enemy.GetComponent<enemyInformationScript>().Die();
                 }
+            } else if(itemScript.isLockdown) {
+                foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
+                    enemy.GetComponent<enemyInformationScript>().isLockdown = true;
+                }
+                foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("enemyMiner")) {
+                    enemy.GetComponent<enemyInformationScript>().isLockdown = true;
+                }
             }
 			itemScript.isUsed = true;
 		}
