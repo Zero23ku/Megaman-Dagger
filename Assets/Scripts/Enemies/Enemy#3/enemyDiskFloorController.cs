@@ -14,7 +14,10 @@ public class enemyDiskFloorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Movement();
+        if (GameManager.isPaused) {
+            Movement();
+        }
+		
 	}
 
     void Movement() {

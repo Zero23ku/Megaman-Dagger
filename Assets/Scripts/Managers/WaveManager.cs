@@ -12,6 +12,7 @@ public class WaveManager : MonoBehaviour {
     public static int timeBetweenWaves;
     public static int currentSet;
     public static bool firstWaveSpawned;
+
     public static bool isTutorialActivated;
     public static bool firstTutorial;
     public static bool secondTutorial;
@@ -23,6 +24,9 @@ public class WaveManager : MonoBehaviour {
     private List<GameObject> SpawnAirList;
     private List<GameObject> SpawnLandList;
     private List<GameObject> currentSpawnLandList;
+
+    private bool firstTutorialspawned;
+    private bool secondTutorialspawned;
 
     private GameObject player;
     private SpawnScript currentSpawnScript;
@@ -89,6 +93,8 @@ public class WaveManager : MonoBehaviour {
         if (isTutorialActivated) {
             firstTutorial = true;
             secondTutorial = true;
+            firstTutorialspawned = false;
+            secondTutorialspawned = false;
         }
     }
 
@@ -99,9 +105,15 @@ public class WaveManager : MonoBehaviour {
         if(currentSceneName == "Scene 1" && player) {
             if (isTutorialActivated) {
                 if (firstTutorial) {
-
+                    if (!firstTutorialspawned) {
+                        //do things//
+                        firstTutorialspawned = true;
+                    }
                 } else {
-
+                    if (!secondTutorialspawned) {
+                        //do things//
+                        secondTutorialspawned = true;
+                    }
 
                 }
                 if(!firstTutorial && !secondTutorial) {
