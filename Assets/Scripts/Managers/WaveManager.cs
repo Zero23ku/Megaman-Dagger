@@ -12,9 +12,12 @@ public class WaveManager : MonoBehaviour {
     public static int timeBetweenWaves;
     public static int currentSet;
     public static bool firstWaveSpawned;
+    public static bool isTutorialActivated;
 
     public GameObject[] SpawnPoints;
     public GameObject[] Platforms;
+
+    public GameObject[] TutorialLevels;
 
     private List<GameObject> SpawnAirList;
     private List<GameObject> SpawnLandList;
@@ -88,15 +91,19 @@ public class WaveManager : MonoBehaviour {
         string currentSceneName = SceneManager.GetActiveScene().name;
         player = GameObject.FindWithTag("Player");
         if(currentSceneName == "Scene 1" && player) {
-            if(!firstWaveSpawned) {
-                spawnNewSet(0);
-                firstWaveSpawned = true;
-            }
-            // If there's no enemy on the screen
-            if(isWaveSpawnable && !currentlyAssigning) {
-                currentlyAssigning = true;
-                isWaveSpawnable = false;
-                StartCoroutine(AssignNewWave());
+            if (isTutorialActivated) {
+
+            } else {
+                if (!firstWaveSpawned) {
+                    spawnNewSet(0);
+                    firstWaveSpawned = true;
+                }
+                // If there's no enemy on the screen
+                if (isWaveSpawnable && !currentlyAssigning) {
+                    currentlyAssigning = true;
+                    isWaveSpawnable = false;
+                    StartCoroutine(AssignNewWave());
+                }
             }
         }
     }
