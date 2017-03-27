@@ -299,8 +299,8 @@ public class WaveManager : MonoBehaviour {
 
     private void SpawnNewTutorialSet(int index) {
         GameObject tutorialLevel = Instantiate(TutorialLevels[index]);
-        /*tutorialLevel.transform.parent = GameObject.Find("Platforms").transform;
-        tutorialLevel.transform.localPosition = new Vector3(tutorialLevel.transform.position.x, tutorialLevel.transform.position.y, 0f);*/
+        tutorialLevel.transform.parent = GameObject.Find("Platforms").transform;
+        tutorialLevel.transform.localPosition = new Vector3(tutorialLevel.transform.position.x, tutorialLevel.transform.position.y, 0f);
     }
 
     private IEnumerator ChangeTutorialSet() {
