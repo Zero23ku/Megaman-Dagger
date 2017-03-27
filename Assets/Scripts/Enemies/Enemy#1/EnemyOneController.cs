@@ -88,7 +88,6 @@ public class EnemyOneController : MonoBehaviour {
 
     private IEnumerator Lockdown(int frames) {
         gameObject.layer = 0;
-        Debug.Log(gameObject.tag);
         spriteRenderer.color = new Color(0, 0, 255);
 
         while(frames > 0) {
