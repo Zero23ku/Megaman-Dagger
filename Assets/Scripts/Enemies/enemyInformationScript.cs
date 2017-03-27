@@ -14,12 +14,8 @@ public class enemyInformationScript : MonoBehaviour {
     public bool isDead;
     public bool isLockdown;
     public int boxColliderPosition;
-<<<<<<< HEAD
     public bool enemyTutorial;
-=======
     public int lockdownFrames;
->>>>>>> refs/remotes/origin/master
-
     private SpriteRenderer spriteRenderer;
     private Animator enemyAnimator;
 

@@ -20,10 +20,6 @@ public class enemyDiskFloorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-<<<<<<< HEAD
-        if (!GameManager.isPaused) {
-            Movement();
-=======
         if(!enemyInformation.isLockdown) {
             Movement();
         } else {
@@ -31,7 +27,6 @@ public class enemyDiskFloorController : MonoBehaviour {
                 alreadyLockedDown = true;
                 StartCoroutine(Lockdown(enemyInformation.lockdownFrames));
             }
->>>>>>> refs/remotes/origin/master
         }
 	}
 
