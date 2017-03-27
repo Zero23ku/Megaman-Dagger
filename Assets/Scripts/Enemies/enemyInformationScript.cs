@@ -30,10 +30,6 @@ public class enemyInformationScript : MonoBehaviour {
 		StartCoroutine(WaitFramesHighlight(60));
 	}
 
-    private void Update() {
-        Debug.Log(isLockdown);
-    }
-
     public void Die() {
         isDead = true;
         dropItem();
