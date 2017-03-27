@@ -67,3 +67,6 @@ MonoBehaviour:
   - {fileID: 1478670982950386, guid: 00927b71d95eea142809cc77fb866ae1, type: 2}
   - {fileID: 1325184968016288, guid: 82dd96b18e7d50045a51cc79da7b3355, type: 2}
   - {fileID: 1813897789646482, guid: 77fff888da13d8c4cb93048d9d7491ff, type: 2}
+  TutorialLevels:
+  - {fileID: 1157987004848408, guid: 15f1485cef006c648802f02dca86ad44, type: 2}
+  - {fileID: 1905246919378968, guid: c0715f572a7f2b2408cc606dd34700d3, type: 2}

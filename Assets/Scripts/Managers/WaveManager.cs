@@ -16,7 +16,6 @@ public class WaveManager : MonoBehaviour {
 
     public GameObject[] SpawnPoints;
     public GameObject[] Platforms;
-
     public GameObject[] TutorialLevels;
 
     private List<GameObject> SpawnAirList;
@@ -42,6 +41,8 @@ public class WaveManager : MonoBehaviour {
     private int originalSpawnRate;
     private int spawnRate;
     private bool setChanged;
+    private bool firstTutorial;
+    private bool secondTutorial;
     private List<int> sets;
 
     void Awake() {
@@ -84,6 +85,10 @@ public class WaveManager : MonoBehaviour {
         setCount = 0;
         //-spawnNewSet(0);
         firstWaveSpawned = true;
+        if (isTutorialActivated) {
+            firstTutorial = true;
+            secondTutorial = true;
+        }
     }
 
     // Update is called once per frame
@@ -92,7 +97,15 @@ public class WaveManager : MonoBehaviour {
         player = GameObject.FindWithTag("Player");
         if(currentSceneName == "Scene 1" && player) {
             if (isTutorialActivated) {
+                if (firstTutorial) {
 
+                } else {
+
+
+                }
+                if(!firstTutorial && !secondTutorial) {
+                    isTutorialActivated = false;
+                }
             } else {
                 if (!firstWaveSpawned) {
                     spawnNewSet(0);
