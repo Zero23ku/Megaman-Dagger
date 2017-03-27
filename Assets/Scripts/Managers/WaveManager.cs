@@ -13,13 +13,26 @@ public class WaveManager : MonoBehaviour {
     public static int currentSet;
     public static bool firstWaveSpawned;
 
+    public static bool isTutorialActivated = true;
+    public static bool firstTutorial;
+    public static bool secondTutorial;
+    public static int enemiesCount = 3;
+
     public GameObject[] SpawnPoints;
     public GameObject[] Platforms;
+    public GameObject[] TutorialLevels;
+
     public bool DEBUGMODE;
+
 
     private List<GameObject> SpawnAirList;
     private List<GameObject> SpawnLandList;
     private List<GameObject> currentSpawnLandList;
+
+    private GameObject[] enemiesTutorial;
+
+    private bool firstTutorialspawned;
+    private bool secondTutorialspawned;
 
     private GameObject player;
     private SpawnScript currentSpawnScript;
@@ -40,6 +53,7 @@ public class WaveManager : MonoBehaviour {
     private int originalSpawnRate;
     private int spawnRate;
     private bool setChanged;
+
     private List<int> sets;
 
     void Awake() {
@@ -84,6 +98,14 @@ public class WaveManager : MonoBehaviour {
         }
         setCount = 0;
         firstWaveSpawned = true;
+        if (isTutorialActivated) {
+            firstTutorial = true;
+            secondTutorial = true;
+            firstTutorialspawned = false;
+            secondTutorialspawned = false;
+        } else {
+            spawnNewSet(0);
+        }
     }
 
     // Update is called once per frame
@@ -91,15 +113,39 @@ public class WaveManager : MonoBehaviour {
         string currentSceneName = SceneManager.GetActiveScene().name;
         player = GameObject.FindWithTag("Player");
         if(currentSceneName == "Scene 1" && player) {
-            if(!firstWaveSpawned) {
-                spawnNewSet(0);
-                firstWaveSpawned = true;
-            }
-            // If there's no enemy on the screen
-            if(isWaveSpawnable && !currentlyAssigning) {
-                currentlyAssigning = true;
-                isWaveSpawnable = false;
-                StartCoroutine(AssignNewWave());
+            //print(firstTutorial);
+            if (isTutorialActivated) {
+               // print("tutorial 1: " + firstTutorial + " tutorial 2: " + secondTutorial);
+                if (firstTutorial) {
+                    if (!firstTutorialspawned) {
+                        SpawnNewTutorialSet(0);
+                        firstTutorialspawned = true;
+                    }
+                } else if(secondTutorial) {
+                    if (!secondTutorialspawned) {
+                        //print("pase");
+                        StartCoroutine(ChangeTutorialSet());
+                        //enemiesTutorial = GameObject.FindGameObjectsWithTag("Enemy");
+                        secondTutorialspawned = true;
+                    }
+                    if (enemiesCount <= 0) {
+                        secondTutorial = false;
+                    }
+                }
+                if(!firstTutorial && !secondTutorial) {
+                    isTutorialActivated = false;
+                }
+            } else {
+                if (!firstWaveSpawned) {
+                    spawnNewSet(0);
+                    firstWaveSpawned = true;
+                }
+                // If there's no enemy on the screen
+                if (isWaveSpawnable && !currentlyAssigning) {
+                    currentlyAssigning = true;
+                    isWaveSpawnable = false;
+                    StartCoroutine(AssignNewWave());
+                }
             }
         }
     }
@@ -249,6 +295,59 @@ public class WaveManager : MonoBehaviour {
         GameObject platforms = Instantiate(Platforms[index]);
         platforms.transform.parent = GameObject.Find("Platforms").transform;
         platforms.transform.localPosition = new Vector3(platforms.transform.position.x, platforms.transform.position.y, 0f);
+    }
+
+    private void SpawnNewTutorialSet(int index) {
+        GameObject tutorialLevel = Instantiate(TutorialLevels[index]);
+        /*tutorialLevel.transform.parent = GameObject.Find("Platforms").transform;
+        tutorialLevel.transform.localPosition = new Vector3(tutorialLevel.transform.position.x, tutorialLevel.transform.position.y, 0f);*/
+    }
+
+    private IEnumerator ChangeTutorialSet() {
+        float transitionFrames = 70f;
+        float framesToTransition = 0f;
+        float tAlpha = 0f;
+        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
+        Color BGFOColor = BGFO.color;
+        print(BGFO + " " + BGFOColor);
+        // Fade Out
+        while (framesToTransition < transitionFrames) {
+            if (!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(0.0f, 1.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
+
+        
+
+        // We destroy the current set from the scene
+        if (player) {
+            foreach (GameObject set in GameObject.FindGameObjectsWithTag("Set")) {
+                Destroy(set);
+            }
+        }
+
+        SpawnNewTutorialSet(1);
+
+        // Fade In
+        framesToTransition = 0f;
+        tAlpha = 1f;
+        while (framesToTransition < transitionFrames) {
+            if (!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(1.0f, 0.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
     }
 
     private IEnumerator ChangeSet() {

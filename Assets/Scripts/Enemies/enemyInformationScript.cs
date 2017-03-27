@@ -14,8 +14,8 @@ public class enemyInformationScript : MonoBehaviour {
     public bool isDead;
     public bool isLockdown;
     public int boxColliderPosition;
+    public bool enemyTutorial;
     public int lockdownFrames;
-
     private SpriteRenderer spriteRenderer;
     private Animator enemyAnimator;
 
@@ -32,7 +32,8 @@ public class enemyInformationScript : MonoBehaviour {
 
     public void Die() {
         isDead = true;
-        dropItem();
+        if(!enemyTutorial)
+            dropItem();
 
         GetComponentsInChildren<BoxCollider2D>() [boxColliderPosition].enabled = false;
         enemyAnimator.SetTrigger("tDead");
