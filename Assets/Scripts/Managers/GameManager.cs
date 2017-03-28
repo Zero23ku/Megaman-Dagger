@@ -8,10 +8,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 	public static bool isPaused;
+    public static string playerName = "";
 
-	private WaveManager waveManager;
-    private InputField playerNameInput;
-    private string playerName = "";
+    
     private bool isInputReferenced = false;
 
     void Awake() {
@@ -26,35 +25,14 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		waveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
 		isPaused = false;
-        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		string currentSceneName = SceneManager.GetActiveScene().name;
-
-		// Main Menu logic
-		if (currentSceneName == "Main Menu") {
-            if (!isInputReferenced) {
-                isInputReferenced = true;
-                playerNameInput = GameObject.Find("PlayerNameInput").GetComponent<InputField>();
-                playerNameInput.text = playerName;
-            }
-
-            if (Input.GetButtonDown("Jump")) {
-                waveManager.ResetScene();
-                ScoreManager.ResetScene();
-                playerName = playerNameInput.gameObject.GetComponentsInChildren<Text>()[1].text;
-                isInputReferenced = false;
-                WaveManager.currentSet = 0;
-                WaveManager.setCount = 0;
-                WaveManager.firstWaveSpawned = false;
-                SceneManager.LoadScene("Scene 1");
-            }
-            playerNameInput.ActivateInputField();            
-		} else if (currentSceneName == "Scene 1") {
+		string currentSceneName = SceneManager.GetActiveScene().name;    
+ 
+        if (currentSceneName == "Scene 1") {
 			if (Input.GetButtonDown("Pause")) {
 				if (isPaused) {
 					Unpause();
@@ -81,20 +59,19 @@ public class GameManager : MonoBehaviour {
 
 	public void gameOver() {
         if (playerName == "")
-            playerName = "Player";
-        ScoreManager.instance.SetScore(playerName);
+            ScoreManager.instance.SetScore("Player");
+        else
+            ScoreManager.instance.SetScore(playerName);
         StartCoroutine(waitForFrames(100));
 		
 	}
 
     private IEnumerator waitForFrames(int frames) {
-
         while (frames > 0) {
             if (!GameManager.isPaused)
                 frames--;
             yield return null;
         }
         SceneManager.LoadScene("Game Over");
-
     }
 }

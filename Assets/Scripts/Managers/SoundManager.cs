@@ -19,8 +19,7 @@ public class SoundManager : MonoBehaviour {
 	private Slider SFXControl;
 	private GameObject SFXObject;
     private string currentSceneName;
-
-
+    
     void Awake() {
 		if (!instance) {
 			instance = this;
@@ -31,15 +30,13 @@ public class SoundManager : MonoBehaviour {
 
 		DontDestroyOnLoad(gameObject);
 	}
-
-
-
+    
 	// Use this for initialization
 	void Start () {
 		musicSource = GetComponents<AudioSource>()[0];
 		sfxSource = GetComponents<AudioSource>()[1];
 		musicVolume = musicSource.volume;
-        volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
+ //       volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
         currentSceneName = SceneManager.GetActiveScene().name;
         /*if (currentSceneName == "Main Menu") {
             volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
@@ -63,15 +60,15 @@ public class SoundManager : MonoBehaviour {
 			sfxSource.UnPause();
 			musicSource.UnPause();
 		}
-
+        /*
         if (currentSceneName == "Main Menu") {
-            volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
-            SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
+ //          volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
+ //           SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
             volumeControl = volumeObject.GetComponent<Slider>();
             SFXControl = SFXObject.GetComponent<Slider>();
             musicSource.volume = volumeControl.value;
             sfxSource.volume = SFXControl.value;
-        }
+        }*/
 	}
 
 	public void PlaySingle(AudioClip clip) {

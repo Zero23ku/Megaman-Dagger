@@ -119,7 +119,7 @@ public class WaveManager : MonoBehaviour {
         string currentSceneName = SceneManager.GetActiveScene().name;
         player = GameObject.FindWithTag("Player");
         if(currentSceneName == "Main Menu") {
-            isTutorialActivated = GameObject.FindGameObjectWithTag("Toggle").GetComponent<Toggle>().isOn;
+ //           isTutorialActivated = GameObject.FindGameObjectWithTag("Toggle").GetComponent<Toggle>().isOn;
             firstTutorial = isTutorialActivated;
             secondTutorial = isTutorialActivated;
             wasTutorialActivated = isTutorialActivated;
