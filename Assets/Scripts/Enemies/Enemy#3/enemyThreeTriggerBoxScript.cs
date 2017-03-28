@@ -7,6 +7,8 @@ public class enemyThreeTriggerBoxScript : MonoBehaviour {
 	private enemyDiskFloorController enemyDiskFloorController;
 	private enemyInformationScript enemyInformation;
 	private platformController platformController;
+    public AudioClip Damage;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +23,8 @@ public class enemyThreeTriggerBoxScript : MonoBehaviour {
 		}
 
 		if (otherCollider.tag == "MegamanBullet") {
-			enemyDiskFloorController.receiveDamage();
+            SoundManager.instance.RandomizeSFX(Damage);
+            enemyDiskFloorController.receiveDamage();
 		}
 	}
 

@@ -141,6 +141,7 @@ MonoBehaviour:
   isMoreSpeedItem: 0
   isClearAll: 0
   isLockdown: 1
+  itemPickUp: {fileID: 8300000, guid: aeb311bbb5a05ee4ab023b49285b4771, type: 3}
   giveHealth: 0
   isUsed: 0
 --- !u!114 &114462190926925626

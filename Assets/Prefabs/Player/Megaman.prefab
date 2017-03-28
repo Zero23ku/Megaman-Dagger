@@ -194,9 +194,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.06, y: 0}
+  m_Offset: {x: -0.06, y: -0.8}
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 1.91}
+  m_Size: {x: 0.4, y: 0.5}
 --- !u!61 &61472984261510262
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -208,9 +208,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00552996, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.17, y: 0.21}
+  m_Size: {x: 0.12207404, y: 0.21000001}
 --- !u!61 &61681996976282350
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -224,7 +224,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.12, y: -1.28}
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 1.03}
+  m_Size: {x: 0.65, y: 1.03}
 --- !u!95 &95018865994733932
 Animator:
   serializedVersion: 3
@@ -282,8 +282,12 @@ MonoBehaviour:
   blinkFrames: 60
   attackCooldown: 5
   bulletClip: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
+  Damage: {fileID: 8300000, guid: 578fe26066455a2428ed59df0b427069, type: 3}
+  Death: {fileID: 8300000, guid: 32010bd6c0430c743a1d34e049ca815a, type: 3}
+  jumpClip: {fileID: 8300000, guid: 21fd501f384a72843b48abb8e14b19d5, type: 3}
   deathParticlePrefab: {fileID: 4408051694744514, guid: e3dcda9a16300f640b9d7d8e60342d5c,
     type: 2}
+  playJumpClip: 0
 --- !u!212 &212040893618031026
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -137,6 +137,11 @@ MonoBehaviour:
   isHealthItem: 1
   isThreeBulletsItem: 0
   isMoreBulletsItem: 0
+  isMoreBulletSpeedItem: 0
+  isMoreSpeedItem: 0
+  isClearAll: 0
+  isLockdown: 0
+  itemPickUp: {fileID: 8300000, guid: baf3b341c9ca3064aacee42af6fcfd0e, type: 3}
   giveHealth: 2
   isUsed: 0
 --- !u!114 &114864736039944026
