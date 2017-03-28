@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour {
@@ -13,7 +14,7 @@ public class WaveManager : MonoBehaviour {
     public static int currentSet;
     public static bool firstWaveSpawned;
 
-    public static bool isTutorialActivated = true;
+    public static bool isTutorialActivated;
     public static bool firstTutorial;
     public static bool secondTutorial;
     public static int enemiesCount = 3;
@@ -33,6 +34,7 @@ public class WaveManager : MonoBehaviour {
 
     private bool firstTutorialspawned;
     private bool secondTutorialspawned;
+    //private Toggle toggleTutorial;
 
     private GameObject player;
     private SpawnScript currentSpawnScript;
@@ -93,8 +95,9 @@ public class WaveManager : MonoBehaviour {
         isWaveSpawnable = true;
 
         setChanged = false;
+   
 
-        if(DEBUGMODE) {
+        if (DEBUGMODE) {
             spawnNewSet(0);
         }
         setCount = 0;
@@ -105,15 +108,18 @@ public class WaveManager : MonoBehaviour {
             firstTutorialspawned = false;
             secondTutorialspawned = false;
             wasTutorialActivated = true;
-        } else {
-            spawnNewSet(0);
         }
     }
 
     // Update is called once per frame
     void Update() {
+       
         string currentSceneName = SceneManager.GetActiveScene().name;
         player = GameObject.FindWithTag("Player");
+        if(currentSceneName == "Main Menu") {
+            isTutorialActivated = GameObject.FindGameObjectWithTag("Toggle").GetComponent<Toggle>().isOn;
+            print(isTutorialActivated);
+        }
         if(currentSceneName == "Scene 1" && player) {
             //print(firstTutorial);
             if (isTutorialActivated) {
