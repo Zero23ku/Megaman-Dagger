@@ -59,7 +59,6 @@ public class EnemyTwoController : MonoBehaviour {
     private IEnumerator Lockdown(int frames) {
         spriteRenderer.color = new Color(0, 0, 255);
         selfBody.velocity = new Vector2(0f, 0f);
-        Debug.Log("!");
         while(frames > 0) {
             if(!GameManager.isPaused) {
                 frames--;
