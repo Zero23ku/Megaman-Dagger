@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyInformationScript : MonoBehaviour {
     public Transform[] items;
+    public AudioClip Death;
     public int health;
 	public float speed;
 	public int difficultLevel;
@@ -32,9 +33,10 @@ public class enemyInformationScript : MonoBehaviour {
 
     public void Die() {
         isDead = true;
-        if(!enemyTutorial)
+        if (!enemyTutorial) {
             dropItem();
-
+        }
+        SoundManager.instance.RandomizeSFX(Death);
         GetComponentsInChildren<BoxCollider2D>() [boxColliderPosition].enabled = false;
         enemyAnimator.SetTrigger("tDead");
         WaveManager.timeBetweenWaves += bonusTimeInFrames;

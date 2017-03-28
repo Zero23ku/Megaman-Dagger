@@ -1717,6 +1717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cc6289ed7ed3d46b66cfa8341ca825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: {fileID: 0}
 --- !u!114 &114157936283793278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1740,6 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  Death: {fileID: 8300000, guid: 1b57c0593102e88438ca94af7ae1abd4, type: 3}
   health: 2
   speed: 2
   difficultLevel: 0
@@ -1798,6 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cc6289ed7ed3d46b66cfa8341ca825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: {fileID: 8300000, guid: d5dc04c4c7eed8d45bb6d815ee5c2890, type: 3}
 --- !u!114 &114656847856515638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1810,6 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  Death: {fileID: 8300000, guid: 1b57c0593102e88438ca94af7ae1abd4, type: 3}
   health: 2
   speed: 2
   difficultLevel: 0
@@ -1858,6 +1862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  Death: {fileID: 8300000, guid: 1b57c0593102e88438ca94af7ae1abd4, type: 3}
   health: 2
   speed: 2
   difficultLevel: 0
@@ -1905,6 +1910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cc6289ed7ed3d46b66cfa8341ca825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: {fileID: 8300000, guid: d5dc04c4c7eed8d45bb6d815ee5c2890, type: 3}
 --- !u!212 &212438198991668962
 SpriteRenderer:
   m_ObjectHideFlags: 1

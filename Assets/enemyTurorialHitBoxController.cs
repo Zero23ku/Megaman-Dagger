@@ -6,6 +6,8 @@ public class enemyTurorialHitBoxController : MonoBehaviour {
 
     private enemyTutorialController enemyTutorialController;
     private enemyInformationScript enemyInformation;
+    public AudioClip Damage;
+    
 	// Use this for initialization
 	void Start () {
         enemyTutorialController = GetComponentInParent<enemyTutorialController>();
@@ -18,6 +20,7 @@ public class enemyTurorialHitBoxController : MonoBehaviour {
         }
 
         if (otherCollider.tag == "MegamanBullet") {
+            SoundManager.instance.RandomizeSFX(Damage);
             enemyTutorialController.receiveDamage();
         }
     }

@@ -5,15 +5,17 @@ using UnityEngine;
 public class enemyMinerHitBoxScript : MonoBehaviour {
 
 	private enemyMinerController enemyMinerController;
+    public AudioClip Damage;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		enemyMinerController = GetComponentInParent<enemyMinerController>();
 	}
 	
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 		if (otherCollider.tag == "MegamanBullet") {
-			enemyMinerController.receiveDamage();
-		}
+            SoundManager.instance.RandomizeSFX(Damage);
+            enemyMinerController.receiveDamage();
+        }
 	}
 }

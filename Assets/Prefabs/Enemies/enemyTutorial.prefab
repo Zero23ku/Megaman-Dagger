@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  Death: {fileID: 8300000, guid: 1b57c0593102e88438ca94af7ae1abd4, type: 3}
   health: 0
   speed: 2
   difficultLevel: 0
@@ -146,8 +147,10 @@ MonoBehaviour:
   isShottingEnemy: 0
   buffAttack: 0
   isDead: 0
+  isLockdown: 0
   boxColliderPosition: 0
   enemyTutorial: 1
+  lockdownFrames: 0
 --- !u!114 &114546564518882386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cc6289ed7ed3d46b66cfa8341ca825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: {fileID: 8300000, guid: d5dc04c4c7eed8d45bb6d815ee5c2890, type: 3}
 --- !u!114 &114878921764616094
 MonoBehaviour:
   m_ObjectHideFlags: 1
