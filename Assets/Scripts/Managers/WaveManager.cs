@@ -128,7 +128,7 @@ public class WaveManager : MonoBehaviour {
         if(currentSceneName == "Scene 1" && player) {
             //print("After main screen: " +  isTutorialActivated);
             if (isTutorialActivated) {
-                print("tutorial 1: " + firstTutorial + " tutorial 2: " + secondTutorial);
+                //print("tutorial 1: " + firstTutorial + " tutorial 2: " + secondTutorial);
                 if (firstTutorial) {
                     if (!firstTutorialspawned) {
                         SpawnNewTutorialSet(0);
