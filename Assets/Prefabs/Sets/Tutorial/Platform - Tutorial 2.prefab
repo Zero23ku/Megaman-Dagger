@@ -1748,8 +1748,10 @@ MonoBehaviour:
   isShottingEnemy: 0
   buffAttack: 0
   isDead: 0
+  isLockdown: 0
   boxColliderPosition: 0
   enemyTutorial: 1
+  lockdownFrames: 0
 --- !u!114 &114428259344402416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1816,8 +1818,10 @@ MonoBehaviour:
   isShottingEnemy: 0
   buffAttack: 0
   isDead: 0
+  isLockdown: 0
   boxColliderPosition: 0
   enemyTutorial: 1
+  lockdownFrames: 0
 --- !u!114 &114720800205601880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1862,8 +1866,10 @@ MonoBehaviour:
   isShottingEnemy: 0
   buffAttack: 0
   isDead: 0
+  isLockdown: 0
   boxColliderPosition: 0
   enemyTutorial: 1
+  lockdownFrames: 0
 --- !u!114 &114822079269099322
 MonoBehaviour:
   m_ObjectHideFlags: 1

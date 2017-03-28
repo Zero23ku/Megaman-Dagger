@@ -53,6 +53,7 @@ public class WaveManager : MonoBehaviour {
     private int originalSpawnRate;
     private int spawnRate;
     private bool setChanged;
+    private bool wasTutorialActivated;
 
     private List<int> sets;
 
@@ -103,6 +104,7 @@ public class WaveManager : MonoBehaviour {
             secondTutorial = true;
             firstTutorialspawned = false;
             secondTutorialspawned = false;
+            wasTutorialActivated = true;
         } else {
             spawnNewSet(0);
         }
@@ -136,16 +138,24 @@ public class WaveManager : MonoBehaviour {
                     isTutorialActivated = false;
                 }
             } else {
-                if (!firstWaveSpawned) {
-                    spawnNewSet(0);
-                    firstWaveSpawned = true;
+
+                if (wasTutorialActivated) {
+                    StartCoroutine(ChangeTutorialToSet());
+                    //spawnNewSet(0);
+                    
+                } else {
+                    if (!firstWaveSpawned) {
+                        spawnNewSet(0);
+                        firstWaveSpawned = true;
+                    }
+                    // If there's no enemy on the screen
+                    if (isWaveSpawnable && !currentlyAssigning) {
+                        currentlyAssigning = true;
+                        isWaveSpawnable = false;
+                        StartCoroutine(AssignNewWave());
+                    }
                 }
-                // If there's no enemy on the screen
-                if (isWaveSpawnable && !currentlyAssigning) {
-                    currentlyAssigning = true;
-                    isWaveSpawnable = false;
-                    StartCoroutine(AssignNewWave());
-                }
+
             }
         }
     }
@@ -333,6 +343,56 @@ public class WaveManager : MonoBehaviour {
         }
 
         SpawnNewTutorialSet(1);
+
+        // Fade In
+        framesToTransition = 0f;
+        tAlpha = 1f;
+        while (framesToTransition < transitionFrames) {
+            if (!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(1.0f, 0.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
+        firstWaveSpawned = true;
+        wasTutorialActivated = false;
+    }
+
+    private IEnumerator ChangeTutorialToSet() {
+        float transitionFrames = 70f;
+        float framesToTransition = 0f;
+        float tAlpha = 0f;
+        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
+        Color BGFOColor = BGFO.color;
+        //print(BGFO + " " + BGFOColor);
+        // Fade Out
+        while (framesToTransition < transitionFrames) {
+            if (!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(0.0f, 1.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
+
+
+
+        // We destroy the current set from the scene
+        if (player) {
+            foreach (GameObject set in GameObject.FindGameObjectsWithTag("Set")) {
+                Destroy(set);
+            }
+        }
+
+        //SpawnNewTutorialSet(1);
+        spawnNewSet(0);
 
         // Fade In
         framesToTransition = 0f;
