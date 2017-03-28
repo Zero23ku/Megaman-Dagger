@@ -27,6 +27,7 @@ TagManager:
   - sliderVolume
   - BGFO
   - Set
+  - Toggle
   layers:
   - Default
   - TransparentFX

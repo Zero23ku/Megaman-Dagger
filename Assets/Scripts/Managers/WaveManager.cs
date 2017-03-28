@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour {
@@ -13,7 +14,7 @@ public class WaveManager : MonoBehaviour {
     public static int currentSet;
     public static bool firstWaveSpawned;
 
-    public static bool isTutorialActivated = true;
+    public static bool isTutorialActivated;
     public static bool firstTutorial;
     public static bool secondTutorial;
     public static int enemiesCount = 3;
@@ -33,6 +34,7 @@ public class WaveManager : MonoBehaviour {
 
     private bool firstTutorialspawned;
     private bool secondTutorialspawned;
+    //private Toggle toggleTutorial;
 
     private GameObject player;
     private SpawnScript currentSpawnScript;
@@ -93,31 +95,40 @@ public class WaveManager : MonoBehaviour {
         isWaveSpawnable = true;
 
         setChanged = false;
+   
 
-        if(DEBUGMODE) {
+        if (DEBUGMODE) {
             spawnNewSet(0);
         }
         setCount = 0;
         firstWaveSpawned = true;
-        if (isTutorialActivated) {
+        /*if (isTutorialActivated) {
             firstTutorial = true;
             secondTutorial = true;
             firstTutorialspawned = false;
             secondTutorialspawned = false;
             wasTutorialActivated = true;
-        } else {
-            spawnNewSet(0);
-        }
+        }*/
+        firstTutorialspawned = false;
+        secondTutorialspawned = false;
     }
 
     // Update is called once per frame
     void Update() {
+       
         string currentSceneName = SceneManager.GetActiveScene().name;
         player = GameObject.FindWithTag("Player");
+        if(currentSceneName == "Main Menu") {
+            isTutorialActivated = GameObject.FindGameObjectWithTag("Toggle").GetComponent<Toggle>().isOn;
+            firstTutorial = isTutorialActivated;
+            secondTutorial = isTutorialActivated;
+            wasTutorialActivated = isTutorialActivated;
+            //print("main screen: " + isTutorialActivated);
+        }
         if(currentSceneName == "Scene 1" && player) {
-            //print(firstTutorial);
+            //print("After main screen: " +  isTutorialActivated);
             if (isTutorialActivated) {
-               // print("tutorial 1: " + firstTutorial + " tutorial 2: " + secondTutorial);
+                print("tutorial 1: " + firstTutorial + " tutorial 2: " + secondTutorial);
                 if (firstTutorial) {
                     if (!firstTutorialspawned) {
                         SpawnNewTutorialSet(0);
@@ -135,6 +146,7 @@ public class WaveManager : MonoBehaviour {
                     }
                 }
                 if(!firstTutorial && !secondTutorial) {
+                    //print("pase");
                     isTutorialActivated = false;
                 }
             } else {

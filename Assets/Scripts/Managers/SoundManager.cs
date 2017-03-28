@@ -39,14 +39,14 @@ public class SoundManager : MonoBehaviour {
 		musicSource = GetComponents<AudioSource>()[0];
 		sfxSource = GetComponents<AudioSource>()[1];
 		musicVolume = musicSource.volume;
-        //volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
+        volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
         currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName == "Main Menu") {
+        /*if (currentSceneName == "Main Menu") {
             volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
             SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
-            SFXControl = SFXObject.GetComponent<Slider>();
-            volumeControl = volumeObject.GetComponent<Slider>();
-        }
+            //SFXControl = SFXObject.GetComponent<Slider>();
+            //volumeControl = volumeObject.GetComponent<Slider>();
+        }*/
 	}
 	
 	// Update is called once per frame
@@ -65,6 +65,10 @@ public class SoundManager : MonoBehaviour {
 		}
 
         if (currentSceneName == "Main Menu") {
+            volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
+            SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
+            volumeControl = volumeObject.GetComponent<Slider>();
+            SFXControl = SFXObject.GetComponent<Slider>();
             musicSource.volume = volumeControl.value;
             sfxSource.volume = SFXControl.value;
         }
