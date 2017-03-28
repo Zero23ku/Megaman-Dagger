@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037228997656830408f438c1d1f24d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: {fileID: 8300000, guid: d5dc04c4c7eed8d45bb6d815ee5c2890, type: 3}
 --- !u!114 &114592008277225150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +186,7 @@ MonoBehaviour:
   - {fileID: 4846426601437796, guid: e5f772b5f676ff84aad66e88a1e482b9, type: 2}
   - {fileID: 4801381489246322, guid: 4683b5d2812af204da3f601a1cd2a2b5, type: 2}
   - {fileID: 4802195445258500, guid: d7c2320542314404fafae22ceff85e64, type: 2}
+  Death: {fileID: 8300000, guid: 1b57c0593102e88438ca94af7ae1abd4, type: 3}
   health: 3
   speed: 0
   difficultLevel: 4
@@ -195,6 +197,7 @@ MonoBehaviour:
   isDead: 0
   isLockdown: 0
   boxColliderPosition: 1
+  enemyTutorial: 0
   lockdownFrames: 300
 --- !u!212 &212408616434221576
 SpriteRenderer:

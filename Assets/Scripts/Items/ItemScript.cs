@@ -12,6 +12,7 @@ public class ItemScript : MonoBehaviour {
     public bool isMoreSpeedItem;
     public bool isClearAll;
     public bool isLockdown;
+    public AudioClip itemPickUp;
 
     public int giveHealth;
     public bool isUsed;
@@ -32,7 +33,11 @@ public class ItemScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isUsed || timePassed) {
-			Destroy(gameObject);
+            if (isUsed) {
+                SoundManager.instance.RandomizeSFX(itemPickUp);
+                //print("pase");
+            }
+            Destroy(gameObject);
 		}
 	}
 

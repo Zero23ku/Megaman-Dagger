@@ -282,8 +282,12 @@ MonoBehaviour:
   blinkFrames: 60
   attackCooldown: 5
   bulletClip: {fileID: 8300000, guid: daa68a99a4b729149b94660a51e348e1, type: 3}
+  Damage: {fileID: 8300000, guid: 578fe26066455a2428ed59df0b427069, type: 3}
+  Death: {fileID: 8300000, guid: 32010bd6c0430c743a1d34e049ca815a, type: 3}
+  jumpClip: {fileID: 8300000, guid: 21fd501f384a72843b48abb8e14b19d5, type: 3}
   deathParticlePrefab: {fileID: 4408051694744514, guid: e3dcda9a16300f640b9d7d8e60342d5c,
     type: 2}
+  playJumpClip: 0
 --- !u!212 &212040893618031026
 SpriteRenderer:
   m_ObjectHideFlags: 1
