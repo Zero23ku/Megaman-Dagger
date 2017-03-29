@@ -25,7 +25,6 @@ public class WaveManager : MonoBehaviour {
 
     public bool DEBUGMODE;
 
-
     private List<GameObject> SpawnAirList;
     private List<GameObject> SpawnLandList;
     private List<GameObject> currentSpawnLandList;
@@ -56,6 +55,7 @@ public class WaveManager : MonoBehaviour {
     private int spawnRate;
     private bool setChanged;
     private bool wasTutorialActivated;
+    private bool isCouroutineActive;
 
     private List<int> sets;
 
@@ -92,7 +92,7 @@ public class WaveManager : MonoBehaviour {
         isBuffed = false;
         currentlyAssigning = false;
         isOverallDifficultLevelCalculated = false;
-        isWaveSpawnable = true;
+        isWaveSpawnable = false;
 
         setChanged = false;
    
@@ -101,16 +101,13 @@ public class WaveManager : MonoBehaviour {
             spawnNewSet(0);
         }
         setCount = 0;
+        isTutorialActivated = true;
         firstWaveSpawned = true;
-        /*if (isTutorialActivated) {
-            firstTutorial = true;
-            secondTutorial = true;
-            firstTutorialspawned = false;
-            secondTutorialspawned = false;
-            wasTutorialActivated = true;
-        }*/
+        firstTutorial = true;
+        secondTutorial = true;
         firstTutorialspawned = false;
         secondTutorialspawned = false;
+        wasTutorialActivated = true;
     }
 
     // Update is called once per frame
@@ -119,11 +116,9 @@ public class WaveManager : MonoBehaviour {
         string currentSceneName = SceneManager.GetActiveScene().name;
         player = GameObject.FindWithTag("Player");
         if(currentSceneName == "Main Menu") {
- //           isTutorialActivated = GameObject.FindGameObjectWithTag("Toggle").GetComponent<Toggle>().isOn;
             firstTutorial = isTutorialActivated;
             secondTutorial = isTutorialActivated;
             wasTutorialActivated = isTutorialActivated;
-            //print("main screen: " + isTutorialActivated);
         }
         if(currentSceneName == "Scene 1" && player) {
             //print("After main screen: " +  isTutorialActivated);
@@ -148,12 +143,13 @@ public class WaveManager : MonoBehaviour {
                 if(!firstTutorial && !secondTutorial) {
                     //print("pase");
                     isTutorialActivated = false;
+                    wasTutorialActivated = true;
                 }
             } else {
 
                 if (wasTutorialActivated) {
+                    wasTutorialActivated = false;
                     StartCoroutine(ChangeTutorialToSet());
-                    //spawnNewSet(0);
                     
                 } else {
                     if (!firstWaveSpawned) {
@@ -326,26 +322,11 @@ public class WaveManager : MonoBehaviour {
     }
 
     private IEnumerator ChangeTutorialSet() {
-        float transitionFrames = 70f;
-        float framesToTransition = 0f;
-        float tAlpha = 0f;
-        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
-        Color BGFOColor = BGFO.color;
-        //print(BGFO + " " + BGFOColor);
-        // Fade Out
-        while (framesToTransition < transitionFrames) {
-            if (!GameManager.isPaused && player) {
-                framesToTransition += 1f;
-                tAlpha = framesToTransition / transitionFrames;
-                BGFOColor.a = Mathf.Lerp(0.0f, 1.0f, tAlpha);
-                BGFO.color = BGFOColor;
-                yield return null;
-            } else {
-                break;
-            }
+        StartCoroutine(FadeOut());
+        isCouroutineActive = true;
+        while(isCouroutineActive) {
+            yield return null;
         }
-
-        
 
         // We destroy the current set from the scene
         if (player) {
@@ -355,46 +336,22 @@ public class WaveManager : MonoBehaviour {
         }
 
         SpawnNewTutorialSet(1);
-
-        // Fade In
-        framesToTransition = 0f;
-        tAlpha = 1f;
-        while (framesToTransition < transitionFrames) {
-            if (!GameManager.isPaused && player) {
-                framesToTransition += 1f;
-                tAlpha = framesToTransition / transitionFrames;
-                BGFOColor.a = Mathf.Lerp(1.0f, 0.0f, tAlpha);
-                BGFO.color = BGFOColor;
-                yield return null;
-            } else {
-                break;
-            }
-        }
         firstWaveSpawned = true;
         wasTutorialActivated = false;
+
+        StartCoroutine(FadeIn());
+        isCouroutineActive = true;
+        while(isCouroutineActive) {
+            yield return null;
+        }
     }
 
     private IEnumerator ChangeTutorialToSet() {
-        float transitionFrames = 70f;
-        float framesToTransition = 0f;
-        float tAlpha = 0f;
-        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
-        Color BGFOColor = BGFO.color;
-        //print(BGFO + " " + BGFOColor);
-        // Fade Out
-        while (framesToTransition < transitionFrames) {
-            if (!GameManager.isPaused && player) {
-                framesToTransition += 1f;
-                tAlpha = framesToTransition / transitionFrames;
-                BGFOColor.a = Mathf.Lerp(0.0f, 1.0f, tAlpha);
-                BGFO.color = BGFOColor;
-                yield return null;
-            } else {
-                break;
-            }
+        StartCoroutine(FadeOut());
+        isCouroutineActive = true;
+        while(isCouroutineActive) {
+            yield return null;
         }
-
-
 
         // We destroy the current set from the scene
         if (player) {
@@ -403,45 +360,29 @@ public class WaveManager : MonoBehaviour {
             }
         }
 
-        //SpawnNewTutorialSet(1);
+        ResetScene();
         spawnNewSet(0);
+        firstWaveSpawned = true;
+        isWaveSpawnable = false;
 
-        // Fade In
-        framesToTransition = 0f;
-        tAlpha = 1f;
-        while (framesToTransition < transitionFrames) {
-            if (!GameManager.isPaused && player) {
-                framesToTransition += 1f;
-                tAlpha = framesToTransition / transitionFrames;
-                BGFOColor.a = Mathf.Lerp(1.0f, 0.0f, tAlpha);
-                BGFO.color = BGFOColor;
-                yield return null;
-            } else {
-                break;
-            }
+        StartCoroutine(FadeIn());
+        isCouroutineActive = true;
+        while(isCouroutineActive) {
+            yield return null;
         }
+
+        firstWaveSpawned = true;
+        isWaveSpawnable = true;
+        currentlyAssigning = false;
     }
 
     private IEnumerator ChangeSet() {
         int previousSet;
         int newCurrentSet;
-        float transitionFrames = 70f;
-        float framesToTransition = 0f;
-        float tAlpha = 0f;
-        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
-        Color BGFOColor = BGFO.color;
-
-        // Fade Out
-        while(framesToTransition < transitionFrames) {
-            if(!GameManager.isPaused && player) {
-                framesToTransition += 1f;
-                tAlpha = framesToTransition / transitionFrames;
-                BGFOColor.a = Mathf.Lerp(0.0f, 1.0f, tAlpha);
-                BGFO.color = BGFOColor;
-                yield return null;
-            } else {
-                break;
-            }
+        StartCoroutine(FadeOut());
+        isCouroutineActive = true;
+        while(isCouroutineActive) {
+            yield return null;
         }
 
         // We remove the current set from the poll
@@ -465,21 +406,11 @@ public class WaveManager : MonoBehaviour {
         // We add the previous set to the poll
         sets.Add(previousSet);
 
-        // Fade In
-        framesToTransition = 0f;
-        tAlpha = 1f;
-        while(framesToTransition < transitionFrames) {
-            if(!GameManager.isPaused && player) {
-                framesToTransition += 1f;
-                tAlpha = framesToTransition / transitionFrames;
-                BGFOColor.a = Mathf.Lerp(1.0f, 0.0f, tAlpha);
-                BGFO.color = BGFOColor;
-                yield return null;
-            } else {
-                break;
-            }
+        StartCoroutine(FadeIn());
+        isCouroutineActive = true;
+        while(isCouroutineActive) {
+            yield return null;
         }
-        
         setChanged = true;
     }
 
@@ -494,5 +425,48 @@ public class WaveManager : MonoBehaviour {
 
     public void MinusDifficultLevel(int minusDifficult) {
         currentDifficultLevel -= minusDifficult;
+    }
+
+
+
+    private IEnumerator FadeIn() {
+        float transitionFrames = 70f;
+        float framesToTransition = 0f;
+        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
+        Color BGFOColor = BGFO.color;
+        float tAlpha = 1f;
+        while(framesToTransition < transitionFrames) {
+            if(!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(1.0f, 0.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
+        isCouroutineActive = false;
+    }
+
+    private IEnumerator FadeOut() {
+        float transitionFrames = 70f;
+        float framesToTransition = 0f;
+        float tAlpha = 0f;
+        SpriteRenderer BGFO = GameObject.FindGameObjectWithTag("BGFO").GetComponent<SpriteRenderer>();
+        Color BGFOColor = BGFO.color;
+        // Fade Out
+        while(framesToTransition < transitionFrames) {
+            if(!GameManager.isPaused && player) {
+                framesToTransition += 1f;
+                tAlpha = framesToTransition / transitionFrames;
+                BGFOColor.a = Mathf.Lerp(0.0f, 1.0f, tAlpha);
+                BGFO.color = BGFOColor;
+                yield return null;
+            } else {
+                break;
+            }
+        }
+        isCouroutineActive = false;
     }
 }
