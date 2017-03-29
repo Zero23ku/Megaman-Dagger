@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour {
 	public static bool isPaused;
     public static string playerName = "";
 
-    
-    private bool isInputReferenced = false;
-
     void Awake() {
 		if (!instance) {
 			instance = this;
@@ -32,20 +29,20 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		string currentSceneName = SceneManager.GetActiveScene().name;    
  
-        if (currentSceneName == "Scene 1") {
-			if (Input.GetButtonDown("Pause")) {
+        if (currentSceneName == "Scene 1" && Input.GetButtonDown("Pause")) {
 				if (isPaused) {
 					Unpause();
 				} else {
 					Pause();
 				}
 			}
-		} else { // Game Over
-			if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Attack")) {
+
+        if (currentSceneName == "Game Over" || currentSceneName == "Credits") {
+            if(Input.GetButtonDown("Jump") || Input.GetButtonDown("Attack")) {
                 SceneManager.LoadScene("Main Menu");
-			}			
-		}
-	}
+            }
+        }
+    }
 
 	public void Pause() {
 		Time.timeScale = 0;
