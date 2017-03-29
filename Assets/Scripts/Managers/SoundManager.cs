@@ -30,24 +30,21 @@ public class SoundManager : MonoBehaviour {
 
 		DontDestroyOnLoad(gameObject);
 	}
-    
-	// Use this for initialization
-	void Start () {
-		musicSource = GetComponents<AudioSource>()[0];
-		sfxSource = GetComponents<AudioSource>()[1];
-		musicVolume = musicSource.volume;
- //       volumeControl = GameObject.FindWithTag("sliderVolume").GetComponent<Slider>();
+
+    // Use this for initialization
+    void Start() {
+        musicSource = GetComponents<AudioSource>()[0];
+        sfxSource = GetComponents<AudioSource>()[1];
+        musicVolume = musicSource.volume;
         currentSceneName = SceneManager.GetActiveScene().name;
-        /*if (currentSceneName == "Main Menu") {
-            volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
-            SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
-            //SFXControl = SFXObject.GetComponent<Slider>();
-            //volumeControl = volumeObject.GetComponent<Slider>();
-        }*/
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        if (currentSceneName == "Main Menu") {
+            volumeControl = Resources.FindObjectsOfTypeAll<Slider>()[0];
+            SFXControl = Resources.FindObjectsOfTypeAll<Slider>()[1];
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         currentSceneName = SceneManager.GetActiveScene().name;
 		if (!soundPaused && GameManager.isPaused) {
@@ -60,18 +57,14 @@ public class SoundManager : MonoBehaviour {
 			sfxSource.UnPause();
 			musicSource.UnPause();
 		}
-        /*
+        
         if (currentSceneName == "Main Menu") {
- //          volumeObject = GameObject.FindGameObjectsWithTag("sliderVolume")[0];
- //           SFXObject = GameObject.FindGameObjectsWithTag("sliderVolume")[1];
-            volumeControl = volumeObject.GetComponent<Slider>();
-            SFXControl = SFXObject.GetComponent<Slider>();
             musicSource.volume = volumeControl.value;
             sfxSource.volume = SFXControl.value;
-        }*/
-	}
+        }
+    }
 
-	public void PlaySingle(AudioClip clip) {
+    public void PlaySingle(AudioClip clip) {
 		sfxSource.clip = clip;
 		sfxSource.Play();
 	}

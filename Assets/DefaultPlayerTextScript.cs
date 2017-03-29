@@ -12,8 +12,7 @@ public class DefaultPlayerTextScript : MonoBehaviour {
         playerNameInput = Resources.FindObjectsOfTypeAll<InputField>()[0];
 
         if(GameManager.playerName != "") {
-            playerName = playerNameInput.GetComponentsInChildren<Text>()[0];
-            playerName.text = GameManager.playerName;
+            playerNameInput.text = GameManager.playerName;
         }
 
         playerNameInput.ActivateInputField();
