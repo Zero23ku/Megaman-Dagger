@@ -14,7 +14,8 @@ public class platformController : MonoBehaviour {
 			enemyController = otherCollider.gameObject.GetComponentInParent<enemyDiskFloorController>();
 			enemyInformation = otherCollider.gameObject.GetComponentInParent<enemyInformationScript>();
 		}
-		if (otherCollider.tag == "playerHitBox") {
+
+		if (otherCollider.tag == "playerHitBox") {
 			if (enemyController) {
 				enemyInformation.speed *= 2;
 			}
