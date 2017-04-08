@@ -8,6 +8,7 @@ public class enemyDiskFloorController : MonoBehaviour {
 	private Rigidbody2D selfBody;
     private SpriteRenderer spriteRenderer;
 
+    private bool isSpawned;
     private bool alreadyLockedDown;
 
 	// Use this for initialization
@@ -15,15 +16,18 @@ public class enemyDiskFloorController : MonoBehaviour {
 		selfBody = GetComponent<Rigidbody2D>();
 		enemyInformation = GetComponent<enemyInformationScript>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
         alreadyLockedDown = false;
+        isSpawned = false;
+        StartCoroutine(WaitForSpawn());
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if(!enemyInformation.isLockdown) {
+        if(!enemyInformation.isLockdown && isSpawned) {
             Movement();
         } else {
-            if(!alreadyLockedDown) {
+            if(!alreadyLockedDown && isSpawned) {
                 alreadyLockedDown = true;
                 StartCoroutine(Lockdown(enemyInformation.lockdownFrames));
             }
@@ -55,5 +59,16 @@ public class enemyDiskFloorController : MonoBehaviour {
         spriteRenderer.color = new Color(255, 255, 255);
         alreadyLockedDown = false;
         enemyInformation.isLockdown = false;
+    }
+
+    private IEnumerator WaitForSpawn() {
+        int frames = 45;
+        while (frames > 0) {
+            if(!GameManager.isPaused) {
+                frames--;
+                yield return null;
+            }
+        }
+        isSpawned = true;
     }
 }

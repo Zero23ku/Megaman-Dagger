@@ -19,7 +19,7 @@ public class ItemColliderController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
-		if (otherCollider.tag == "playerHitBox") {
+        if (otherCollider.tag == "playerHitBox") {
             if(itemScript.isInvulnerabilityItem) {
                 megamanController.becomeInvulnerable();
             } else if(itemScript.isHealthItem) {

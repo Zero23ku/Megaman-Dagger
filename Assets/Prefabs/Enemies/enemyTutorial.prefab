@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4896512047481728}
   - component: {fileID: 61350049283669428}
   - component: {fileID: 114546564518882386}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: enemyHitBox
   m_TagString: enemyHitBox
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1109154795300974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.95, y: 1.38, z: 0}
+  m_LocalPosition: {x: 5.259289, y: -2.7167504, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4896512047481728}
@@ -138,7 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  Death: {fileID: 8300000, guid: 1b57c0593102e88438ca94af7ae1abd4, type: 3}
   health: 0
   speed: 2
   difficultLevel: 0

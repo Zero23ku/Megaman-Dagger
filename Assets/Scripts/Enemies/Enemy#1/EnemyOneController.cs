@@ -57,7 +57,7 @@ public class EnemyOneController : MonoBehaviour {
                         if(framesBetweenMovement == 0) {
                             framesBetweenMovement = 20;
                             playerPosition = playerTransform.position;
-                            playerPosition.y += 0.4f;
+                            playerPosition.y += +0.2f;
                         } else {
                             framesBetweenMovement--;
                         }

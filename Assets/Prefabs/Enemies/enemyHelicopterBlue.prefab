@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4573808721315522}
   - component: {fileID: 61693283668786104}
   - component: {fileID: 114939741397573746}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: enemyHitBox
   m_TagString: enemyHitBox
   m_Icon: {fileID: 0}
@@ -56,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1337644675204186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.69, y: -1.09, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3.7476149, y: -1.5410031, z: 0}
+  m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_Children:
   - {fileID: 4573808721315522}
   m_Father: {fileID: 0}
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.128
+  m_Mass: 0.16928
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -186,7 +186,6 @@ MonoBehaviour:
   - {fileID: 4846426601437796, guid: e5f772b5f676ff84aad66e88a1e482b9, type: 2}
   - {fileID: 4801381489246322, guid: 4683b5d2812af204da3f601a1cd2a2b5, type: 2}
   - {fileID: 4802195445258500, guid: d7c2320542314404fafae22ceff85e64, type: 2}
-  Death: {fileID: 8300000, guid: 1b57c0593102e88438ca94af7ae1abd4, type: 3}
   health: 1
   speed: 2
   difficultLevel: 3

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4577628593447414}
   - component: {fileID: 61701086258012972}
   - component: {fileID: 114864736039944026}
-  m_Layer: 19
+  m_Layer: 0
   m_Name: ItemCollider
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113550088206962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.212737, y: 1.0266252, z: 0}
+  m_LocalPosition: {x: 3.700217, y: -1.8481392, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4577628593447414}
