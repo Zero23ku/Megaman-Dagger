@@ -62,7 +62,7 @@ public class enemyDiskFloorController : MonoBehaviour {
     }
 
     private IEnumerator WaitForSpawn() {
-        int frames = 45;
+        int frames = 80;
         while (frames > 0) {
             if(!GameManager.isPaused) {
                 frames--;
